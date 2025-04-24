@@ -39,10 +39,9 @@
     color: #ffffff;
   }
   
-  .BlueOutline,
-  .Blue:hover {
-    /* border: 1px solid #2142b2; */
-    background-color: #ffffff;
+  .GreenOutline,
+  .Green:hover {
+    background-color: #1c2e0a ;
     color: #2142b2;
   }
   
