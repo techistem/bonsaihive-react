@@ -5,10 +5,22 @@ import {Route,Switch} from "react-router-dom";
 import './api/axiosDefaults';
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from './pages/auth/SignInForm';
+import bgImage from "./assets/bgimage.jpg"
 
 function App() {
   return (
-       <div className={styles.App}>
+    <div 
+      className={`${styles.bg} ${styles.App}`} 
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+        minHeight: "100vh",
+        position: "relative",
+      }}
+    >
+  );
+      <div>
         <NavBar />
         <Container className={styles.Main}>
           <Switch>
@@ -19,6 +31,7 @@ function App() {
           </Switch>
         </Container>
       </div>
+    </div>
   );
 }
 

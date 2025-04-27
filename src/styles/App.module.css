@@ -1,7 +1,5 @@
-
 .App {
     font-family: "DM Sans", sans-serif;
-    background-color: #f8f8f8;
     min-height: 100vh;
   }
   
@@ -16,11 +14,11 @@
     border: 1px solid #dadadf;
   }
   
-  .FillerImage {
+  /*.FillerImage {
     object-fit: cover;
     height: 100%;
     width: 100%;
-  }
+  } */
   
   .Image {
     max-height: 40vh;
@@ -67,7 +65,7 @@
     text-align: center;
     display: inline-block;
   }
-  
+
   /* scrollbar */
   *::-webkit-scrollbar {
     width: 5px;
