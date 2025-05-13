@@ -43,7 +43,8 @@
     ]
   },
   "devDependencies": {
-    "msw": "^2.7.3"
+    "msw": "^2.7.6",
+    "util": "^0.12.5"
   },
   "engines": {
     "node": "16.19.1",

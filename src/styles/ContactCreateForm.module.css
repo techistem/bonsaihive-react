@@ -1,0 +1,73 @@
+/* contactCreateForm.css */
+
+/* Form Container */
+.formContainer {
+    margin-top: 50px;
+    width: 80%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  /* Input and Textarea Fields */
+  .inputField {
+    margin-bottom: 1rem;
+  }
+  
+  .inputField label {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .inputField input,
+  .textareaField {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .textareaField {
+    resize: none;
+    min-height: 150px;
+  }
+  
+  /* Error Message */
+  input:invalid,
+  textarea:invalid {
+    border-color: red;
+  }
+  
+  input:valid,
+  textarea:valid {
+    border-color: green;
+  }
+  
+  /* Submit Button */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Error Message */
+  .error {
+    color: red;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  
