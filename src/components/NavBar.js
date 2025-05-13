@@ -35,6 +35,16 @@ const NavBar = () => {
       <i className="far fa-plus-square"></i>Add post
     </NavLink>
   );
+  const contactIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/contact/create"
+    >
+      <i className="fas fa-envelope"></i> Contact
+    </NavLink>
+  );
+
   const loggedInIcons = (
     <>
       <NavLink
@@ -111,6 +121,7 @@ const NavBar = () => {
             >
               <i className="fas fa-home"></i>Home
             </NavLink>
+            {contactIcon}
 
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
