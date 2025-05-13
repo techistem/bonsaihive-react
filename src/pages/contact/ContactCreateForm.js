@@ -60,13 +60,15 @@ const ContactCreateForm = () => {
    */
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log('Form submitted!');
     const formData = new FormData();
+    
 
     formData.append("reason", reason);
     formData.append("content", content);
 
     try {
-      await axiosReq.post("/contacts/", formData);
+      await axiosReq.post("/contact/", formData);
       setFormSubmitted(true);
       handleShow();
       setContactData({ reason: "", content: "" });
