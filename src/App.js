@@ -16,6 +16,7 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ContactCreateForm from "./pages/contact/ContactCreateForm";
+import ReviewsPage from "./pages/reviews/ReviewsPage";
 
 
 function App() {
@@ -62,6 +63,8 @@ function App() {
             <Route exact path="/posts/:id" render={()=> <PostPage />} />
             <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
             <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+            <Route exact path="/reviews" component={ReviewsPage} />
+
             <Route
             exact
             path="/profiles/:id/edit/username"
