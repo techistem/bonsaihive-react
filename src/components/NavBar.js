@@ -121,6 +121,12 @@ const NavBar = () => {
             >
               <i className="fas fa-home"></i>Home
             </NavLink>
+            <NavLink 
+            exact className={styles.NavLink} 
+            activeClassName={styles.Active} 
+            to="/reviews">
+               <i className="fas fa-star"></i> Reviews
+            </NavLink>
             {contactIcon}
 
             {currentUser ? loggedInIcons : loggedOutIcons}
