@@ -1,35 +1,31 @@
 import React, { useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-
 import { useHistory, useParams } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
+
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
-
 const ReviewCreateForm = () => {
   useRedirect("loggedOut");
-  const [errors, setErrors] = useState({});
-  const { id } = useParams();
+
   const [reviewData, setReviewData] = useState({
+    title: "",
     content: "",
   });
-  const {content } = reviewData;
-
+  const [rating, setRating] = useState(0); // 0–5 scale
+  const [errors, setErrors] = useState({});
   const history = useHistory();
+  const { id } = useParams(); // post id
 
-  const [rating, setRating] = useState(0); // initial rating value
-
-  // Catch Rating value
   const handleRating = (rate) => {
-    setRating(rate / 20);
+    setRating(rate / 20); // because rate is 0–100, we convert it to 0–5
   };
 
   const handleChange = (event) => {
@@ -43,13 +39,14 @@ const ReviewCreateForm = () => {
     event.preventDefault();
     const formData = new FormData();
 
-    formData.append("title", title);
+    formData.append("title", reviewData.title);
+    formData.append("content", reviewData.content);
     formData.append("rating", rating);
-    formData.append("content", content);
+    formData.append("post", id);
 
     try {
       await axiosReq.post("/reviews/", formData);
-      history.goBack();
+      history.goBack(); // go back to the post page or previous
     } catch (err) {
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
@@ -57,65 +54,80 @@ const ReviewCreateForm = () => {
     }
   };
 
-  const textFields = (
-    <div className="text-center">
-      {/* <Form.Group>
-        <Form.Label>Rating</Form.Label>
-        <Form.Control
-          type="text"
-          name="rating"
-          value={rating}
-          onChange={handleChange}
-        />
-      </Form.Group>
-      {errors?.title?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))} */}
-      <Form.Group>
-        <Rating onClick={handleRating} /* Available Props */ />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Content</Form.Label>
-        <Form.Control
-          as="textarea"
-          rows={6}
-          name="content"
-          value={content}
-          onChange={handleChange}
-        />
-      <Form.Group>
-        <Form.Label>Title</Form.Label>
-        <Form.Control 
-           type="text"
-           name="title"
-           value={title}
-           onChange={handleChange}
-        />
-      </Form.Group>
-      </Form.Group>
-      {errors?.content?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-
-      <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => history.goBack()}
-      >
-        Cancel
-      </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        Save
-      </Button>
-    </div>
-  );
-
   return (
     <Form onSubmit={handleSubmit}>
-      <Container className={appStyles.Content}>{textFields}</Container>
+      <Container className={appStyles.Content}>
+        <h3 className="text-center">Leave a Review</h3>
+
+        <Form.Group>
+          <Form.Label>Rating (1-5)</Form.Label>
+          <div className="d-flex justify-content-center mb-2">
+            <Rating
+              onClick={handleRating}
+              initialValue={rating * 20}
+              size={25}
+              allowFraction
+              transition
+              showTooltip
+              tooltipArray={["Terrible", "Bad", "Okay", "Good", "Excellent"]}
+            />
+          </div>
+          {errors?.rating?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label>Title</Form.Label>
+          <Form.Control
+            type="text"
+            name="title"
+            value={reviewData.title}
+            onChange={handleChange}
+            placeholder="Enter review title"
+          />
+          {errors?.title?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label>Content</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={5}
+            name="content"
+            value={reviewData.content}
+            onChange={handleChange}
+            placeholder="Write your review..."
+          />
+          {errors?.content?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
+        </Form.Group>
+
+        <div className="text-center mt-3">
+          <Button
+            variant="secondary"
+            onClick={() => history.goBack()}
+            className={`mr-2 ${btnStyles.Button}`}
+          >
+            Cancel
+          </Button>
+          <Button
+            className={`${btnStyles.Button} ${btnStyles.Blue}`}
+            type="submit"
+          >
+            Submit Review
+          </Button>
+        </div>
+      </Container>
     </Form>
   );
 };

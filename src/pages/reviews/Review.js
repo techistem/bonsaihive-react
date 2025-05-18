@@ -13,6 +13,8 @@ const Review = (props) => {
     updated_at,
     content,
     rating,
+    title,
+    review_id,
 
   } = props;
 
