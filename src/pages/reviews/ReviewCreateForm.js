@@ -4,7 +4,8 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import { useHistory, useParams } from "react-router-dom";
-import { Rating } from "react-simple-star-rating";
+import Rating from "react-rating";
+import { FaStar, FaRegStar } from "react-icons/fa";
 
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -19,14 +20,10 @@ const ReviewCreateForm = () => {
     title: "",
     content: "",
   });
-  const [rating, setRating] = useState(0); // 0–5 scale
+  const [rating, setRating] = useState(0);
   const [errors, setErrors] = useState({});
   const history = useHistory();
-  const { id } = useParams(); // post id
-
-  const handleRating = (rate) => {
-    setRating(rate / 20); // because rate is 0–100, we convert it to 0–5
-  };
+  const { id } = useParams();
 
   const handleChange = (event) => {
     setReviewData({
@@ -46,7 +43,7 @@ const ReviewCreateForm = () => {
 
     try {
       await axiosReq.post("/reviews/", formData);
-      history.goBack(); // go back to the post page or previous
+      history.goBack();
     } catch (err) {
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
@@ -60,16 +57,14 @@ const ReviewCreateForm = () => {
         <h3 className="text-center">Leave a Review</h3>
 
         <Form.Group>
-          <Form.Label>Rating (1-5)</Form.Label>
+          <Form.Label>Rating (1–5)</Form.Label>
           <div className="d-flex justify-content-center mb-2">
             <Rating
-              onClick={handleRating}
-              initialValue={rating * 20}
-              size={25}
-              allowFraction
-              transition
-              showTooltip
-              tooltipArray={["Terrible", "Bad", "Okay", "Good", "Excellent"]}
+              initialRating={rating}
+              onChange={(rate) => setRating(rate)}
+              emptySymbol={<FaRegStar size={24} color="#bbb" />}
+              fullSymbol={<FaStar size={24} color="#fcd93a" />}
+              fractions={2}
             />
           </div>
           {errors?.rating?.map((message, idx) => (

@@ -17,6 +17,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import ReviewCreateForm from "../reviews/ReviewCreateForm";
 
 
 function PostPage() {
@@ -50,6 +51,12 @@ function PostPage() {
       <PopularProfiles mobile />
         <Post {...post.results[0]} setPosts={setPost} postPage />
         <Container className={appStyles.Content}>
+        {currentUser && (
+            <div className="mb-3">
+              <h5>Leave a Review</h5>
+              <ReviewCreateForm postId={id} />
+            </div>
+          )}
           {currentUser ? (
             <CommentCreateForm
               profile_id={currentUser.profile_id}

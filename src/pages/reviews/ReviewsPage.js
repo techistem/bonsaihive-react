@@ -4,23 +4,22 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { Spinner } from "react-bootstrap";
 
 const ReviewsPage = () => {
-  const [posts, setPosts] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const fetchReviews = async () => {
       try {
-        const { data } = await axiosReq.get("/posts/");
-        const postsWithReviews = data.filter(post => post.review_id !== null);
-        setPosts(postsWithReviews);
+        const { data } = await axiosReq.get("/reviews/");
+        setReviews(data.results); 
       } catch {
         setError("An error occurred while loading posts with reviews.");
       } finally {
         setHasLoaded(true);
       }
     };
-    fetchPosts();
+    fetchReviews();
   }, []);
 
   if (error) {
@@ -42,19 +41,16 @@ const ReviewsPage = () => {
 
   return (
     <Container>
-      <h3 className="my-4">Posts with Reviews</h3>
-      {posts.length ? (
-        posts.map(post => (
-          <Card key={post.id} className="mb-3">
+      <h3 className="my-4">All Reviews</h3>
+      {reviews.length ? (
+        reviews.map(review => (
+          <Card key={review.id} className="mb-3">
             <Card.Body>
-              <Card.Title>{post.title}</Card.Title>
+              <Card.Title>{review.title}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
-                {post.owner} - Average Rating: {post.average_rating || "N/A"}
+                {review.owner} | Rating: {review.rating}
               </Card.Subtitle>
-              <Card.Text>{post.content}</Card.Text>
-              <hr />
-              <h5>Review: {post.review_title}</h5>
-              <p>{post.review_content}</p>
+              <Card.Text>{review.content}</Card.Text>
             </Card.Body>
           </Card>
         ))

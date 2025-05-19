@@ -29,8 +29,8 @@ function PostsPage({ message, filter = "" }) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?ordering=-average_rating&${filter}search=${query}`);
-
+        const filterQuery = filter ? `${filter}&search=${query}` : `search=${query}`;
+const { data } = await axiosReq.get(`/posts/?ordering=-average_rating&${filterQuery}`)
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
