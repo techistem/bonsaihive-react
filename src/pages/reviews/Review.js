@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Media from "react-bootstrap/Media";
 import { Link } from "react-router-dom";
 import { Rating } from "react-simple-star-rating";
@@ -14,9 +14,25 @@ const Review = (props) => {
     content,
     rating,
     title,
-    review_id,
 
   } = props;
+
+useEffect(() => {
+    const handleMount = async () => {
+      try {
+        const [{ data: posts }, { data: comments }] = await Promise.all([
+          axiosReq.get(`/posts/${post}`),
+          axiosReq.get(`/comments/?post=${id}`),
+        ]);
+        setPost({ results: [posts] });
+        console.log(posts)
+      } catch (err) {
+        //console.log(err);
+      }
+    };
+
+    handleMount();
+  }, [id]);
 
   return (
     <>

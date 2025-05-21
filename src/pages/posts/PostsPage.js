@@ -30,7 +30,8 @@ function PostsPage({ message, filter = "" }) {
     const fetchPosts = async () => {
       try {
         const filterQuery = filter ? `${filter}&search=${query}` : `search=${query}`;
-const { data } = await axiosReq.get(`/posts/?ordering=-average_rating&${filterQuery}`)
+        const { data } = await axiosReq.get(`/posts/?ordering=-created_at&${filterQuery}`);
+
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {

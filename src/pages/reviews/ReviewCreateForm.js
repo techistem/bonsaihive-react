@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Rating from "react-rating";
 import { FaStar, FaRegStar } from "react-icons/fa";
 
@@ -23,7 +23,6 @@ const ReviewCreateForm = () => {
   const [rating, setRating] = useState(0);
   const [errors, setErrors] = useState({});
   const history = useHistory();
-  const { id } = useParams();
 
   const handleChange = (event) => {
     setReviewData({
@@ -39,7 +38,6 @@ const ReviewCreateForm = () => {
     formData.append("title", reviewData.title);
     formData.append("content", reviewData.content);
     formData.append("rating", rating);
-    formData.append("post", id);
 
     try {
       await axiosReq.post("/reviews/", formData);

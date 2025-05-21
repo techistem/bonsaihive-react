@@ -55,7 +55,7 @@ const ReviewsPage = () => {
           </Card>
         ))
       ) : (
-        <Alert variant="info">No posts with reviews yet.</Alert>
+        <Alert variant="info">No reviews yet.</Alert>
       )}
     </Container>
   );
