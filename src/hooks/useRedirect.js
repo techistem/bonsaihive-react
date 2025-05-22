@@ -16,7 +16,7 @@ export const useRedirect = (userAuthStatus) => {
               // if user is logged in and on signin/signup page, redirect to profile page
               if (authPages.includes(location.pathname) || homepage) {
                 if (userAuthStatus === 'loggedIn' && currentUser) {
-                  history.push(`/profile/${currentUser.profile_id}`);
+                  history.push('posts');
                   return;
                 }
                 if (userAuthStatus === 'loggedOut') {
@@ -33,7 +33,7 @@ export const useRedirect = (userAuthStatus) => {
                 // if user is not logged in, the code below will run
                 if (userAuthStatus === 'loggedOut') {
                     if (location.pathname !== '/contact/create') {
-                      history.push('/');
+                      history.push('/posts');
                     }
                 }
               }
