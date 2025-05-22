@@ -93,14 +93,13 @@ const ContactCreateForm = () => {
           name="email"
           value={email}
           onChange={handleChange}
-          required
           className={styles.inputField}
         />
       </Form.Group>
       {errors?.email?.map((message, idx) => (
         <Alert variant="warning" key={idx}>{message}</Alert>
       ))}
-      
+
       <Form.Group>
         <Form.Label>Reason for contacting us</Form.Label>
         <Form.Control
