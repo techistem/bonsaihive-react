@@ -112,14 +112,17 @@ const NavBar = () => {
         aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
-            <NavLink
+            {currentUser && (
+              <NavLink
               exact
               className={styles.NavLink}
               activeClassName={styles.Active}
               to="/"
             >
-              <i className="fas fa-home"></i>Home
+              <i className="fas fa-home"></i>Posts
             </NavLink>
+            )}
+            
             <NavLink 
             exact className={styles.NavLink} 
             activeClassName={styles.Active} 

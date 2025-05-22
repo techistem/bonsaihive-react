@@ -17,6 +17,7 @@ import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ContactCreateForm from "./pages/contact/ContactCreateForm";
 import ReviewsPage from "./pages/reviews/ReviewsPage";
+import Homepage from './pages/auth/Homepage';
 
 
 function App() {
@@ -38,10 +39,18 @@ function App() {
         <NavBar />
         <Container className={styles.Main}>
           <Switch>
-            <Route exact path="/" render={() => (
+            <Route exact path="/" render={() => currentUser ? (
               <PostsPage message="No results found. Adjust the search keyword."/>
-              )} 
+            ) : (
+              <Homepage />
+            )
+              } 
             />
+
+            <Route exact path="/posts" render={() => (
+              <PostsPage message="No results found. Adjust the search keyword." />
+            )} />
+
             <Route exact path="/feed" render={() => (
               <PostsPage 
               message="No results found. Adjust the search keyword or follow a user."
@@ -49,6 +58,7 @@ function App() {
               />
               )} 
             />
+            
             <Route exact path="/liked" render={() => (
               <PostsPage 
               message="No results found. Adjust the search keyword or like a post."
@@ -56,7 +66,8 @@ function App() {
               />
               )}
             />
-              
+            
+            <Route exact path='/' render={() => <Homepage />} />
             <Route exact path="/signin" render={() => <SignInForm />} />
             <Route exact path="/signup" render={() => <SignUpForm /> } />
             <Route exact path="/posts/create" render={() => <PostCreateForm />} />
