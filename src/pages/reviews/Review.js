@@ -25,9 +25,8 @@ useEffect(() => {
           axiosReq.get(`/comments/?post=${id}`),
         ]);
         setPost({ results: [posts] });
-        console.log(posts)
       } catch (err) {
-        //console.log(err);
+        console.log(err);
       }
     };
 

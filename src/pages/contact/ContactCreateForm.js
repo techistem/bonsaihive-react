@@ -21,12 +21,13 @@ const ContactCreateForm = () => {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const [contactData, setContactData] = useState({
+    email: "",
     reason: "",
     content: "",
   });
-  const { reason, content } = contactData;
-  const history = useHistory();
+  const { email, reason, content } = contactData;
 
+  const history = useHistory();
   const [show, setShow] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -60,10 +61,11 @@ const ContactCreateForm = () => {
    */
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Form submitted!');
-    const formData = new FormData();
-    
 
+    console.log('Form submitted!');
+
+    const formData = new FormData();
+    formData.append("email", email);
     formData.append("reason", reason);
     formData.append("content", content);
 
@@ -71,7 +73,7 @@ const ContactCreateForm = () => {
       await axiosReq.post("/contact/", formData);
       setFormSubmitted(true);
       handleShow();
-      setContactData({ reason: "", content: "" });
+      setContactData({ email: "", reason: "", content: "" });
     } catch (err) {
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
@@ -83,12 +85,27 @@ const ContactCreateForm = () => {
    * Renders form fields for inputting contact reason and details
    */
   const textFields = (
-    <div className="text-center">
+    <div className="text-center"> 
+      <Form.Group>
+        <Form.Label>Email Address</Form.Label>
+        <Form.Control
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+          required
+          className={styles.inputField}
+        />
+      </Form.Group>
+      {errors?.email?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>{message}</Alert>
+      ))}
+      
       <Form.Group>
         <Form.Label>Reason for contacting us</Form.Label>
         <Form.Control
           type="text"
-          name="reason"
+          name="reason"            
           value={reason}
           onChange={handleChange}
           className={styles.inputField}
