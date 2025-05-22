@@ -30,24 +30,28 @@ function PostsPage({ message, filter = "" }) {
     const fetchPosts = async () => {
       try {
         const filterQuery = filter ? `${filter}&search=${query}` : `search=${query}`;
+        
+        // 🔍 Log satırı burada
+        console.log("Filter query being sent:", `/posts/?ordering=-created_at&${filterQuery}`);
+  
         const { data } = await axiosReq.get(`/posts/?ordering=-created_at&${filterQuery}`);
-
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
       }
     };
-
+  
     setHasLoaded(false);
     const timer = setTimeout(() => {
-        fetchPosts();
+      fetchPosts();
     }, 1000);
-    
+  
     return () => {
-        clearTimeout(timer);
-      };
-    }, [filter, query, pathname]);
+      clearTimeout(timer);
+    };
+  }, [filter, query, pathname]);
+  
 
   return (
     <Row className="h-100">

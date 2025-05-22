@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Container, Alert, Card } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
+import ReviewCreateForm from "../reviews/ReviewCreateForm";
 import { Spinner } from "react-bootstrap";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [error, setError] = useState("");
+
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -41,6 +45,12 @@ const ReviewsPage = () => {
 
   return (
     <Container>
+      {currentUser && (
+            <div className="mb-3">
+              <h5>Leave a Review</h5>
+              <ReviewCreateForm />
+            </div>
+          )}
       <h3 className="my-4">All Reviews</h3>
       {reviews.length ? (
         reviews.map(review => (

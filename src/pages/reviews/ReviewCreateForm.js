@@ -41,7 +41,7 @@ const ReviewCreateForm = () => {
 
     try {
       await axiosReq.post("/reviews/", formData);
-      history.goBack();
+      window.location.reload();
     } catch (err) {
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
