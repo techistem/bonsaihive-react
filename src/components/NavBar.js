@@ -38,36 +38,44 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/feed"
-      >
-        <i className="fas fa-stream"></i>Feed
-      </NavLink>
-      <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/liked"
-      >
-        <i className="fas fa-heart"></i>Liked
-      </NavLink>
+      {/* Explore Dropdown */}
+      <NavDropdown
+      title={
+        <span>
+          <i className="fas fa-compass"></i> Explore
+        </span>
+      }
+      id="explore-nav-dropdown"
+      className={styles.NavLink}
+    >
+      <NavDropdown.Item as={NavLink} to="/">
+        <i className="fas fa-seedling"></i> Posts
+      </NavDropdown.Item>
+      <NavDropdown.Item as={NavLink} to="/feed">
+        <i className="fas fa-stream"></i> Feed
+      </NavDropdown.Item>
+      <NavDropdown.Item as={NavLink} to="/liked">
+        <i className="fas fa-heart"></i> Liked
+      </NavDropdown.Item>
+    </NavDropdown>
 
-      <NavDropdown 
-        title={
-          <span>
-            <Avatar
-              src={currentUser?.profile_image} 
-              height={30} 
-              id="myProfileAvatar"
-            />{" "}
-            My Bonsai Hive 🌳
-          </span>
-        }
-        id="profile-nav-dropdown"
-        className={styles.NavLink}
-        >
-          <NavDropdown.Item
+
+    {/* Avatar Dropdown */}
+    <NavDropdown
+      title={
+        <span>
+          <Avatar
+            src={currentUser?.profile_image}
+            height={30}
+            id="myProfileAvatar"
+          />{" "}
+          My Bonsai Hive 🌳
+        </span>
+      }
+      id="profile-nav-dropdown"
+      className={styles.NavLink}
+    >
+        <NavDropdown.Item
           as={NavLink}
           to={`/profiles/${currentUser?.profile_id}`}
         >
@@ -123,16 +131,6 @@ const NavBar = () => {
 
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
-            {currentUser && (
-              <NavLink
-              exact
-              className={styles.NavLink}
-              activeClassName={styles.Active}
-              to="/"
-            >
-              <i className="fas fa-seedling"></i>Posts
-            </NavLink>
-            )}
 
              {/* Reviews and Contact for users who are not logged in */}
 
