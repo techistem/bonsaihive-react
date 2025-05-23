@@ -66,21 +66,20 @@ function App() {
               />
               )}
             />
-            
-            <Route exact path='/' render={() => <Homepage />} />
+ 
+            {/* Auth Routes */}
             <Route exact path="/signin" render={() => <SignInForm />} />
             <Route exact path="/signup" render={() => <SignUpForm /> } />
+
+            {/* Posts Routes */}
             <Route exact path="/posts/create" render={() => <PostCreateForm />} />
             <Route exact path="/posts/:id" render={()=> <PostPage />} />
             <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
-            <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
-            <Route exact path="/reviews" component={ReviewsPage} />
 
-            <Route
-            exact
-            path="/profiles/:id/edit/username"
-            render={() => <UsernameForm />}
-          />
+            {/* Profiles Routes */}
+            <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
+            <Route exact path="/profiles/:id/edit/username"
+            render={() => <UsernameForm />} />
           <Route
             exact
             path="/profiles/:id/edit/password"
@@ -96,6 +95,7 @@ function App() {
             path="/contact/create/"
             render={() => <ContactCreateForm />}
           />
+            <Route exact path="/reviews" component={ReviewsPage} />
             <Route render={()=><p>Page not found!</p>} />
           </Switch>
         </Container>

@@ -10,3 +10,17 @@
 .Active i {
   color: #2142b2;
 }
+
+.AddPostButton {
+  color: #28a745 !important;
+  border-bottom: 2px solid #28a745;
+  padding-bottom: 2px;
+  font-weight: 600;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.AddPostButton:hover {
+  color: #1e7e34 !important;
+  border-bottom-color: #1e7e34;
+  text-decoration: none;
+}

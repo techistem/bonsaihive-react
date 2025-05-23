@@ -28,11 +28,12 @@ const NavBar = () => {
 
   const addPostIcon = (
     <NavLink
-      className={styles.NavLink}
+      className={`${styles.NavLink} ${styles.AddPostButton}`}
       activeClassName={styles.Active}
       to="/posts/create"
+      exact
     >
-      <i className="far fa-plus-square"></i>Add post
+      <i className="far fa-plus-square"></i> Add post
     </NavLink>
   );
 
@@ -48,13 +49,31 @@ const NavBar = () => {
       id="explore-nav-dropdown"
       className={styles.NavLink}
     >
-      <NavDropdown.Item as={NavLink} to="/">
+      <NavDropdown.Item 
+        as={NavLink} 
+        to="/"
+        exact
+        activeClassName={styles.Active}
+        className={styles.NavLink}
+      >
         <i className="fas fa-seedling"></i> Posts
       </NavDropdown.Item>
-      <NavDropdown.Item as={NavLink} to="/feed">
+      <NavDropdown.Item 
+        as={NavLink} 
+        to="/feed"
+        exact
+        activeClassName={styles.Active}
+        className={styles.NavLink}
+      >
         <i className="fas fa-stream"></i> Feed
       </NavDropdown.Item>
-      <NavDropdown.Item as={NavLink} to="/liked">
+      <NavDropdown.Item 
+        as={NavLink} 
+        to="/liked"
+        exact
+        activeClassName={styles.Active}
+        className={styles.NavLink}
+      >
         <i className="fas fa-heart"></i> Liked
       </NavDropdown.Item>
     </NavDropdown>
@@ -75,31 +94,52 @@ const NavBar = () => {
       id="profile-nav-dropdown"
       className={styles.NavLink}
     >
-        <NavDropdown.Item
-          as={NavLink}
-          to={`/profiles/${currentUser?.profile_id}`}
+    <NavDropdown.Item
+        as={NavLink}
+        to={`/profiles/${currentUser?.profile_id}`}
+        exact
+        activeClassName={styles.Active}
+        className={styles.NavLink}
+    >
+        <i className="fas fa-user"></i> My Profile
+    </NavDropdown.Item>
+    <NavDropdown.Item 
+        as={NavLink} 
+        to="/reviews"
+        exact
+        activeClassName={styles.Active}
+        className={styles.NavLink}
+    >
+        <i className="fas fa-star"></i> Reviews
+    </NavDropdown.Item>
+    <NavDropdown.Item 
+        as={NavLink} 
+        to="/contact/create"
+        exact
+        activeClassName={styles.Active}
+        className={styles.NavLink}
+    >
+        <i className="fas fa-envelope"></i> Contact
+    </NavDropdown.Item>
+    <NavDropdown.Divider />
+    <NavDropdown.Item
+          as="button"
+          onClick={handleSignOut}
+          className={styles.NavLink}
+          style={{ cursor: "pointer" }}
         >
-          My Profile
-        </NavDropdown.Item>
-        <NavDropdown.Item as={NavLink} to="/reviews">
-          Reviews
-        </NavDropdown.Item>
-        <NavDropdown.Item as={NavLink} to="/contact/create">
-          Contact
-        </NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item as={NavLink} to="/" onClick={handleSignOut}>
           <i className="fas fa-sign-out-alt"></i> Sign out
         </NavDropdown.Item>
-      </NavDropdown>
-    </>
-  );
+  </NavDropdown>
+  </>
+);
   const loggedOutIcons = (
     <>
     <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/signin"
+        exact
       >
         <i className="fas fa-sign-in-alt"></i> Sign in
       </NavLink>
@@ -107,6 +147,7 @@ const NavBar = () => {
         to="/signup"
         className={styles.NavLink}
         activeClassName={styles.Active}
+        exact
       >
         <i className="fas fa-user-plus"></i> Sign up
       </NavLink>
@@ -117,7 +158,7 @@ const NavBar = () => {
     <Navbar expanded={expanded}
     className={styles.NavBar} expand="md" fixed="top">
       <Container>
-        <NavLink to="/">
+        <NavLink to="/" exact>
           <Navbar.Brand>
             <img src={logo} alt="logo" height="45" />
           </Navbar.Brand>
@@ -140,6 +181,7 @@ const NavBar = () => {
                   className={styles.NavLink}
                   activeClassName={styles.Active}
                   to="/reviews"
+                  exact
                 >
                   <i className="fas fa-star"></i> Reviews
                 </NavLink>
@@ -147,6 +189,7 @@ const NavBar = () => {
                   className={styles.NavLink}
                   activeClassName={styles.Active}
                   to="/contact/create"
+                  exact
                 >
                   <i className="fas fa-envelope"></i> Contact
                 </NavLink>
