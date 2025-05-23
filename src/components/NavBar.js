@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
@@ -35,15 +35,6 @@ const NavBar = () => {
       <i className="far fa-plus-square"></i>Add post
     </NavLink>
   );
-  const contactIcon = (
-    <NavLink
-      className={styles.NavLink}
-      activeClassName={styles.Active}
-      to="/contact/create"
-    >
-      <i className="fas fa-envelope"></i> Contact
-    </NavLink>
-  );
 
   const loggedInIcons = (
     <>
@@ -61,37 +52,55 @@ const NavBar = () => {
       >
         <i className="fas fa-heart"></i>Liked
       </NavLink>
-      <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
-        <i className="fas fa-sign-out-alt"></i>Sign out
-      </NavLink>
-      <NavLink
+
+      <NavDropdown 
+        title={
+          <span>
+            <Avatar
+              src={currentUser?.profile_image} 
+              height={30} 
+              id="myProfileAvatar"
+            />{" "}
+            My Bonsai Hive 🌳
+          </span>
+        }
+        id="profile-nav-dropdown"
         className={styles.NavLink}
-        to={`/profiles/${currentUser?.profile_id}`}
-      >
-        <Avatar
-        src={currentUser?.profile_image} 
-        height={30} 
-        id="myProfileAvatar"
-        />
-        <span>My Bonsai Hive 🌳</span>
-      </NavLink>
+        >
+          <NavDropdown.Item
+          as={NavLink}
+          to={`/profiles/${currentUser?.profile_id}`}
+        >
+          My Profile
+        </NavDropdown.Item>
+        <NavDropdown.Item as={NavLink} to="/reviews">
+          Reviews
+        </NavDropdown.Item>
+        <NavDropdown.Item as={NavLink} to="/contact/create">
+          Contact
+        </NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item as={NavLink} to="/" onClick={handleSignOut}>
+          <i className="fas fa-sign-out-alt"></i> Sign out
+        </NavDropdown.Item>
+      </NavDropdown>
     </>
   );
   const loggedOutIcons = (
     <>
-      <NavLink
+    <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
         to="/signin"
       >
-        <i className="fas fa-sign-in-alt"></i>Sign in
+        <i className="fas fa-sign-in-alt"></i> Sign in
       </NavLink>
       <NavLink
         to="/signup"
         className={styles.NavLink}
         activeClassName={styles.Active}
       >
-        <i className="fas fa-user-plus"></i>Sign up
+        <i className="fas fa-user-plus"></i> Sign up
       </NavLink>
     </>
   );
@@ -106,10 +115,12 @@ const NavBar = () => {
           </Navbar.Brand>
         </NavLink>
         {currentUser && addPostIcon}
+
         <Navbar.Toggle
         ref={ref}
         onClick={() => setExpanded(!expanded)}
         aria-controls="basic-navbar-nav" />
+
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto text-left">
             {currentUser && (
@@ -122,14 +133,27 @@ const NavBar = () => {
               <i className="fas fa-home"></i>Posts
             </NavLink>
             )}
-            
-            <NavLink 
-            exact className={styles.NavLink} 
-            activeClassName={styles.Active} 
-            to="/reviews">
-               <i className="fas fa-star"></i> Reviews
-            </NavLink>
-            {contactIcon}
+
+             {/* Reviews and Contact for users who are not logged in */}
+
+             {!currentUser && (
+              <>
+                <NavLink
+                  className={styles.NavLink}
+                  activeClassName={styles.Active}
+                  to="/reviews"
+                >
+                  <i className="fas fa-star"></i> Reviews
+                </NavLink>
+                <NavLink
+                  className={styles.NavLink}
+                  activeClassName={styles.Active}
+                  to="/contact/create"
+                >
+                  <i className="fas fa-envelope"></i> Contact
+                </NavLink>
+              </>
+            )}
 
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
