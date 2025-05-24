@@ -76,8 +76,16 @@ const NavBar = () => {
       >
         <i className="fas fa-heart"></i> Liked
       </NavDropdown.Item>
+      <NavDropdown.Item 
+         as={NavLink} 
+         to="/events"
+         exact
+         activeClassName={styles.Active}
+         className={styles.NavLink}
+      >
+        <i className="fas fa-calendar-alt"></i> Events
+    </NavDropdown.Item>
     </NavDropdown>
-
 
     {/* Avatar Dropdown */}
     <NavDropdown

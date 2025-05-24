@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+
 
 function EventCreateForm() {
+  const currentUser = useCurrentUser();
   const history = useHistory();
 
   const [formData, setFormData] = useState({
@@ -15,6 +18,10 @@ function EventCreateForm() {
 
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
+
+  if (!currentUser) {
+    return <p>You need to log in to create a new event.</p>;
+  }
 
   const handleChange = (e) => {
     setFormData({
@@ -29,8 +36,10 @@ function EventCreateForm() {
     setSuccess(false);
 
     try {
-      await axios.post("/events/", formData);
-
+      await axios.post(
+        "/events/",
+        formData);
+        
       setSuccess(true);
       setFormData({
         title: "",
@@ -42,7 +51,12 @@ function EventCreateForm() {
 
       history.push("/events");
     } catch (err) {
-      setError(err.response?.data || "Failed to create event.");
+
+      if (err.response?.status === 401) {
+        setError("You must be logged in to create an event.");
+      } else {
+        setError(err.response?.data || "Failed to create event.");
+      }
     }
   };
 
@@ -53,24 +67,52 @@ function EventCreateForm() {
       {error && <p style={{ color: "red" }}>{JSON.stringify(error)}</p>}
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Title</label><br/>
-          <input type="text" name="title" value={formData.title} onChange={handleChange} required />
+          <label>Title</label><br />
+          <input
+            type="text"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div>
-          <label>Description</label><br/>
-          <textarea name="description" value={formData.description} onChange={handleChange} required />
+          <label>Description</label><br />
+          <textarea
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div>
-          <label>Location</label><br/>
-          <input type="text" name="location" value={formData.location} onChange={handleChange} required />
+          <label>Location</label><br />
+          <input
+            type="text"
+            name="location"
+            value={formData.location}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div>
-          <label>Start Time</label><br/>
-          <input type="datetime-local" name="start_time" value={formData.start_time} onChange={handleChange} required />
+          <label>Start Time</label><br />
+          <input
+            type="datetime-local"
+            name="start_time"
+            value={formData.start_time}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div>
-          <label>End Time</label><br/>
-          <input type="datetime-local" name="end_time" value={formData.end_time} onChange={handleChange} />
+          <label>End Time</label><br />
+          <input
+            type="datetime-local"
+            name="end_time"
+            value={formData.end_time}
+            onChange={handleChange}
+          />
         </div>
         <button type="submit">Submit Event</button>
       </form>

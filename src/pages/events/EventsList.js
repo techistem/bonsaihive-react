@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom"; 
+import { Link, useHistory } from "react-router-dom";
+import { useCurrentUser } from "../../contexts/CurrentUserContext"; 
 
 function EventsList() {
+  const currentUser = useCurrentUser();
+  const history = useHistory();
+
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -26,6 +30,15 @@ function EventsList() {
   return (
     <div>
       <h2>Upcoming Events</h2>
+      {currentUser && (
+        <button
+          onClick={() => history.push("/events/create")}
+          style={{ marginBottom: "1rem" }}
+        >
+          Create New Event
+        </button>
+      )}
+      
       {events.length === 0 ? (
         <p>No events found.</p>
       ) : (

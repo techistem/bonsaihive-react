@@ -99,9 +99,9 @@ function App() {
             render={() => <ContactCreateForm />}
           />
             <Route exact path="/reviews" component={ReviewsPage} />
+            <Route exact path="/events/create" component={EventCreateForm} />
             <Route exact path="/events" component={EventsList} />
             <Route exact path="/events/:id" component={EventDetail} />
-            <Route exact path="/events/create" component={EventCreateForm} />
             <Route render={()=><p>Page not found!</p>} />
           </Switch>
         </Container>
