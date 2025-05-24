@@ -5,22 +5,71 @@
 
 .NavLink {
   padding: 5px;
+  color: black; /* Varsayılan renk */
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
+/* Aktif link ve ikonu mavi */
+.Active,
 .Active i {
   color: #2142b2;
 }
 
+/* Dropdown item'lar için varsayılan ve hover renkleri */
+.dropdown-item {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:hover i {
+  color: #2142b2;
+}
+
+.dropdown-item.active,
+.dropdown-item.active i {
+  color: #2142b2;
+}
+
+/* Buton NavLink için hover */
+button.NavLink {
+  background: none;
+  border: none;
+  padding: 0;
+  color: black;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+button.NavLink:hover,
+button.NavLink:hover i {
+  color: #2142b2;
+}
+
+/* Add Post Butonu */
 .AddPostButton {
-  color: #28a745 !important;
-  border-bottom: 2px solid #28a745;
-  padding-bottom: 2px;
+  background-color: #28a745;
+  color: white !important;
+  padding: 6px 12px;
+  border-radius: 6px;
   font-weight: 600;
-  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .AddPostButton:hover {
-  color: #1e7e34 !important;
-  border-bottom-color: #1e7e34;
+  background-color: #218838;
   text-decoration: none;
+  color: white !important;
 }
