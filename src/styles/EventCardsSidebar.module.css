@@ -1,0 +1,16 @@
+.EventCardsSidebar {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+  }
+  
+  .Card {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .Card:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+  }
+  

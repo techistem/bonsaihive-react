@@ -17,6 +17,7 @@ import NoResults from "../../assets/no-results.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import EventCardsSidebar from "../events/EventCardsSidebar";
 
 
 function PostsPage({ message, filter = "" }) {
@@ -32,7 +33,6 @@ function PostsPage({ message, filter = "" }) {
       try {
         const filterQuery = filter ? `${filter}&search=${query}` : `search=${query}`;
         
-        // 🔍 Log satırı burada
         console.log("Filter query being sent:", `/posts/?ordering=-created_at&${filterQuery}`);
   
         const { data } = await axiosReq.get(`/posts/?ordering=-created_at&${filterQuery}`);
@@ -59,6 +59,12 @@ function PostsPage({ message, filter = "" }) {
         {/* Show on /feed only */}
         {pathname === "/feed" && <PopularProfiles mobile />}
 
+        {/* Show EventCardsSidebar at top on mobile / */}
+        {pathname === "/" && (
+          <div className="d-block d-lg-none mb-3">
+            <EventCardsSidebar />
+          </div>
+        )}
         {/* Search bar */}
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form 
@@ -102,9 +108,16 @@ function PostsPage({ message, filter = "" }) {
        {/* Show PopularProfiles ONLY on /feed route */}
        {pathname === "/feed" && (
           <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-        <PopularProfiles />
-      </Col>
+            <PopularProfiles />
+          </Col>
         )}
+        
+        {/* Sidebar for /posts with Events */}
+        {pathname === "/" && (
+          <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+            <EventCardsSidebar />
+          </Col>
+      )}
     </Row>
   );
 }
