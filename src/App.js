@@ -18,6 +18,7 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import ContactCreateForm from "./pages/contact/ContactCreateForm";
 import ReviewsPage from "./pages/reviews/ReviewsPage";
 import Homepage from './pages/auth/Homepage';
+import EventsList from "./pages/events/EventsList";
 
 
 function App() {
@@ -96,6 +97,7 @@ function App() {
             render={() => <ContactCreateForm />}
           />
             <Route exact path="/reviews" component={ReviewsPage} />
+            <Route exact path="/events" component={EventsList} />
             <Route render={()=><p>Page not found!</p>} />
           </Switch>
         </Container>
