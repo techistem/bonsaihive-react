@@ -25,7 +25,8 @@ function PostsPage({ message, filter = "" }) {
   const { pathname } = useLocation();
 
   const [query, setQuery] = useState("");
-
+  
+  // Fetch posts based on query and filter
   useEffect(() => {
     const fetchPosts = async () => {
       try {
@@ -52,11 +53,13 @@ function PostsPage({ message, filter = "" }) {
     };
   }, [filter, query, pathname]);
   
-
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <PopularProfiles mobile />
+        {/* Show on /feed only */}
+        {pathname === "/feed" && <PopularProfiles mobile />}
+
+        {/* Search bar */}
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form 
         className={styles.SearchBar}
@@ -71,6 +74,7 @@ function PostsPage({ message, filter = "" }) {
         />
         </Form>
 
+        {/* Display posts or no results */}
         {hasLoaded ? (
           <>
             {posts.results.length ? (
@@ -95,9 +99,12 @@ function PostsPage({ message, filter = "" }) {
           </Container>
         )}
       </Col>
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+       {/* Show PopularProfiles ONLY on /feed route */}
+       {pathname === "/feed" && (
+          <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <PopularProfiles />
       </Col>
+        )}
     </Row>
   );
 }
