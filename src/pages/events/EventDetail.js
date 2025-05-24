@@ -21,13 +21,20 @@ function EventDetail() {
   if (!event) return <p>Loading event...</p>;
 
   return (
-    <div style={{ background: "#fff", padding: "1rem", borderRadius: "8px" }}>
-      <h2>{event.title}</h2>
-      <p><strong>Description:</strong> {event.description}</p>
-      <p><strong>Start:</strong> {new Date(event.start_time).toLocaleString()}</p>
-      <p><strong>End:</strong> {new Date(event.end_time).toLocaleString()}</p>
-      <p><strong>Location:</strong> {event.location}</p>
-    </div>
+    <div style={{
+        background: "#f8f9fa",
+        padding: "2rem",
+        borderRadius: "12px",
+        maxWidth: "600px",
+        margin: "2rem auto",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
+      }}>
+        <h2 style={{ fontSize: "2rem", marginBottom: "1rem" }}>{event.title}</h2>
+        <p><strong>Description:</strong> {event.description}</p>
+        <p><strong>Start:</strong> {new Date(event.start_time).toLocaleString()}</p>
+        <p><strong>End:</strong> {new Date(event.end_time).toLocaleString()}</p>
+        <p><strong>Location:</strong> {event.location}</p>
+      </div>
   );
 }
 

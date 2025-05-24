@@ -20,6 +20,7 @@ import ReviewsPage from "./pages/reviews/ReviewsPage";
 import Homepage from './pages/auth/Homepage';
 import EventsList from "./pages/events/EventsList";
 import EventDetail from "./pages/events/EventDetail";
+import EventCreateForm from "./pages/events/EventCreateForm";
 
 
 function App() {
@@ -100,6 +101,7 @@ function App() {
             <Route exact path="/reviews" component={ReviewsPage} />
             <Route exact path="/events" component={EventsList} />
             <Route exact path="/events/:id" component={EventDetail} />
+            <Route exact path="/events/create" component={EventCreateForm} />
             <Route render={()=><p>Page not found!</p>} />
           </Switch>
         </Container>
