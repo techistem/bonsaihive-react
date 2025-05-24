@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
-import { useCurrentUser } from "../../contexts/CurrentUserContext"; 
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+
 
 function EventsList() {
   const currentUser = useCurrentUser();
@@ -38,7 +39,7 @@ function EventsList() {
           Create New Event
         </button>
       )}
-      
+
       {events.length === 0 ? (
         <p>No events found.</p>
       ) : (

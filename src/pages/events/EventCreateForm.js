@@ -35,10 +35,20 @@ function EventCreateForm() {
     setError(null);
     setSuccess(false);
 
+    const authToken = localStorage.getItem("access_token");
+    console.log("Auth token:", authToken);
+
+
     try {
       await axios.post(
         "/events/",
-        formData);
+        formData,
+      {
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
+      }
+    );
         
       setSuccess(true);
       setFormData({
@@ -49,7 +59,7 @@ function EventCreateForm() {
         end_time: "",
       });
 
-      history.push("/events");
+      history.push("/events?created=1");
     } catch (err) {
 
       if (err.response?.status === 401) {

@@ -24,11 +24,11 @@ function EventCardsSidebar() {
 
   return (
     <div className={styles.EventCardsSidebar}>
-      <h5>Upcoming Events</h5>
+      <h5 className={styles.header}>Upcoming Events</h5>
       {!hasLoaded ? (
         <p>Loading...</p>
       ) : events.length ? (
-        <Row xs={1} md={2} className="g-2">
+        <Row xs={2} md={1} className="g-4">
           {events.map((event) => (
             <Col key={event.id}>
               <Card as={Link} to={`/events/${event.id}`} className={styles.Card}>
