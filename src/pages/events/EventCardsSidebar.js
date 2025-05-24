@@ -12,11 +12,10 @@ function EventCardsSidebar() {
     const fetchEvents = async () => {
       try {
         // Fetch upcoming events - you can add ordering or filtering here
-        const { data } = await axiosReq.get("/events/?ordering=date");
+        const { data } = await axiosReq.get("/events/?ordering=start_time");
         setEvents(data.results);
         setHasLoaded(true);
       } catch (err) {
-        console.error(err);
       }
     };
 
@@ -35,7 +34,7 @@ function EventCardsSidebar() {
               <Card as={Link} to={`/events/${event.id}`} className={styles.Card}>
                 <Card.Body>
                   <Card.Title>{event.title}</Card.Title>
-                  <Card.Text>{new Date(event.date).toLocaleDateString()}</Card.Text>
+                  <Card.Text>{new Date(event.start_time).toLocaleDateString()}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>

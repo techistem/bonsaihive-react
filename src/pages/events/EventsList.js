@@ -8,8 +8,8 @@ function EventsList() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const { data } = await axios.get("/api/events/");
-        setEvents(data);
+        const { data } = await axios.get("/events/?ordering=start_time");
+        setEvents(data.results || data);
       } catch (error) {
         console.error("Failed to fetch events:", error);
       } finally {
@@ -32,7 +32,8 @@ function EventsList() {
           <div key={event.id} style={{ border: "1px solid #ddd", margin: "1rem 0", padding: "1rem" }}>
             <h3>{event.title}</h3>
             <p>{event.description}</p>
-            <p><strong>Date:</strong> {new Date(event.date).toLocaleDateString()}</p>
+            <p><strong>Start Time:</strong> {new Date(event.start_time).toLocaleString()}</p>
+            <p><strong>End Time:</strong> {new Date(event.end_time).toLocaleString()}</p>
             <p><strong>Location:</strong> {event.location}</p>
           </div>
         ))
