@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom"; 
 
 function EventsList() {
   const [events, setEvents] = useState([]);
@@ -29,13 +30,21 @@ function EventsList() {
         <p>No events found.</p>
       ) : (
         events.map((event) => (
-          <div key={event.id} style={{ border: "1px solid #ddd", margin: "1rem 0", padding: "1rem" }}>
-            <h3>{event.title}</h3>
-            <p>{event.description}</p>
-            <p><strong>Start Time:</strong> {new Date(event.start_time).toLocaleString()}</p>
-            <p><strong>End Time:</strong> {new Date(event.end_time).toLocaleString()}</p>
-            <p><strong>Location:</strong> {event.location}</p>
-          </div>
+          <Link
+            key={event.id}
+            to={`/events/${event.id}`}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+
+            <div style={{ border: "1px solid #ddd", margin: "1rem 0", padding: "1rem" }}>
+              <h3>{event.title}</h3>
+              <p>{event.description}</p>
+              <p><strong>Start Time:</strong> {new Date(event.start_time).toLocaleString()}. 
+              </p>
+              <p><strong>End Time:</strong> {new Date(event.end_time).toLocaleString()}</p>
+              <p><strong>Location:</strong> {event.location}</p>
+            </div>
+          </Link>
         ))
       )}
     </div>
