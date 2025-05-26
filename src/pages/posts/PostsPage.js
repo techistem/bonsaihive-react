@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";  // NavLink import
+import { useCurrentUser } from "../../contexts/CurrentUserContext"; // currentUser hook import
 
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -21,6 +23,7 @@ import EventCardsSidebar from "../events/EventCardsSidebar";
 
 
 function PostsPage({ message, filter = "" }) {
+  const currentUser = useCurrentUser();
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -33,7 +36,7 @@ function PostsPage({ message, filter = "" }) {
       try {
         const filterQuery = filter ? `${filter}&search=${query}` : `search=${query}`;
         
-        console.log("Filter query being sent:", `/posts/?ordering=-created_at&${filterQuery}`);
+        // console.log("Filter query being sent:", `/posts/?ordering=-created_at&${filterQuery}`);
   
         const { data } = await axiosReq.get(`/posts/?ordering=-created_at&${filterQuery}`);
         setPosts(data);
@@ -54,31 +57,43 @@ function PostsPage({ message, filter = "" }) {
   }, [filter, query, pathname]);
   
   return (
+    <>
+     {/*  Shadowed box directly below the Navbar \*/}
+     {currentUser && (
+      <div className={`${styles.AddPostContainer} container mt-3`}>
+        <div className="d-flex align-items-center">
+          <NavLink to="/posts/create" className={styles.AddPostButton}>
+            <i className="far fa-plus-square"></i> Add Post
+          </NavLink>
+          <span className={styles.AddPostMessage}>"What would you like to share today?"</span>
+        </div>
+      </div>
+    )}
+  
     <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
-        {/* Show on /feed only */}
-        {pathname === "/feed" && <PopularProfiles mobile />}
+  <Col className="py-2 p-0 p-lg-2" lg={8}>
+    {/* Show on /feed only */}
+    {pathname === "/feed" && <PopularProfiles mobile />}
 
-        {/* Show EventCardsSidebar at top on mobile / */}
-        {pathname === "/" && (
-          <div className="d-block d-lg-none mb-3">
-            <EventCardsSidebar />
-          </div>
-        )}
-        {/* Search bar */}
-        <i className={`fas fa-search ${styles.SearchIcon}`} />
-        <Form 
-        className={styles.SearchBar}
-        onSubmit={(event) => event.preventDefault()}
-        >
-        <Form.Control
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          type="text"
-          className="mr-sm-2"
-          placeholder="Search posts"
-        />
-        </Form>
+    {/* Show EventCardsSidebar at top on mobile / */}
+    {pathname === "/" && (
+      <div className="d-block d-lg-none mb-3">
+        <EventCardsSidebar />
+      </div>
+    )}
+
+    {/* Search bar */}
+    <Form className={styles.SearchBar} onSubmit={(event) => event.preventDefault()}>
+    <i className={`fas fa-search ${styles.SearchIcon}`} />
+      <Form.Control
+        value={query}
+        onChange={(event) => setQuery(event.target.value)}
+        type="text"
+        className="mr-sm-2"
+        placeholder="Search posts"
+      />
+    </Form>
+
 
         {/* Display posts or no results */}
         {hasLoaded ? (
@@ -119,6 +134,7 @@ function PostsPage({ message, filter = "" }) {
           </Col>
       )}
     </Row>
+    </>
   );
 }
 

@@ -1,68 +1,75 @@
 .Button {
-    font-size: 0.8rem;
-    align-self: center;
-    border-radius: 100px;
-    border-color: transparent;
-    padding: 4px 10px;
-    margin-left: 2px;
-    margin-right: 2px;
-    min-width: 75px;
-  }
-  
-  .Button:hover {
-    opacity: 0.8;
-    border-color: transparent;
-    cursor: pointer;
-  }
-  
-  .Button:hover:active {
-    background-color: #6cd603 !important;
-  }
-  
-  .Button:active {
-    background-color: #6cd603 !important;
-  }
-  
-  .Button:focus {
-    background-color: #6cd603 ;
-  }
-  
-  .Wide {
-    padding: 10px 50px;
-    width: 100%;
-  }
-  
-  .Green,
-  .GreenOutline:hover,
-  .Bright:hover {
-    background-color: #6cd603;
-    color: #ffffff;
-  }
-  
-  .GreenOutline,
-  .Green:hover {
-    background-color: #1c2e0a ;
-    color: #2142b2;
-  }
-  
-  .Black,
-  .BlackOutline:hover {
-    /* background-color: #242a3d;
-    color: white; */
-    background-color: #242a3d;
-    color: aliceblue;
-  }
-  
-  .Black:hover,
-  .BlackOutline {
-    /* background-color: #dadadf;
-    color: #242a3d;
-    border-color: #242a3d; */
-    background-color: aliceblue;
-    color: #242a3d;
-  }
-  
-  .Bright {
-    background-color: #2ed9ff;
-    color: red;
-  }
+  font-size: 0.8rem;
+  align-self: center;
+  border-radius: 100px;
+  border: none;
+  padding: 4px 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+  min-width: 75px;
+  background-color: #6B8E23;  /* Medium green */
+  color: #F5F5F0;             /* Light cream - Navbar text color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Button:hover {
+  opacity: 0.9;
+  background-color: #A2AD63;  /* Navbar color (light olive) on hover */
+  color: #385212;             /* Dark green from page background */
+  cursor: pointer;
+}
+
+.Button:active {
+  background-color: #385212;  /* Dark green page background */
+  color: #E7E0CA;             /* Cream background of posts */
+}
+
+.Button:focus {
+  outline: 2px solid #D9CBA3; /* Light beige focus effect */
+  outline-offset: 2px;
+  background-color: #6B8E23;
+  color: #F5F5F0;
+}
+
+.AddPostButton {
+  background-color: #385212; /* Dark green */
+  color: #E7E0CA;            /* Light cream text */
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.AddPostButton:hover {
+  background-color: #6B8E23; /* Lighter green on hover */
+  color: #F5F5F0;            /* Light color similar to navbar */
+  cursor: pointer;
+}
+
+.AddPostButton:focus {
+  outline: 2px solid #D9CBA3; /* Focus color in light beige tone */
+  outline-offset: 2px;
+}
+
+.AddPostButton:active {
+  background-color: #2E4B0B; /* Darker green for active state */
+  color: #E7E0CA;
+}
+
+.Wide {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.Bright {
+  background-color: #F5F5F0;  /* Light cream */
+  color: #385212;             /* Dark green text */
+  font-weight: bold;
+  border: 2px solid #A2AD63;  /* Slight olive border */
+}

@@ -45,18 +45,6 @@ const NavBar = () => {
     setProfileOpen(false);
   };
 
-  const addPostIcon = (
-    <NavLink
-      className={`${styles.NavLink} ${styles.AddPostButton}`}
-      activeClassName={styles.Active}
-      to="/posts/create"
-      exact
-      onClick={closeMenus}
-    >
-      <i className="far fa-plus-square"></i> Add post
-    </NavLink>
-  );
-
   const loggedInIcons = (
     <>
 
@@ -222,7 +210,7 @@ const NavBar = () => {
           </Navbar.Brand>
         </NavLink>
 
-        {currentUser && addPostIcon}
+        {/* {currentUser && addPostIcon} */}
 
         <Navbar.Toggle
           onClick={() => setExpanded(!expanded)}

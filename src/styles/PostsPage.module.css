@@ -1,18 +1,115 @@
+/* General Container and Shadow Effect */
+.AddPostContainer {
+  background-color: #E7E0CA; /* Light beige tone */
+  padding: 1rem 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+/* Add Post Button */
+.AddPostButton {
+  background-color: #A2AD63; /* Olive green */
+  color: #E7E0CA;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.AddPostButton:hover {
+  background-color: #8D974F;
+  color: #E7E0CA;
+  text-decoration: none;
+}
+
+/* Add Post Message */
+.AddPostMessage {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #385212; /* Dark green tone */
+  margin-left: 1rem;
+  align-self: center;
+  white-space: nowrap; /* Keeps it on a single line */
+}
+
+/* General Search Bar Container */
+.SearchBar {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+/* Search Input */
 .SearchBar input {
-    border-radius: 20px;
-    color: #242a3d;
-    padding-left: 40px;
-    margin-bottom: 16px;
-  }
-  
-  .SearchIcon {
-    position: absolute;
-    font-size: 1.2rem;
-    padding: 9px;
-    padding-left: 15px;
-  }
-  
-  .SearchIcon:hover {
-    cursor: default;
-    color: #068a3b;
-  }
+  border-radius: 20px;
+  color: #2B2B2B;
+  padding-left: 50px; /* Increased padding for icon */
+  border: 1px solid #E7E0CA;
+  height: 40px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.SearchBar input:focus {
+  border-color: #068a3b; /* Green on focus */
+  outline: none;
+}
+
+/* Search Icon - Main SearchBar */
+.SearchIcon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #555;
+  pointer-events: none; /* Icon is not clickable */
+}
+
+.SearchIcon:hover {
+  cursor: default;
+  color: #068a3b;
+}
+
+/* Alternative Search Bar Box */
+.SearchBarBox {
+  background-color: #f9f9f9;
+  padding: 12px 24px;
+  margin-top: 108px; /* Space equal to navbar height */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Input inside SearchBarBox */
+.SearchBarBox input {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.SearchBarBox input:focus {
+  border-color: #A2AD63; /* Navbar color */
+  outline: none;
+}
+
+/* Icon inside SearchBarBox */
+.SearchBarBox .SearchIcon {
+  color: #A2AD63;
+  font-size: 1.2rem;
+  pointer-events: none;
+}

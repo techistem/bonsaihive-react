@@ -85,9 +85,9 @@
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;                     /* NavBar’ın hemen altına */
+  top: 100%;
   left: 0;
-  z-index: 1050;                 /* NavBar'dan yüksek olmalı */
+  z-index: 1050;
   display: none;
   min-width: 180px;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
@@ -113,3 +113,15 @@ button.NavLink:hover,
 button.NavLink:hover i {
   color: #D9CBA3;
 }
+
+.SearchBarBox {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 20px;
+  background-color: #D9CBA3;
+  color: #385212;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
