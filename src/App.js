@@ -6,7 +6,7 @@ import './api/axiosDefaults';
 import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from './pages/auth/SignInForm';
 import PostCreateForm from "./pages/posts/PostCreateForm";
-import bgImage from "./assets/bgimage.jpg";
+// import bgImage from "./assets/bgimage.jpg";
 import PostPage from "./pages/posts/PostPage";
 import PostsPage from "./pages/posts/PostsPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
@@ -29,15 +29,14 @@ function App() {
 
   return (
     <div 
-      className={`${styles.bg} ${styles.App}`} 
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundSize: "cover",
-        backgroundAttachment: "fixed",
-        minHeight: "100vh",
-        position: "relative",
-      }}
-    >
+  className={`${styles.bg} ${styles.App}`} 
+  style={{
+    backgroundColor: "#385212",
+    minHeight: "100vh",
+    position: "relative",
+  }}
+>
+
       <div>
         <NavBar />
         <Container className={styles.Main}>

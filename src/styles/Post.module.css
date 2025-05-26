@@ -1,24 +1,97 @@
 .Post {
-    background-color: #e7c5e4;
-    border: 1px solid #dfddda;
-    border-radius: 2px;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-  
-  .Post figure,
-  h5 {
-    margin: 0 0;
-  }
-  
-  .Heart {
-    color: #f85032;
-  }
-  
-  .Heart:hover {
-    color: #2142b2;
-  }
-  
-  .HeartOutline:hover {
-    color: #f85032;
-  }
+  background-color: #D9CBA3;
+  border: 1px solid #2B2B2B;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.Post figure,
+h5 {
+  margin: 0;
+}
+
+/* Filled heart */
+.Heart {
+  color: #385212;
+  font-size: 1.3rem;
+  vertical-align: middle;
+}
+
+/* Filled heart hover */
+.Heart:hover {
+  color: #A2AD63;
+}
+
+/* Empty heart */
+.HeartOutline {
+  color: #385212;
+  font-size: 1.3rem;
+  vertical-align: middle;
+}
+
+/* Empty heart hover */
+.HeartOutline:hover {
+  color: #A2AD63;
+}
+
+/* Post bar (heart + comment + counts) */
+.PostBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px; /* Space between heart and comment groups */
+  margin-top: 8px;
+}
+
+.LikeWrapper,
+.CommentWrapper {
+  display: inline-flex;
+  align-items: center;       /* Align icon and number */
+  gap: 6px;                  /* Space between icon and number */
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+}
+
+/* Like and comment counts */
+.LikeCount,
+.CommentCount {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #385212;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Slightly lower the comment count */
+.CommentCount {
+  position: relative;
+  top: 2px;
+}
+
+/* Common styles for heart and comment icons */
+.PostBar i {
+  font-size: 1.6rem;
+  color: #385212;
+  padding: 0;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+/* Comment icon */
+.CommentIcon {
+  color: #385212;
+  font-size: 1.3rem;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Comment icon hover */
+.CommentIcon:hover {
+  color: #A2AD63;
+}
+
+.CommentIcon.filled {
+  color: #385212; /* dolu hali için koyu yeşil */
+}

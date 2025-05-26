@@ -104,29 +104,40 @@ const Post = (props) => {
               placement="top"
               overlay={<Tooltip>You can't like your own post!</Tooltip>}
             >
-              <i className="far fa-heart" />
+              <div className={styles.LikeWrapper}>
+        <i className="far fa-heart" />
+        <span className={styles.LikeCount}>{likes_count}</span>
+      </div>
             </OverlayTrigger>
           ) : like_id ? (
-            <span onClick={handleUnlike}>
+            <span onClick={handleUnlike} className={styles.LikeWrapper}>
               <i className={`fas fa-heart ${styles.Heart}`} />
+              <span className={styles.LikeCount}>{likes_count}</span>
             </span>
           ) : currentUser ? (
-            <span onClick={handleLike}>
+            <span onClick={handleLike} className={styles.LikeWrapper}>
               <i className={`far fa-heart ${styles.HeartOutline}`} />
+              <span className={styles.LikeCount}>{likes_count}</span>
             </span>
           ) : (
             <OverlayTrigger
               placement="top"
               overlay={<Tooltip>Log in to like posts!</Tooltip>}
             >
+              <div className={styles.LikeWrapper}>
               <i className="far fa-heart" />
+              <span className={styles.LikeCount}>{likes_count}</span>
+              </div>
             </OverlayTrigger>
           )}
-          {likes_count}
-          <Link to={`/posts/${id}`}>
-            <i className="far fa-comments" />
-          </Link>
-          {comments_count}
+          
+          <Link to={`/posts/${id}`} className={styles.CommentWrapper}>
+  <i
+    className={`${comments_count > 0 ? 'fas' : 'far'} fa-comments ${styles.CommentIcon}`}
+  />
+  <span className={styles.CommentCount}>{comments_count}</span>
+</Link>
+
         </div>
       </Card.Body>
     </Card>

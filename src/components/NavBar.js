@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo2.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import {
@@ -218,7 +218,7 @@ const NavBar = () => {
       <Container>
         <NavLink to="/" exact onClick={closeMenus}>
           <Navbar.Brand>
-            <img src={logo} alt="logo" height="45" />
+            <img src={logo} alt="BonsaiHive logo" className={styles.LogoImage} />
           </Navbar.Brand>
         </NavLink>
 

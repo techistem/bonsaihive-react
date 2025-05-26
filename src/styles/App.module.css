@@ -14,12 +14,6 @@
     border: 1px solid #dadadf;
   }
   
-  /*.FillerImage {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  } */
-  
   .Image {
     max-height: 40vh;
     max-width: 100%;

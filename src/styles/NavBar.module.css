@@ -1,12 +1,25 @@
-/* Navbar */
 .NavBar {
-  background-color: #ffffff;
-  border: 1px solid #dadadf;
+  background-color: #A2AD63;
+  height: 108px;
+  padding: 0 32px;           
+  margin: 0;
+  display: flex;
+  align-items: center;
+  max-width: 100vw;
+  position: relative;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
-/* Genel nav link stilleri */
+.LogoImage {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+  display: block;
+}
+
 .NavLink {
-  color: black;
+  color: #F5F5F0;
   padding: 5px;
   display: inline-flex;
   align-items: center;
@@ -15,16 +28,14 @@
   text-decoration: none;
 }
 
-/* Aktif sayfa linki */
 .Active,
 .Active i {
-  color: #2142b2;
+  color: #D9CBA3;
 }
 
-/* Add Post butonu */
 .AddPostButton {
-  background-color: #28a745;
-  color: white !important;
+  background-color: #6B8E23;
+  color: #F5F5F0 !important;
   padding: 6px 12px;
   border-radius: 6px;
   font-weight: 600;
@@ -35,14 +46,13 @@
 }
 
 .AddPostButton:hover {
-  background-color: #218838;
-  color: white !important;
+  background-color: #385212;
+  color: #F5F5F0 !important;
   text-decoration: none;
 }
 
-/* Profile başlık satırı */
 .ProfileTitle {
-  color: black;
+  color: #F5F5F0;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -50,17 +60,15 @@
   cursor: pointer;
 }
 
-/* Profile başlık hover veya açıkken */
 .ProfileTitle:hover,
 .ProfileTitle:hover i,
 #profile-nav-dropdown.show .ProfileTitle,
 #profile-nav-dropdown.show .ProfileTitle i {
-  color: #2142b2;
+  color: #D9CBA3;
 }
 
-/* Explore başlığı için özel stil (istersen ayırabilirsin) */
 #explore-nav-dropdown > .dropdown-toggle {
-  color: black;
+  color: #F5F5F0;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -72,32 +80,28 @@
 #explore-nav-dropdown > .dropdown-toggle:hover,
 #explore-nav-dropdown > .dropdown-toggle:hover i,
 #explore-nav-dropdown.show > .dropdown-toggle i {
-  color: #2142b2;
+  color: #D9CBA3;
 }
 
-/* Dropdown içindeki itemlar */
-.dropdown-item {
-  color: black;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.3s ease;
+.dropdown-menu {
+  position: absolute;
+  top: 100%;                     /* NavBar’ın hemen altına */
+  left: 0;
+  z-index: 1050;                 /* NavBar'dan yüksek olmalı */
+  display: none;
+  min-width: 180px;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
 }
 
-/* Dropdown item hover ve aktif */
-.dropdown-item:hover,
-.dropdown-item:hover i,
-.dropdown-item.active,
-.dropdown-item.active i {
-  color: #2142b2;
+.show > .dropdown-menu {
+  display: block;
 }
 
-/* Çıkış butonu da NavLink gibi */
 button.NavLink {
   background: none;
   border: none;
   padding: 5px;
-  color: black;
+  color: #F5F5F0;
   cursor: pointer;
   transition: color 0.3s ease;
   display: inline-flex;
@@ -107,5 +111,5 @@ button.NavLink {
 
 button.NavLink:hover,
 button.NavLink:hover i {
-  color: #2142b2;
+  color: #D9CBA3;
 }
