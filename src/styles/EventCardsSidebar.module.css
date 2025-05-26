@@ -34,6 +34,12 @@
   transform: scale(1.03);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
   text-decoration: none;
+  color: #385212;
+}
+
+.Card:hover .cardTitle,
+.Card:hover .cardDate {
+  color: #385212;
 }
 
 .cardBody {

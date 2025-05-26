@@ -10,24 +10,59 @@
 /* Add Post Button */
 .AddPostButton {
   background-color: #A2AD63; /* Olive green */
+  color: #E7E0CA; /* Default yazı rengi */
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+/* Add Post Button */
+/* Add Post Button */
+.AddPostButton {
+  background-color: #A2AD63;
   color: #E7E0CA;
   padding: 10px 16px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Icon */
+.AddPostButton .AddPostIcon {
+  color: #E7E0CA;
+  transition: color 0.3s ease;
+}
+
+/* Text */
+.AddPostButton .AddPostText {
+  color: #E7E0CA;
+  transition: color 0.3s ease;
+}
+
+/* Hover State - Icon and Text turn dark green */
 .AddPostButton:hover {
   background-color: #8D974F;
-  color: #E7E0CA;
+  color: #385212; /* 👈 Bu satır eklendi */
   text-decoration: none;
 }
+
+.AddPostButton:hover .AddPostIcon,
+.AddPostButton:hover .AddPostText {
+  color: #385212;
+}
+
 
 /* Add Post Message */
 .AddPostMessage {

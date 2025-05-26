@@ -83,7 +83,11 @@ const Post = (props) => {
             {owner}
           </Link>
           <div className="d-flex align-items-center">
-            <span>{updated_at}</span>
+          <span className={styles.PostDate}>
+  {new Date(updated_at).toISOString().slice(0, 10)}
+</span>
+
+
             {is_owner && postPage && (
               < MoreDropdown 
               handleEdit={handleEdit}

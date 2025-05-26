@@ -95,3 +95,21 @@ h5 {
 .CommentIcon.filled {
   color: #385212; /* dolu hali için koyu yeşil */
 }
+
+.PostDate {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: #E7E0CA;
+  color: #385212;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+

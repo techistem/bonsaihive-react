@@ -63,7 +63,7 @@ function PostsPage({ message, filter = "" }) {
       <div className={`${styles.AddPostContainer} container mt-3`}>
         <div className="d-flex align-items-center">
           <NavLink to="/posts/create" className={styles.AddPostButton}>
-            <i className="far fa-plus-square"></i> Add Post
+          <i className={`far fa-plus-square ${styles.AddPostIcon}`}></i> Add Post
           </NavLink>
           <span className={styles.AddPostMessage}>"What would you like to share today?"</span>
         </div>
