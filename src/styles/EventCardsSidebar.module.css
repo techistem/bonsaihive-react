@@ -1,32 +1,62 @@
 .EventCardsSidebar {
-  padding: 1rem;
-  background-color: rgb(30, 142, 193);
-  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background-color: #E7E0CA; /* light beige background */
+  border-radius: 1rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  color: #385212; /* text color: dark green */
+  max-width: 350px; /* optional max width */
+  margin: auto;
+}
+
+.header {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #D9CBA3; /* beige toned bottom border */
 }
 
 .Card {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  background-color: hsl(219, 50%, 92%);
+  background-color: #D9CBA3; /* post background color */
   border-radius: 0.5rem;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  }
-
+  color: #2B2B2B; /* card text color: dark */
+  margin-bottom: 1rem;
+  min-height: 150px;
+  width: 100%;
+}
 
 .Card:hover {
   transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
   text-decoration: none;
 }
 
-.header {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #fff;
-  padding-bottom: 0.5rem;
+.cardBody {
+  position: relative;
+  padding: 1rem 1.5rem 2rem 1rem; /* Padding with extra space at bottom and right for the date */
+  min-height: 80px;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Space between title and date */
+}
+
+.cardTitle {
+  font-weight: 700; /* Bold title */
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.cardDate {
+  position: absolute; /* Positioned relative to cardBody */
+  bottom: 1rem; /* 1rem from the bottom */
+  right: 1.5rem; /* 1.5rem from the right */
+  font-size: 1rem;
+  color: #385212; /* Dark green date color */
+  white-space: nowrap; /* Prevent date from breaking into multiple lines */
+  font-weight: 600; /* Semi-bold to make date stand out */
 }

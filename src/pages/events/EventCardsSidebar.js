@@ -29,17 +29,20 @@ function EventCardsSidebar() {
         <p>Loading...</p>
       ) : events.length ? (
         <Row xs={2} md={1} className="g-4">
-          {events.map((event) => (
-            <Col key={event.id}>
-              <Card as={Link} to={`/events/${event.id}`} className={styles.Card}>
-                <Card.Body>
-                  <Card.Title>{event.title}</Card.Title>
-                  <Card.Text>{new Date(event.start_time).toLocaleDateString()}</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
+  {events.map((event) => (
+    <Col key={event.id}>
+      <Card as={Link} to={`/events/${event.id}`} className={styles.Card}>
+        <Card.Body className={styles.cardBody}>
+          <Card.Title className={styles.cardTitle}>{event.title}</Card.Title>
+          <Card.Text className={styles.cardDate}>
+            {new Date(event.start_time).toLocaleDateString()}
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+  ))}
+</Row>
+
       ) : (
         <p>No upcoming events found.</p>
       )}
