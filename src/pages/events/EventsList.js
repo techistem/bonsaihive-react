@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useHistory } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import styles from "../../styles/EventCardsSidebar.module.css";
 
 
 function EventsList() {
@@ -10,14 +11,17 @@ function EventsList() {
 
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
         const { data } = await axios.get("/events/?ordering=start_time");
         setEvents(data.results || data);
+        setError(null);
       } catch (error) {
         console.error("Failed to fetch events:", error);
+        setError("Failed to load events. Please try again later.");
       } finally {
         setLoading(false);
       }
@@ -26,11 +30,21 @@ function EventsList() {
     fetchEvents();
   }, []);
 
-  if (loading) return <p>Loading events...</p>;
+  if (loading) 
+    return (
+      <div style={{ textAlign: "center", marginTop: "2rem" }}>
+        <div className="spinner"></div>
+        <p>Loading events...</p>
+      </div>
+    );
+
+  if (error)
+    return <p style={{ color: "red", textAlign: "center" }}>{error}</p>;
 
   return (
-    <div>
-      <h2>Upcoming Events</h2>
+    <div className="EventCardsSidebar">
+      <h2 className="header">Upcoming Events</h2>
+
       {currentUser && (
         <button
           onClick={() => history.push("/events/create")}
@@ -47,16 +61,27 @@ function EventsList() {
           <Link
             key={event.id}
             to={`/events/${event.id}`}
+            className={styles.Card}
             style={{ textDecoration: "none", color: "inherit" }}
           >
-
-            <div style={{ border: "1px solid #ddd", margin: "1rem 0", padding: "1rem" }}>
-              <h3>{event.title}</h3>
-              <p>{event.description}</p>
-              <p><strong>Start Time:</strong> {new Date(event.start_time).toLocaleString()}. 
+            <div className={styles.cardBody}>
+              <h3 className={styles.cardTitle}>{event.title}</h3>
+              <p>{event.description || "No description available."}</p>
+              <p className={styles.CardDate}>
+                {event.start_time
+                  ? new Date(event.start_time).toLocaleDateString()
+                  : "Start date not specified."}
               </p>
-              <p><strong>End Time:</strong> {new Date(event.end_time).toLocaleString()}</p>
-              <p><strong>Location:</strong> {event.location}</p>
+              {event.end_time && (
+                <p style={{ fontSize: "0.9rem", marginTop: "0.3rem" }}>
+                  <strong>End:</strong> {new Date(event.end_time).toLocaleDateString()}
+                </p>
+              )}
+              {event.location && (
+                <p style={{ fontSize: "0.9rem", marginTop: "0.3rem" }}>
+                  <strong>Location:</strong> {event.location}
+                </p>
+              )}
             </div>
           </Link>
         ))
