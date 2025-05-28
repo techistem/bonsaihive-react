@@ -9,22 +9,6 @@
 
 /* Add Post Button */
 .AddPostButton {
-  background-color: #A2AD63; /* Olive green */
-  color: #E7E0CA; /* Default yazı rengi */
-  padding: 10px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-/* Add Post Button */
-/* Add Post Button */
-.AddPostButton {
   background-color: #A2AD63;
   color: #E7E0CA;
   padding: 10px 16px;
@@ -39,11 +23,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Icon */
-.AddPostButton .AddPostIcon {
-  color: #E7E0CA;
-  transition: color 0.3s ease;
-}
+
 
 /* Text */
 .AddPostButton .AddPostText {
@@ -54,7 +34,7 @@
 /* Hover State - Icon and Text turn dark green */
 .AddPostButton:hover {
   background-color: #8D974F;
-  color: #385212; /* 👈 Bu satır eklendi */
+  color: #385212;
   text-decoration: none;
 }
 
@@ -112,35 +92,7 @@
   color: #068a3b;
 }
 
-/* Alternative Search Bar Box */
-.SearchBarBox {
-  background-color: #f9f9f9;
-  padding: 12px 24px;
-  margin-top: 108px; /* Space equal to navbar height */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
-/* Input inside SearchBarBox */
-.SearchBarBox input {
-  flex-grow: 1;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.SearchBarBox input:focus {
-  border-color: #A2AD63; /* Navbar color */
-  outline: none;
-}
 
 /* Icon inside SearchBarBox */
 .SearchBarBox .SearchIcon {

@@ -10,7 +10,6 @@ import Container from "react-bootstrap/Container";
 import Post from "./Post";
 import Asset from "../../components/Asset";
 
-import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -58,74 +57,67 @@ function PostsPage({ message, filter = "" }) {
   
   return (
     <>
+    <Container className="mt-3">
+    <Row className="h-100">
+    <Col className="py-2 p-0 p-lg-2" lg={8}>
      {/*  Shadowed box directly below the Navbar \*/}
      {currentUser && (
-      <div className={`${styles.AddPostContainer} container mt-3`}>
-        <div className="d-flex align-items-center">
+      
+        <div className={styles.AddPostContainer}>
           <NavLink to="/posts/create" className={styles.AddPostButton}>
           <i className={`far fa-plus-square ${styles.AddPostIcon}`}></i> Add Post
           </NavLink>
           <span className={styles.AddPostMessage}>"What would you like to share today?"</span>
         </div>
-      </div>
+      
     )}
   
-    <Row className="h-100">
-  <Col className="py-2 p-0 p-lg-2" lg={8}>
-    {/* Show on /feed only */}
-    {pathname === "/feed" && <PopularProfiles mobile />}
-
-    {/* Show EventCardsSidebar at top on mobile / */}
-    {pathname === "/" && (
-      <div className="d-block d-lg-none mb-3">
-        <EventCardsSidebar />
-      </div>
-    )}
-
     {/* Search bar */}
-    <Form className={styles.SearchBar} onSubmit={(event) => event.preventDefault()}>
+    <Form className={styles.SearchBar} onSubmit={(e) => e.preventDefault()}>
     <i className={`fas fa-search ${styles.SearchIcon}`} />
       <Form.Control
         value={query}
         onChange={(event) => setQuery(event.target.value)}
         type="text"
-        className="mr-sm-2"
+    
         placeholder="Search posts"
       />
     </Form>
+   
+      {pathname === "/feed" && <PopularProfiles mobile />}
+      {pathname === "/" && (
+        <div className="d-block d-lg-none mb-3">
+          <EventCardsSidebar />
+        </div>
+      )}
 
 
         {/* Display posts or no results */}
         {hasLoaded ? (
-          <>
-            {posts.results.length ? (
-                <InfiniteScroll
-                children={posts.results.map((post) => (
-                    <Post key={post.id} {...post} setPosts={setPosts} />
-                ))}
-                dataLength={posts.results.length}
-                loader={<Asset spinner/>}
-                hasMore={!!posts.next}
-                next={() => fetchMoreData(posts, setPosts)}
-            />    
-            ) : (
-              <Container className={appStyles.Content}>
-                <Asset src={NoResults} message={message} />
-              </Container>
-            )}
-          </>
-        ) : (
-          <Container className={appStyles.Content}>
-            <Asset spinner />
-          </Container>
-        )}
+  posts.results.length ? (
+    <InfiniteScroll
+      children={posts.results.map((post) => (
+        <Post key={post.id} {...post} setPosts={setPosts} />
+      ))}
+      dataLength={posts.results.length}
+      loader={<Asset spinner />}
+      hasMore={!!posts.next}
+      next={() => fetchMoreData(posts, setPosts)}
+    />
+  ) : (
+    <Asset src={NoResults} message={message} />
+  )
+) : (
+  <Asset spinner />
+)}
+
       </Col>
-       {/* Show PopularProfiles ONLY on /feed route */}
-       {pathname === "/feed" && (
-          <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-            <PopularProfiles />
-          </Col>
-        )}
+       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+       {pathname === "/feed" && <PopularProfiles />}
+       {pathname === "/" && <EventCardsSidebar />}
+     </Col>
+   </Row>
+ </Container>
         
         {/* Sidebar for /posts with Events */}
         {pathname === "/" && (
@@ -133,7 +125,7 @@ function PostsPage({ message, filter = "" }) {
             <EventCardsSidebar />
           </Col>
       )}
-    </Row>
+    
     </>
   );
 }
