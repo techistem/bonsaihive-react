@@ -43,7 +43,7 @@ function EventsList() {
 
   return (
     <div className="EventCardsSidebar">
-      <h2 className="header">Upcoming Events</h2>
+      <h2 className={styles.header}>Upcoming Events</h2>
 
       {currentUser && (
         <button
