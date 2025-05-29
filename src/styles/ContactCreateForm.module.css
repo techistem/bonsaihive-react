@@ -38,10 +38,9 @@
     min-height: 150px;
   }
   
-  /* Error Message */
   input:invalid,
   textarea:invalid {
-    border-color: red;
+    border-color: #385212;
   }
   
   input:valid,

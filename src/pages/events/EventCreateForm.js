@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useCurrentUser } from "../../contexts/CurrentUserContext"
+import styles from "../../styles/EventCreateForm.module.css";
 
 
 function EventCreateForm() {
@@ -71,63 +72,69 @@ function EventCreateForm() {
   };
 
   return (
-    <div>
-      <h2>Create New Event</h2>
-      {success && <p style={{ color: "green" }}>Event submitted for approval!</p>}
-      {error && <p style={{ color: "red" }}>{JSON.stringify(error)}</p>}
+    <div className={styles.container}>
+      <h2 className={styles.title}>Create New Event</h2>
+      {success && <p className={styles.success}>Event submitted for approval!</p>}
+      {error && <p className={styles.error}>{JSON.stringify(error)}</p>}
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Title</label><br />
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Title</label>
           <input
             type="text"
             name="title"
             value={formData.title}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label>Description</label><br />
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Description</label>
           <textarea
             name="description"
             value={formData.description}
             onChange={handleChange}
             required
+            className={styles.textarea}
           />
         </div>
-        <div>
-          <label>Location</label><br />
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Location</label>
           <input
             type="text"
             name="location"
             value={formData.location}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label>Start Time</label><br />
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Start Time</label>
           <input
             type="datetime-local"
             name="start_time"
             value={formData.start_time}
             onChange={handleChange}
             required
+            className={styles.input}
           />
         </div>
-        <div>
-          <label>End Time</label><br />
+        <div className={styles.formGroup}>
+          <label className={styles.label}>End Time</label>
           <input
             type="datetime-local"
             name="end_time"
             value={formData.end_time}
             onChange={handleChange}
+            className={styles.input}
           />
         </div>
-        <button type="submit">Submit Event</button>
+        <button type="submit" className={styles.button}>Submit Event</button>
       </form>
     </div>
   );
+  
 }
 
 export default EventCreateForm;

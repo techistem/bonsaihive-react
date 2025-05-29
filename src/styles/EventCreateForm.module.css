@@ -1,0 +1,90 @@
+/* EventCreateForm.module.css */
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px 25px;
+    background-color: #E7E0CA; /* açık bej arkaplan */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #385212; /* koyu yeşil metin */
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #385212;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-bottom: 2px solid #A2AD63;
+    padding-bottom: 0.5rem;
+  }
+  
+  .formGroup {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #385212;
+  }
+  
+  .input,
+  .textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.6px solid #A2AD63;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.25s ease-in-out;
+    box-sizing: border-box;
+    background-color: #fdfcf7; /* daha açık bej */
+    color: #2b2b2b;
+  }
+  
+  .textarea {
+    resize: vertical;
+    min-height: 90px;
+  }
+  
+  .input:focus,
+  .textarea:focus {
+    border-color: #385212;
+    outline: none;
+    box-shadow: 0 0 6px #A2AD63aa;
+  }
+  
+  .button {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #A2AD63;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #385212;
+  }
+  
+  .success {
+    color: #385212;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .error {
+    color: #385212;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
