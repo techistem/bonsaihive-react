@@ -1,48 +1,106 @@
-
 .Row {
-    height: calc(100vh - 81px);
-  }
-  .Input {
-    background: #ffffff;
-    border: 1px solid #f0f1f9;
-    box-sizing: border-box;
-    border-radius: 2px;
-    color: #7177a1;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .Header {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #2142b2;
-  }
-  
-  .Link {
-    text-decoration: none;
-    text-align: center;
-    display: block;
-    margin: auto;
-  }
-  
-  .Link span {
-    color: #ff9254;
-  }
-  
-  .Container {
-    padding: 30px 10px;
-  }
-  
-  .SignInCol {
-    height: 320px;
-  }
-  
-  .SignUpCol {
-    height: 375px;
-  }
-  
+  height: calc(100vh - 81px);
+  background-color: #E7E0CA;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 900px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Ortak dış kutu (form + görsel birlikte) */
+.Wrapper {
+  display: flex;
+  background-color: #E7E0CA;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Form inputları ortak */
+.Input {
+  background: #E7E0CA;
+  border: 1px solid #A2AD63;
+  box-sizing: border-box;
+  border-radius: 6px;
+  color: #385212;
+  padding: 10px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.Input:focus {
+  border-color: #A2AD63;
+  outline: none;
+  box-shadow: 0 0 4px #A2AD63AA;
+}
+
+/* Başlık */
+.Header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #385212;
+  margin-bottom: 20px;
+}
+
+/* Link */
+.Link {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin: auto;
+  color: #385212;
+  font-weight: 500;
+}
+
+.Link span {
+  color: #A2AD63;
+  font-weight: bold;
+}
+
+/* Form container */
+.Container {
+  padding: 30px 10px;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+/* Görsel taraf ortak */
+.ImageCol {
+  width: 50%;
+  background-color: #E7E0CA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 12px 12px 0;
+}
+
+/* Form tarafı ortak */
+.FormCol {
+  background-color: #E7E0CA;
+  padding: 30px;
+  border-radius: 12px 0 0 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.SignUpCol img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
