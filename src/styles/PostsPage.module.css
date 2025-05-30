@@ -92,11 +92,11 @@
   color: #068a3b;
 }
 
-
-
 /* Icon inside SearchBarBox */
 .SearchBarBox .SearchIcon {
   color: #A2AD63;
   font-size: 1.2rem;
   pointer-events: none;
 }
+
+
