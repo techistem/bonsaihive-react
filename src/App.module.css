@@ -57,3 +57,10 @@ i:hover {
   box-shadow: 0 8px 15px rgba(56, 18, 82, 0.2);
   color: #385212;
 }
+.PasswordFormContainer {
+  background-color: #E7E0CA; /* soft beige */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+}
