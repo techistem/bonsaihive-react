@@ -1,0 +1,58 @@
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.reviewBox {
+  background-color: #A2AD63;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reviewCard {
+  background-color: rgba(255, 255, 255, 0.85); /* Açık şeffaf beyaz kutu */
+  border: none;
+  border-radius: 6px;
+  padding: 1rem;
+  color: #333;
+}
+
+.reviewCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+
+.header {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  color: #385212;
+}
+
+.cardTitle {
+  font-weight: 600;
+  color: #34495e;
+}
+
+.cardSubtitle {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+}
+
+.noReviewsAlert {
+  font-style: italic;
+  color: #95a5a6;
+  margin-top: 2rem;
+  text-align: center;
+}
+
