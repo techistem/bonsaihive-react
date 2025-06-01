@@ -6,7 +6,7 @@ import axios from "axios";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import purpleb from '../../assets/purpleb.png';
+import signup from '../../assets/signup.png';
 
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({
@@ -116,7 +116,7 @@ const SignUpForm = () => {
       >
         <img
           className="mr-3 mt-2"
-          src={purpleb}
+          src={signup}
           alt="purple bonsai tree"
           style={{ maxWidth: '100%', height: 'auto' }}
         />
