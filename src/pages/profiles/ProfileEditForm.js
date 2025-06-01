@@ -16,7 +16,7 @@ import {
 } from "../../contexts/CurrentUserContext";
 
 import btnStyles from "../../styles/Button.module.css";
-import appStyles from "../../App.module.css";
+import styles from "../../styles/ProfileEditForm.module.css";
 
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();
@@ -67,7 +67,7 @@ const ProfileEditForm = () => {
     formData.append("content", content);
 
     if (imageFile?.current?.files[0]) {
-      formData.append("image", imageFile?.current?.files[0]);
+      formData.append("image", imageFile.current.files[0]);
     }
 
     try {
@@ -93,23 +93,31 @@ const ProfileEditForm = () => {
           onChange={handleChange}
           name="content"
           rows={7}
+          className={styles.bioTextarea}
         />
       </Form.Group>
 
       {errors?.content?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
+        <Alert variant="warning" key={idx} className={styles.alert}>
           {message}
         </Alert>
       ))}
-      <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => history.goBack()}
-      >
-        cancel
-      </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        save
-      </Button>
+
+      <div className={styles.buttonsWrapper}>
+        <Button
+          className={`${btnStyles.Button} ${btnStyles.Blue} ${styles.btnCancel}`}
+          onClick={() => history.goBack()}
+          type="button"
+        >
+          cancel
+        </Button>
+        <Button
+          className={`${btnStyles.Button} ${btnStyles.Blue} ${styles.btnSave}`}
+          type="submit"
+        >
+          save
+        </Button>
+      </div>
     </>
   );
 
@@ -117,22 +125,22 @@ const ProfileEditForm = () => {
     <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2 text-center" md={7} lg={6}>
-          <Container className={appStyles.Content}>
+          <Container className={styles.formContent}>
             <Form.Group>
               {image && (
                 <figure>
-                  <Image src={image} fluid />
+                  <Image src={image} fluid className={styles.profileImage} />
                 </figure>
               )}
               {errors?.image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
+                <Alert variant="warning" key={idx} className={styles.alert}>
                   {message}
                 </Alert>
               ))}
               <div>
                 <Form.Label
-                  className={`${btnStyles.Button} ${btnStyles.Blue} btn my-auto`}
                   htmlFor="image-upload"
+                  className={styles.imageUploadLabel}
                 >
                   Change the image
                 </Form.Label>
@@ -149,13 +157,14 @@ const ProfileEditForm = () => {
                     });
                   }
                 }}
+                className={styles.imageUploadInput}
               />
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
         <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">
-          <Container className={appStyles.Content}>{textFields}</Container>
+          <Container className={styles.formContent}>{textFields}</Container>
         </Col>
       </Row>
     </Form>

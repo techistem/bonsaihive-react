@@ -61,7 +61,9 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
-      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
+     <div className={styles.ProfileBox}>
+     <div className={styles.EditDropdownWrapper}>
+      {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}</div>
       <Row noGutters className="px-3 text-center">
         <Col lg={3} className="text-lg-left">
           <Image
@@ -74,16 +76,16 @@ function ProfilePage() {
           <h3 className="m-2">{profile?.owner}</h3>
           <Row className="justify-content-center no-gutters">
             <Col xs={3} className="my-2">
-              <div>{profile?.posts_count}</div>
-              <div>posts</div>
+              <div className={styles.StatsNumber}>{profile?.posts_count}</div>
+              <div className={styles.StatsLabel}>posts</div>
             </Col>
             <Col xs={3} className="my-2">
-              <div>{profile?.followers_count}</div>
-              <div>followers</div>
+            <div className={styles.StatsNumber}>{profile?.followers_count}</div>
+            <div className={styles.StatsLabel}>followers</div>
             </Col>
             <Col xs={3} className="my-2">
-              <div>{profile?.following_count}</div>
-              <div>following</div>
+            <div className={styles.StatsNumber}>{profile?.following_count}</div>
+            <div className={styles.StatsLabel}>following</div>
             </Col>
           </Row>
         </Col>
@@ -108,13 +110,17 @@ function ProfilePage() {
         </Col>
         {profile?.content && <Col className="p-3">{profile.content}</Col>}
       </Row>
+      </div>
     </>
   );
 
   const mainProfilePosts = (
     <>
+    <div className={styles.ProfileBox}>
       <hr />
-      <p className="text-center">{profile?.owner}'s posts</p>
+      <p className={`text-center ${styles.PostsTitle}`}>
+  {profile?.owner}'s posts
+</p>
       <hr />
       {profilePosts.results.length ? (
         <InfiniteScroll
@@ -128,10 +134,16 @@ function ProfilePage() {
         />
       ) : (
         <Asset
-          src={NoResults}
-          message={`No results found, ${profile?.owner} hasn't posted yet.`}
-        />
+  src={NoResults}
+  message={
+    <p className={styles.NoResultsMessage}>
+      {`No results found, ${profile?.owner} hasn't posted yet.`}
+    </p>
+  }
+/>
+
       )}
+      </div>
     </>
   );
 

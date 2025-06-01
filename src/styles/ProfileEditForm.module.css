@@ -1,0 +1,125 @@
+/* Container for the whole form content */
+.formContent {
+    background-color: #E7E0CA; /* Light cream background */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(56, 18, 82, 0.2);
+    color: #385212; /* Dark purple text */
+    min-height: 400px;
+  }
+  
+  /* Profile image styling */
+  .profileImage {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 12px;
+    border: 3px solid #385212;
+    box-shadow: 0 4px 8px rgba(56, 18, 82, 0.3);
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .profileImage:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(56, 18, 82, 0.5);
+  }
+  
+  /* Image upload label styled as a button */
+  .imageUploadLabel {
+    display: inline-block;
+    background-color: #385212;
+    color: #E7E0CA;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .imageUploadLabel:hover {
+    background-color: #D9CBA3;
+    color: #385212;
+  }
+  
+  /* Hide the default file input */
+  .imageUploadInput {
+    display: none;
+  }
+  
+  /* Textarea style */
+  .bioTextarea {
+    background-color: #fff;
+    border: 2px solid #385212;
+    border-radius: 8px;
+    color: #385212;
+    font-size: 1rem;
+    padding: 12px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+  }
+  
+  .bioTextarea:focus {
+    border-color: #D9CBA3;
+    outline: none;
+  }
+  
+  /* Buttons container */
+  .buttonsWrapper {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  /* Cancel and Save buttons */
+  .btnCancel,
+  .btnSave {
+    padding: 10px 25px;
+    font-weight: 700;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Cancel button style */
+  .btnCancel {
+    background-color: transparent;
+    border: 2px solid #385212;
+    color: #385212;
+  }
+  
+  .btnCancel:hover {
+    background-color: #385212;
+    color: #E7E0CA;
+  }
+  
+  /* Save button style */
+  .btnSave {
+    background-color: #385212;
+    border: 2px solid #385212;
+    color: #E7E0CA;
+  }
+  
+  .btnSave:hover {
+    background-color: #D9CBA3;
+    color: #385212;
+  }
+  
+  /* Alerts styling */
+  .alert {
+    margin-top: 10px;
+    font-weight: 600;
+    background-color: #fff4e5;
+    border-color: #f1c40f;
+    color: #7f6000;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 767px) {
+    .buttonsWrapper {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  

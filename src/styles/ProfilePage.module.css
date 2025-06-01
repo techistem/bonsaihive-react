@@ -1,13 +1,144 @@
 .ProfileImage {
-    object-fit: cover;
-    height: 120px;
-    width: 120px;
-    margin: 4px;
+  object-fit: cover;
+  height: 120px;
+  width: 120px;
+  margin: 10px auto;
+  border: 3px solid #385212;
+  box-shadow: 0 4px 8px rgba(56, 18, 82, 0.3);
+  transition: transform 0.3s ease;
+  display: block;
+  border-radius: 50%;
+}
+
+.ProfileImage:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(56, 18, 82, 0.5);
+}
+.ProfileBox {
+  background-color: #E7E0CA;
+  border: 2px solid #385212;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 15px rgba(56, 18, 82, 0.2);
+  overflow: visible;
+}
+
+.EditDropdownWrapper {
+  position: absolute;
+  top: 20px;    /* Some space from top of the box */
+  right: 20px;  /* Some space from right of the box */
+  z-index: 10;  /* To appear on top */
+}
+.StatsNumber {
+  color: #385212;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.StatsLabel {
+  color: #385212;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.PostsTitle {
+  color: #385212;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.NoResultsMessage {
+  color: #385212;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+@media screen and (max-width: 991px) {
+  .ProfileImage {
+    width: 250px;
+    height: 250px;
+    margin: 20px auto;
   }
-  
-  @media screen and (max-width: 991px) {
-    .ProfileImage {
-      width: 250px;
-      height: 250px;
-    }
-  }
+}
+
+/* Profil name */
+h3 {
+  color: #385212;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+/* Stats boxes */
+.row.justify-content-center.no-gutters > .col-xs-3 {
+  background-color: #D9CBA3;
+  border-radius: 8px;
+  padding: 12px 0;
+  margin: 0 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  color: #385212;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.row.justify-content-center.no-gutters > .col-xs-3:hover {
+  background-color: #E7E0CA;
+}
+
+/* Follow buttons */
+.Button {
+  padding: 8px 18px;
+  font-weight: 600;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Black {
+  background-color: #385212;
+  color: #E7E0CA;
+  border: 2px solid #385212;
+}
+
+.Black:hover {
+  background-color: #D9CBA3;
+  color: #385212;
+  border-color: #D9CBA3;
+}
+
+.BlackOutline {
+  background-color: transparent;
+  color: #385212;
+  border: 2px solid #385212;
+}
+
+.BlackOutline:hover {
+  background-color: #385212;
+  color: #E7E0CA;
+}
+
+/* Profile description */
+.p-3 {
+  color: #385212;
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* Page general background and text colors */
+.Content {
+  background-color: #E7E0CA;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(56, 18, 82, 0.2);
+  color: #385212;
+}
+
+/* Texts and small details */
+.text-center {
+  color: #385212;
+  font-weight: 600;
+}
