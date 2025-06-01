@@ -32,11 +32,9 @@ html, body {
   margin: 0;
 }
 
-
-
 .TitleContainer {
   position: relative;
-  background-color: rgba(231, 224, 202, 0.85); /* E7E0CA tonu */
+  background-color: rgba(231, 224, 202, 0.85); /* E7E0CA */
   display: flex;
   flex-direction: column;
   justify-content: center;

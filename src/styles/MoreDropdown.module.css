@@ -16,12 +16,12 @@
 .Absolute {
   position: absolute;
   right: 0;
-  z-index: 1; /* Bu çok yüksek olmasın, dropdown'dan düşük olsun */
+  z-index: 1;
 }
 
 :global(.dropdown-menu) {
   z-index: 9999 !important;
-  position: absolute !important;  /* veya fixed */
+  position: absolute !important;
   background-color: #A2AD63;
   min-width: 180px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);

@@ -203,6 +203,8 @@ const NavBar = () => {
       fixed="top"
       ref={ref}
     >
+      
+
       <Container>
         <NavLink to="/" exact onClick={closeMenus}>
           <Navbar.Brand>
@@ -244,7 +246,9 @@ const NavBar = () => {
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
+       
       </Container>
+      
     </Navbar>
   );
 };

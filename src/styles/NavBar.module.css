@@ -1,7 +1,7 @@
 .NavBar {
   background-color: #A2AD63;
   height: 108px;
-  padding: 0 32px;           
+  padding: 0 32px;
   margin: 0;
   display: flex;
   align-items: center;
@@ -90,7 +90,7 @@
   z-index: 1050;
   display: none;
   min-width: 180px;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 .show > .dropdown-menu {
@@ -125,28 +125,19 @@ button.NavLink:hover i {
   text-align: center;
 }
 
-/* 1. Navbar Collapse arka planı mobilde */
+.app-container {
+  padding-top: 50px;
+}
+
+/* Mobile view styles */
 @media (max-width: 768px) {
   .navbar-collapse {
     background-color: #A2AD63 !important; /* NavBar rengine uyumlu */
     padding: 1rem 1.5rem;
     border-radius: 0 0 10px 10px;
-    z-index: 1100; /* dropdown’dan yukarıda */
+    padding: 1rem 1.5rem;
   }
 
-  /* 2. Dropdown menü ayarları */
-  .dropdown-menu {
-    position: static !important;
-    width: 100% !important;
-    background-color: #385212 !important; /* koyu yeşil */
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: 6px !important;
-    margin-bottom: 0.8rem !important;
-    display: block !important;
-  }
-
-  /* Dropdown item’ler */
   .dropdown-item {
     color: #F5F5F0 !important;
     padding: 12px 16px !important;
