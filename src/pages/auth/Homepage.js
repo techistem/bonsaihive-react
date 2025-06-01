@@ -7,29 +7,30 @@ import Row from 'react-bootstrap/Row';
 
 import styles from '../../styles/Homepage.module.css';
 
-
 const Homepage = () => {
   useRedirect();
+
   return (
-    <Container className={styles.Container}>
-      <Row>
-        <Col xs={7}></Col>
-        <Col xs={5} className={styles.TitleContainer}>
-          <h1 className={styles.Title}>BonsaiHive</h1>
-          <hr className={styles.Line} />
-          <hr className={styles.SecondLine} />
-          <Row>
-            <Col className={styles.IntroContainer}>
+    <Container fluid className={styles.Container}>
+      <Row className={styles.Row}>
+        <Col lg={8} className={styles.ImageCol}></Col>
+        <Col lg={4} className={styles.TitleContainer}>
+          <div>
+            <h1 className={styles.Title}>BonsaiHive</h1>
+            <hr className={styles.Line} />
+            <hr className={styles.SecondLine} />
+            <div className={styles.Description}>
               <p>
-              Bonsai Hive is a dedicated community for bonsai lovers in West Sussex. 
-              Share your bonsai photos, exchange tips, and connect with local enthusiasts who share your passion.
-               Discover new styles, follow fellow artists, and grow your bonsai network right here in West Sussex.
+                Bonsai Hive is a dedicated community for bonsai lovers in West Sussex.
+                Share your bonsai photos, exchange tips, and connect with local enthusiasts.
+                Discover new styles, follow fellow artists, and grow your bonsai network here.
               </p>
-            </Col>
-          </Row>
+            </div>
+          </div>
         </Col>
       </Row>
     </Container>
   );
 };
+
 export default Homepage;
