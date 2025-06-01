@@ -48,3 +48,12 @@ i:hover {
   padding: 0 1rem;
   padding-top: 30px; /* Navbar altı boşluk */
 }
+
+
+.CreamBox {
+  background-color: #E7E0CA;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(56, 18, 82, 0.2);
+  color: #385212;
+}

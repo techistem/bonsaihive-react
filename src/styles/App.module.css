@@ -94,10 +94,11 @@
 }
 
   .popularProfilesContainer {
-    background-color: transparent; /* veya istediğin başka bir renk */
-    padding: 0; /* İç boşluğu sıfırla ki kutu kenarına tam otursun */
+    background-color: transparent;
+    padding: 0;
     border: none;
   }
+
   
     
   
