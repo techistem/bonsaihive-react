@@ -10,7 +10,7 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+    background-color: #A2AD63;
   }
   
   /* Input and Textarea Fields */
@@ -27,7 +27,7 @@
   .textareaField {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #A2AD63;
     border-radius: 4px;
     font-size: 1rem;
     outline: none;
@@ -45,7 +45,7 @@
   
   input:valid,
   textarea:valid {
-    border-color: green;
+    border-color: #385212;
   }
   
   /* Submit Button */
@@ -68,5 +68,10 @@
     color: red;
     font-size: 1rem;
     margin-top: 1rem;
+  }
+  
+  .CustomLabl {
+    color: #385212;
+    font-weight: 700;
   }
   

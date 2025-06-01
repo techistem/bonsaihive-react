@@ -87,7 +87,7 @@ const ContactCreateForm = () => {
   const textFields = (
     <div className="text-center"> 
       <Form.Group>
-        <Form.Label>Email Address</Form.Label>
+      <Form.Label className={styles.CustomLabl}>Email Address</Form.Label>
         <Form.Control
           type="email"
           name="email"
@@ -101,7 +101,7 @@ const ContactCreateForm = () => {
       ))}
 
       <Form.Group>
-        <Form.Label>Reason for contacting us</Form.Label>
+      <Form.Label className={styles.CustomLabl}>Reason for contacting us</Form.Label>
         <Form.Control
           type="text"
           name="reason"            
@@ -117,7 +117,8 @@ const ContactCreateForm = () => {
       ))}
 
       <Form.Group>
-        <Form.Label>Details</Form.Label>
+      <Form.Label className={styles.CustomLabl}>Details</Form.Label>
+
         <Form.Control
           as="textarea"
           rows={5}
