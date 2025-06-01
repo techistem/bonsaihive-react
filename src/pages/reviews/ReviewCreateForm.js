@@ -9,6 +9,7 @@ import { FaStar, FaRegStar } from "react-icons/fa";
 
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import formStyles from "../../styles/ReviewCreateForm.module.css";
 
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
@@ -55,12 +56,12 @@ const ReviewCreateForm = () => {
         <h3 className="text-center">Leave a Review</h3>
 
         <Form.Group>
-          <Form.Label>Rating (1–5)</Form.Label>
+        <Form.Label className={formStyles.label}>Rating (1–5)</Form.Label>
           <div className="d-flex justify-content-center mb-2">
             <Rating
               initialRating={rating}
               onChange={(rate) => setRating(rate)}
-              emptySymbol={<FaRegStar size={24} color="#bbb" />}
+              emptySymbol={<FaRegStar size={24} color="#385212" />}
               fullSymbol={<FaStar size={24} color="#fcd93a" />}
               fractions={2}
             />
@@ -73,7 +74,7 @@ const ReviewCreateForm = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label>Title</Form.Label>
+        <Form.Label className={formStyles.label}>Title</Form.Label>
           <Form.Control
             type="text"
             name="title"
@@ -89,7 +90,7 @@ const ReviewCreateForm = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label>Content</Form.Label>
+        <Form.Label className={formStyles.label}>Content</Form.Label>
           <Form.Control
             as="textarea"
             rows={5}
