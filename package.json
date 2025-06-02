@@ -45,7 +45,7 @@
     ]
   },
   "devDependencies": {
-    "msw": "^2.7.6",
+    "msw": "^2.8.7",
     "util": "^0.12.5"
   },
   "engines": {
