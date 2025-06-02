@@ -83,3 +83,42 @@ Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is 
     - Key: fas fa-key
 
 - All icons are sourced from the free [Font Awesome](https://fontawesome.com/) library and used consistently to represent their respective functions throughout the site.
+
+## Features
+
+### Reusable React Components
+
+<hr>
+
+This project follows a modular structure by creating and reusing React components to efficiently build the front-end. Below is an overview of reusable components and site-wide features, including their descriptions and how they are utilized throughout the application.
+
+### Visual Identity
+
+**Logo & Favicon (site-wide)**
+
+- The application uses a single custom-designed image as both the logo and favicon.
+
+- This image features a stylized bonsai tree created in Canva, incorporating the colour palette: #eff6dd, #fab297, #ff8249, #ff6540, and #ff4536.
+
+- The favicon was generated from this logo using [favicon](https://favicon.io/) to ensure compatibility across browsers and devices.
+
+- This consistent branding is applied throughout the site, including the navbar, browser tabs, and other key areas.
+
+![bonsaiHive favicon in use](docs/readme-images/favicon-16x16.png)
+
+**Navigation Bar (components/NavBar.js)**
+
+The navigation bar features the Bonsai Hive logo with a natural green background (#A2AD63), providing clear and consistent branding across the site. Navigation links are styled in a light cream color (#F5F5F0) by default, switching to a pale gold (#D9CBA3) when active or hovered, improving visual feedback.
+
+Links are tailored based on user authentication status:
+
+Logged-out users see links to Reviews, Contact, Sign in, and Sign up pages.
+
+Logged-in users have access to dropdown menus for Explore (Posts, Feed, Liked, Events) and My Bonsai Hive (My Profile, Reviews, Contact, Sign out).
+
+The navbar is fully responsive, collapsing navigation links into a hamburger menu on smaller screens (<768px) with consistent background and styled dropdown items for a clean, user-friendly interface.
+
+Usage:
+Used throughout the entire application, fixed at the top with a height of 108px to ensure easy and consistent access.
+
+![bonsaiHive navBar with collapsed menu](docs/readme-images/collapsed-navbar.png)
