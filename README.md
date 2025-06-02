@@ -25,3 +25,61 @@ The goal of this React-based user interface is to deliver an engaging, intuitive
 Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is the ideal place to grow your trees — and your network.
 
 ![A preview of the bonsaiHive interface displayed across desktop, tablet, and mobile devices — designed to offer a seamless experience for bonsai enthusiasts on any screen size.](docs/readme-images/multi-screen-mock.png)(https://ui.dev/amiresponsive-eklenecek)
+
+## UX Design
+
+- Color Palette
+
+  - The colour palette of Bonsai Hive is inspired by nature and the calming tones often found in bonsai environments. The goal was to create a warm, earthy feel that reflects the peaceful and organic spirit of bonsai art.
+    - #385212 – Deep olive green used as the main background colour. Evokes the richness of soil and deep foliage.
+    - #A2AD63 – Muted green-yellow used for navigation bars and buttons. Bright enough for attention, but still grounded in nature.
+    - #e7e0ca – Soft cream tone used for card backgrounds. Adds warmth and improves readability against darker tones.
+    - #d9cba3 – Pale golden beige used in card highlights and accents. Suggests natural light and subtle detail.
+  - While these colours were consistently used across the site, minor variations and adjustments were made where needed to maintain visual harmony and contrast.
+
+  ![Colour Palette for the Application](docs/readme-images/colour-palette.png)
+
+- Typography
+
+  - A system font stack was used to ensure fast loading and consistent rendering across different devices and platforms.
+
+    - The primary font stack includes:
+
+      - apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+
+    - This approach ensures that the application looks clean and modern while minimizing dependency on external font files.
+
+- For code elements, a monospaced font stack is used:
+
+  - source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace
+
+  - This improves readability in code blocks and form inputs where fixed-width fonts are appropriate.
+
+- Icons
+
+  - Consistent use of Font Awesome icons and colours enhances the user experience across the application.
+
+  - Key icons include:
+    - Add Post: far fa-plus-square
+    - Search: fas fa-search
+    - Options/Menu: fas fa-ellipsis-v
+    - Edit (including profile editing): fas fa-edit
+    - Delete: fas fa-trash-alt
+    - User-related icons such as:
+      - My Bonsai Hive: fas fa-user-circle
+      - My Profile: fas fa-user
+      - Sign In: fas fa-sign-in-alt
+      - Sign Out: fas fa-sign-out-alt
+      - Sign Up: fas fa-user-plus
+  - Navigation and content-related icons:
+    - Explore: fas fa-compass
+    - Posts: fas fa-seedling
+    - Liked: fas fa-heart
+    - Events: fas fa-calendar-alt
+    - Reviews: fas fa-star
+    - Contact: fas fa-envelope
+  - Security and identity icons:
+    - ID Card: far fa-id-card
+    - Key: fas fa-key
+
+- All icons are sourced from the free [Font Awesome](https://fontawesome.com/) library and used consistently to represent their respective functions throughout the site.
