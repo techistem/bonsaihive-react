@@ -26,6 +26,99 @@ Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is 
 
 ![A preview of the bonsaiHive interface displayed across desktop, tablet, and mobile devices — designed to offer a seamless experience for bonsai enthusiasts on any screen size.](docs/readme-images/multi-screen-mock.png)(https://ui.dev/amiresponsive-eklenecek)
 
+# Contents
+
+- [**Agile Methodology**](#agile-methodology)
+  - [Overview](#project-goals)
+  - [Specific Implementation and Breakdown of Themes](#specific-implementation-and-breakdown-of-themes)
+  - [Use of Agile Methods to Reach Project Goals](#use-of-agile-methods-to-reach-project-goals)
+- [**Technologies Used**](#technologies-used)
+  - [Languages](#languages)
+  - [Libraries and Frameworks](#libraries-and-frameworks)
+  - [A Word on React](#a-word-on-react)
+- [**UX Planning**](#ux-planning)
+  - [Overview](#overview-1)
+  - [Page Wireframes](#page-wireframes)
+  - [Authorisation Pages](#authorisation-pages)
+  - [Post Pages](#post-pages)
+  - [Profile Pages](#profile-pages)
+  - [Song Pages](#song-pages)
+- [**Features**](#features)
+  - [Navbar](#navbar)
+  - [Home](#home)
+  - [Feed](#feed)
+  - [Search Bar](#search-bar)
+  - [Order By](#order-by)
+  - [Top Songs](#top-songs)
+  - [User Authentication](#user-authentication)
+  - [Avatar](#avatar)
+  - [Profile](#profile)
+  - [Edit Profile](#edit-profile)
+  - [Create Song](#create-song)
+  - [Edit Song](#edit-song)
+  - [Create Post](#create-post)
+  - [Edit Post](#edit-post)
+  - [Create Comment](#create-comment)
+  - [Follow](#follow)
+  - [Vote](#vote)
+- [**Features Yet To Be Implemented**](#features-yet-to-be-implemented)
+- [**Testing**](#testing)
+  - [Validation](#validation)
+  - [Lighthouse Testing](#lighthouse-testing)
+  - [Manual Testing](#manual-testing)
+  - [Automated Testing](#automated-testing)
+- [**Error Pages**](#error-pages)
+- [**Bugs**](#bugs)
+- [**Deployment**](#deployment)
+- [**Credits and References**](#credits--references)
+  - [Code, Dependencies and Tools](#code-dependencies-and-tools)
+  - [Media](#media)
+
+<br />
+
+# Agile Methodology
+
+## Overview
+
+An agile methodology was used to develop this project, using iterations on a kanban board.
+GitHub projects was used to facilitate the agile development:
+<a href="https://github.com/users/techistem/projects/20/views/1" target="_blank">bonsaihive-react Project</a>
+
+<br />
+
+## Specific Implementation and Breakdown of Themes
+
+To ensure structured, user-centered development, the project was organized into five main EPICs, each representing a key user experience area. These EPICs were broken down into detailed User Stories, which were managed on a GitHub Kanban board with columns for To Do, In Progress, and Done. Development progressed iteratively, following Agile principles and utilizing the MoSCoW prioritization method (Must Have, Should Have, Could Have, Won’t Have).
+
+The five EPICs and their focus areas are as follows:
+
+1. Navigation & Authentication
+   Users can securely sign up, log in, and navigate the site.
+
+Conditional navigation is implemented (e.g., NavBar updates based on login status).
+
+Features include routing, avatar display, and token refresh for session handling.
+
+2. Posts – Create, View & Interact
+   Users can create new posts, view individual posts, and engage by liking them.
+
+This encourages user participation and content sharing.
+
+3. Posts Page – Discovery & Browsing
+   Users can explore content using filters such as recent posts, liked posts, and posts from followed users.
+
+Infinite scrolling is implemented to enhance content discovery and browsing experience.
+
+4. Post Page – Detail & Comments
+   Users can view detailed post content and interact through comments.
+
+Commenting includes creating, editing, deleting, and viewing timestamped feedback.
+
+5. Profile Page – Users & Relationships
+   Users can manage their profiles, update credentials, and track activity.
+
+Features include viewing other users’ profiles, following/unfollowing, and viewing user stats (such as most followed).
+
 ## UX Design
 
 - Color Palette
@@ -147,3 +240,40 @@ There are several features that would further improve this application. With mor
 - Filtering posts by categories or tags — Enabling users to sort and view posts based on their interests.
 - User nomination system — Allowing users to nominate new events or topics to be added.
 - Improved event management — Features such as RSVP, reminders, and calendar syncing.
+
+### Other Features
+
+<hr>
+
+- **Responsive Design**
+
+  - The site is built with a mobile-first approach, ensuring a seamless and intuitive user experience across all devices, including desktops, tablets, and smartphones.
+
+- **Infinite Scrolling**
+
+  - Users can effortlessly browse posts and comments without manual pagination, as new content loads automatically while scrolling for a smooth and continuous experience.
+
+- **Real-time Updates**
+
+  - Comments and likes on posts update instantly, allowing users to see interactions live and stay engaged with the community.
+
+- **Security**
+
+  - User authentication and data handling are secured with strong encryption and best practices to protect user privacy and sensitive information.
+
+- **Accessibility**
+  - The application is designed to be inclusive, following accessibility standards such as screen reader compatibility and providing alternative text for images to support all users.
+
+## Design Process
+
+- The full process for planning and setting up the project is outlined in the README for the [bonsaiHive REST API](https://github.com/techistem/bonsaiHive_P5)
+
+### User Stories
+
+<hr>
+
+- At the beginning of the project, user stories were outlined to define the core functionality from the user's perspective. These user stories were grouped under five key EPICs and developed iteratively.
+
+- The initial planning was done using a spreadsheet where each user story was mapped to its corresponding EPIC and broken down into technical tasks.
+
+- All user stories can be viewed in the user-stories pdf version of the spreadsheet
