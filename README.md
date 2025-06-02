@@ -121,4 +121,29 @@ The navbar is fully responsive, collapsing navigation links into a hamburger men
 Usage:
 Used throughout the entire application, fixed at the top with a height of 108px to ensure easy and consistent access.
 
-![bonsaiHive navBar with collapsed menu](docs/readme-images/collapsed-navbar.png)
+![bonsaiHive nav bar with collapsed menu](docs/readme-images/collapsed-navbar.png)
+
+- **Logged Out Links**
+
+The links visible to users who are not signed in include:
+
+- Reviews — Access the reviews page to see user feedback.
+- Contact — Navigate to the contact form for inquiries.
+- Sign In — Link to the login page for existing users.
+- Sign Up — Link to the registration page for new users.
+
+![bonsaiHive nav bar for logged out users](docs/readme-images/logged-out-navbar.png)
+
+- **Logged In Links**
+
+Bu bolumu yazzzzz
+
+### Future Features
+
+<hr>
+There are several features that would further improve this application. With more time and resources, I would like to implement:
+
+- Google Maps integration for events — Allowing users to easily locate event venues on a map.
+- Filtering posts by categories or tags — Enabling users to sort and view posts based on their interests.
+- User nomination system — Allowing users to nominate new events or topics to be added.
+- Improved event management — Features such as RSVP, reminders, and calendar syncing.
