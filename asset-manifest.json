@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bonsaihive-react/static/css/main.07078e62.css",
-    "main.js": "/bonsaihive-react/static/js/main.3e807257.js",
+    "main.js": "/bonsaihive-react/static/js/main.3a26e99b.js",
     "static/js/453.9aa4cd89.chunk.js": "/bonsaihive-react/static/js/453.9aa4cd89.chunk.js",
     "static/media/signup.png": "/bonsaihive-react/static/media/signup.11f29f5f1cc94d8e96fd.png",
     "static/media/signin.png": "/bonsaihive-react/static/media/signin.affae628738b7428921f.png",
@@ -9,11 +9,11 @@
     "static/media/logo2.png": "/bonsaihive-react/static/media/logo2.387d77123c792729d3a0.png",
     "index.html": "/bonsaihive-react/index.html",
     "main.07078e62.css.map": "/bonsaihive-react/static/css/main.07078e62.css.map",
-    "main.3e807257.js.map": "/bonsaihive-react/static/js/main.3e807257.js.map",
+    "main.3a26e99b.js.map": "/bonsaihive-react/static/js/main.3a26e99b.js.map",
     "453.9aa4cd89.chunk.js.map": "/bonsaihive-react/static/js/453.9aa4cd89.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.07078e62.css",
-    "static/js/main.3e807257.js"
+    "static/js/main.3a26e99b.js"
   ]
 }
