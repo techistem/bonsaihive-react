@@ -26,99 +26,6 @@ Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is 
 
 ![A preview of the bonsaiHive interface displayed across desktop, tablet, and mobile devices — designed to offer a seamless experience for bonsai enthusiasts on any screen size.](docs/readme-images/multi-screen-mock.png)(https://ui.dev/amiresponsive-eklenecek)
 
-# Contents
-
-- [**Agile Methodology**](#agile-methodology)
-  - [Overview](#project-goals)
-  - [Specific Implementation and Breakdown of Themes](#specific-implementation-and-breakdown-of-themes)
-  - [Use of Agile Methods to Reach Project Goals](#use-of-agile-methods-to-reach-project-goals)
-- [**Technologies Used**](#technologies-used)
-  - [Languages](#languages)
-  - [Libraries and Frameworks](#libraries-and-frameworks)
-  - [A Word on React](#a-word-on-react)
-- [**UX Planning**](#ux-planning)
-  - [Overview](#overview-1)
-  - [Page Wireframes](#page-wireframes)
-  - [Authorisation Pages](#authorisation-pages)
-  - [Post Pages](#post-pages)
-  - [Profile Pages](#profile-pages)
-  - [Song Pages](#song-pages)
-- [**Features**](#features)
-  - [Navbar](#navbar)
-  - [Home](#home)
-  - [Feed](#feed)
-  - [Search Bar](#search-bar)
-  - [Order By](#order-by)
-  - [Top Songs](#top-songs)
-  - [User Authentication](#user-authentication)
-  - [Avatar](#avatar)
-  - [Profile](#profile)
-  - [Edit Profile](#edit-profile)
-  - [Create Song](#create-song)
-  - [Edit Song](#edit-song)
-  - [Create Post](#create-post)
-  - [Edit Post](#edit-post)
-  - [Create Comment](#create-comment)
-  - [Follow](#follow)
-  - [Vote](#vote)
-- [**Features Yet To Be Implemented**](#features-yet-to-be-implemented)
-- [**Testing**](#testing)
-  - [Validation](#validation)
-  - [Lighthouse Testing](#lighthouse-testing)
-  - [Manual Testing](#manual-testing)
-  - [Automated Testing](#automated-testing)
-- [**Error Pages**](#error-pages)
-- [**Bugs**](#bugs)
-- [**Deployment**](#deployment)
-- [**Credits and References**](#credits--references)
-  - [Code, Dependencies and Tools](#code-dependencies-and-tools)
-  - [Media](#media)
-
-<br />
-
-# Agile Methodology
-
-## Overview
-
-An agile methodology was used to develop this project, using iterations on a kanban board.
-GitHub projects was used to facilitate the agile development:
-<a href="https://github.com/users/techistem/projects/20/views/1" target="_blank">bonsaihive-react Project</a>
-
-<br />
-
-## Specific Implementation and Breakdown of Themes
-
-To ensure structured, user-centered development, the project was organized into five main EPICs, each representing a key user experience area. These EPICs were broken down into detailed User Stories, which were managed on a GitHub Kanban board with columns for To Do, In Progress, and Done. Development progressed iteratively, following Agile principles and utilizing the MoSCoW prioritization method (Must Have, Should Have, Could Have, Won’t Have).
-
-The five EPICs and their focus areas are as follows:
-
-1. Navigation & Authentication
-   Users can securely sign up, log in, and navigate the site.
-
-Conditional navigation is implemented (e.g., NavBar updates based on login status).
-
-Features include routing, avatar display, and token refresh for session handling.
-
-2. Posts – Create, View & Interact
-   Users can create new posts, view individual posts, and engage by liking them.
-
-This encourages user participation and content sharing.
-
-3. Posts Page – Discovery & Browsing
-   Users can explore content using filters such as recent posts, liked posts, and posts from followed users.
-
-Infinite scrolling is implemented to enhance content discovery and browsing experience.
-
-4. Post Page – Detail & Comments
-   Users can view detailed post content and interact through comments.
-
-Commenting includes creating, editing, deleting, and viewing timestamped feedback.
-
-5. Profile Page – Users & Relationships
-   Users can manage their profiles, update credentials, and track activity.
-
-Features include viewing other users’ profiles, following/unfollowing, and viewing user stats (such as most followed).
-
 ## UX Design
 
 - Color Palette
@@ -225,11 +132,84 @@ The links visible to users who are not signed in include:
 - Sign In — Link to the login page for existing users.
 - Sign Up — Link to the registration page for new users.
 
-![bonsaiHive nav bar for logged out users](docs/readme-images/logged-out-navbar.png)
+<details>
+<summary> Navbar Screenshot Unauthorised (Desktop) </summary>
+
+![Navbar Screenshot Unauthorised (Desktop)](docs/readme-images/logged-out-navbar.png)
+
+</details>
 
 - **Logged In Links**
 
-Bu bolumu yazzzzz
+The links that are visible to authenticated users when logged in are:
+
+- Explore
+
+  - Posts – Browse all public posts.
+  - Feed – View content from users you follow.
+  - Liked – See posts you’ve liked.
+  - Events – Discover upcoming community events.
+
+- My Bonsai Hive
+
+  - My Profile – View and edit your user profile and posts.
+  - Reviews – Manage or view reviews you’ve written or received.
+  - Contact – Get in touch with support or leave feedback.
+  - Sign Out – Log out of your account.
+
+  <br />
+  <details>
+  <summary> Navbar Screenshot Authorised (Desktop) </summary>
+
+  ![bonsaiHive nav bar for logged in users(Desktop)](docs/readme-images/readme-images:logged-in-navbar.png)
+
+</details>
+
+### Home
+
+- Presents an easy-to-understand landing page to welcome new and returning users, describing the site's fundamental objectives and motivating them to join by registering or checking out the general feed.
+
+<br />
+<details>
+<summary> Home Page Screenshot (Desktop) </summary>
+
+![Home Page Screenshot (Desktop)](docs/readme-images/home-desktop.png)
+
+</details>
+<details>
+<summary> Home Page Screenshot (Mobile) </summary>
+
+![Home Page Screenshot (Mobile)](docs/readme-images/home-mobile.png)
+
+</details> 
+<br />
+
+### Feed
+
+The feed offers users a convenient way to browse through multiple posts displayed in a simple, scrollable list. On the bonsaiHive page, this feed specifically shows posts from users they follow.
+
+- Users can filter content based on their preferences:
+  - The Feed on bonsaiHive displays updates only from followed users,
+  - While the Posts section contains posts from all users site-wide.
+
+This separation makes it easy for users to find the content they want.
+
+Additionally, the feed implements infinite scrolling, meaning new posts load automatically as the user scrolls down. This eliminates the need for pagination controls, providing a smooth and modern browsing experience.
+
+<br />
+<details>
+<summary> Feed Screenshot (Desktop) </summary>
+
+![Feed Screenshot (Desktop)](/readme-assets/features/feed-desktop.webp)
+
+</details> 
+<details>
+<summary> Feed Screenshot (Mobile) </summary>
+
+![Feed Screenshot (Mobile)](/foto eklenecek)
+
+</details> 
+<br />
 
 ### Future Features
 
@@ -277,3 +257,46 @@ There are several features that would further improve this application. With mor
 - The initial planning was done using a spreadsheet where each user story was mapped to its corresponding EPIC and broken down into technical tasks.
 
 - All user stories can be viewed in the user-stories pdf version of the spreadsheet
+
+# Agile Methodology
+
+## Overview
+
+An agile methodology was used to develop this project, using iterations on a kanban board.
+GitHub projects was used to facilitate the agile development:
+<a href="https://github.com/users/techistem/projects/20/views/1" target="_blank">bonsaihive-react Project</a>
+
+<br />
+
+## Specific Implementation and Breakdown of Themes
+
+To ensure structured, user-centered development, the project was organized into five main EPICs, each representing a key user experience area. These EPICs were broken down into detailed User Stories, which were managed on a GitHub Kanban board with columns for To Do, In Progress, and Done. Development progressed iteratively, following Agile principles and utilizing the MoSCoW prioritization method (Must Have, Should Have, Could Have, Won’t Have).
+
+The five EPICs and their focus areas are as follows:
+
+1. Navigation & Authentication
+   Users can securely sign up, log in, and navigate the site.
+
+Conditional navigation is implemented (e.g., NavBar updates based on login status).
+
+Features include routing, avatar display, and token refresh for session handling.
+
+2. Posts – Create, View & Interact
+   Users can create new posts, view individual posts, and engage by liking them.
+
+This encourages user participation and content sharing.
+
+3. Posts Page – Discovery & Browsing
+   Users can explore content using filters such as recent posts, liked posts, and posts from followed users.
+
+Infinite scrolling is implemented to enhance content discovery and browsing experience.
+
+4. Post Page – Detail & Comments
+   Users can view detailed post content and interact through comments.
+
+Commenting includes creating, editing, deleting, and viewing timestamped feedback.
+
+5. Profile Page – Users & Relationships
+   Users can manage their profiles, update credentials, and track activity.
+
+Features include viewing other users’ profiles, following/unfollowing, and viewing user stats (such as most followed).
