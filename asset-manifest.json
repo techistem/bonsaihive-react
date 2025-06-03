@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.b14e9a72.css",
-    "main.js": "/static/js/main.982f8ce1.js",
-    "static/js/453.9aa4cd89.chunk.js": "/static/js/453.9aa4cd89.chunk.js",
-    "static/media/signup.png": "/static/media/signup.11f29f5f1cc94d8e96fd.png",
-    "static/media/signin.png": "/static/media/signin.affae628738b7428921f.png",
-    "static/media/homepage.jpg": "/static/media/homepage.22850e51574e7b221e5b.jpg",
-    "static/media/logo2.png": "/static/media/logo2.387d77123c792729d3a0.png",
-    "index.html": "/index.html",
-    "main.b14e9a72.css.map": "/static/css/main.b14e9a72.css.map",
-    "main.982f8ce1.js.map": "/static/js/main.982f8ce1.js.map",
-    "453.9aa4cd89.chunk.js.map": "/static/js/453.9aa4cd89.chunk.js.map"
+    "main.css": "/bonsaihive-react/static/css/main.07078e62.css",
+    "main.js": "/bonsaihive-react/static/js/main.3e807257.js",
+    "static/js/453.9aa4cd89.chunk.js": "/bonsaihive-react/static/js/453.9aa4cd89.chunk.js",
+    "static/media/signup.png": "/bonsaihive-react/static/media/signup.11f29f5f1cc94d8e96fd.png",
+    "static/media/signin.png": "/bonsaihive-react/static/media/signin.affae628738b7428921f.png",
+    "static/media/homepage.jpg": "/bonsaihive-react/static/media/homepage.22850e51574e7b221e5b.jpg",
+    "static/media/logo2.png": "/bonsaihive-react/static/media/logo2.387d77123c792729d3a0.png",
+    "index.html": "/bonsaihive-react/index.html",
+    "main.07078e62.css.map": "/bonsaihive-react/static/css/main.07078e62.css.map",
+    "main.3e807257.js.map": "/bonsaihive-react/static/js/main.3e807257.js.map",
+    "453.9aa4cd89.chunk.js.map": "/bonsaihive-react/static/js/453.9aa4cd89.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b14e9a72.css",
-    "static/js/main.982f8ce1.js"
+    "static/css/main.07078e62.css",
+    "static/js/main.3e807257.js"
   ]
 }
