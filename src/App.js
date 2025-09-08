@@ -21,6 +21,8 @@ import Homepage from './pages/auth/Homepage';
 import EventsList from "./pages/events/EventsList";
 import EventDetail from "./pages/events/EventDetail";
 import EventCreateForm from "./pages/events/EventCreateForm";
+import { HashRouter } from "react-router-dom";
+
 
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
   const profile_id = currentUser?.profile_id || "";
 
   return (
+    <HashRouter>
     <div 
   className={`${styles.bg} ${styles.App}`} 
   style={{
@@ -108,6 +111,7 @@ function App() {
         </div>
       </div>
     </div>
+    </HashRouter>
   );
 }
 
