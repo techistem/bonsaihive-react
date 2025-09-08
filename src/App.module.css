@@ -2,7 +2,7 @@
   font-family: "DM Sans", sans-serif;
   background-color: #f8f8f8;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 }
 
 * {
@@ -39,7 +39,7 @@ i:hover {
   background-color: #385212;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .Main {
