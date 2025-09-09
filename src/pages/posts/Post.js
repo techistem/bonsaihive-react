@@ -6,6 +6,8 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
+import { format } from 'date-fns';
+
 /* import { useHistory } from "react-router-dom/cjs/react-router-dom.min";*/
 
 const Post = (props) => {
@@ -84,9 +86,8 @@ const Post = (props) => {
           </Link>
           <div className="d-flex align-items-center">
           <span className={styles.PostDate}>
-  {new Date(updated_at).toISOString().slice(0, 10)}
+  {updated_at ? format(new Date(updated_at), 'MM/dd/yyyy') : 'No date'}
 </span>
-
 
             {is_owner && postPage && (
               < MoreDropdown 

@@ -62,7 +62,11 @@ const ContactCreateForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    console.log('Form submitted!');
+    // FRONTEND VALIDATION
+  if (!email || !reason || !content) {
+    alert("Please fill all required fields");
+    return; // Form gönderilmez
+  }
 
     const formData = new FormData();
     formData.append("email", email);
