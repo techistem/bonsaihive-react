@@ -16,3 +16,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar-collapse {
+  background-color: rgb(192, 59, 156);
+  border: 0cap;
+}

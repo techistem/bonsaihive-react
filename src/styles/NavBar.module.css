@@ -12,8 +12,8 @@
 }
 
 .LogoImage {
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   object-fit: contain;
   display: block;
 }
@@ -133,9 +133,8 @@ button.NavLink:hover i {
 @media (max-width: 768px) {
   .navbar-collapse {
     background-color: #A2AD63 !important; /* NavBar rengine uyumlu */
-    padding: 1rem 1.5rem;
     border-radius: 0 0 10px 10px;
-    padding: 1rem 1.5rem;
+  
   }
 
   .dropdown-item {

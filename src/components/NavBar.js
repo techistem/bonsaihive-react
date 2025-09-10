@@ -206,7 +206,7 @@ const NavBar = () => {
       
 
       <Container>
-        <NavLink to="/" exact onClick={closeMenus}>
+        <NavLink to="/" onClick={closeMenus}>
           <Navbar.Brand>
             <img src={logo} alt="BonsaiHive logo" className={styles.LogoImage} />
           </Navbar.Brand>
