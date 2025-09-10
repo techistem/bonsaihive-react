@@ -23,7 +23,7 @@ const Homepage = () => {
               <p>
                 Bonsai Hive is a dedicated community for bonsai lovers in West Sussex.
                 Share your bonsai photos, exchange tips, and connect with local enthusiasts.
-                Discover new styles, follow fellow artists, and grow your bonsai network here.
+                Discover new styles, follow artists, and grow your bonsai network here.
               </p>
             </div>
           </div>
