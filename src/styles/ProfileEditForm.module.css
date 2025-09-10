@@ -1,10 +1,10 @@
 /* Container for the whole form content */
 .formContent {
-    background-color: #E7E0CA; /* Light cream background */
+    background-color: #f5f5f0; /* Light cream background */
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(56, 18, 82, 0.2);
-    color: #385212; /* Dark purple text */
+    color: #385212;
     min-height: 400px;
   }
   
@@ -29,7 +29,7 @@
   .imageUploadLabel {
     display: inline-block;
     background-color: #385212;
-    color: #E7E0CA;
+    color: #f5f5f0;
     padding: 8px 20px;
     border-radius: 25px;
     font-weight: 600;
@@ -50,7 +50,7 @@
   
   /* Textarea style */
   .bioTextarea {
-    background-color: #fff;
+    background-color: #f5f5f0;
     border: 2px solid #385212;
     border-radius: 8px;
     color: #385212;
@@ -91,7 +91,7 @@
   
   .btnCancel:hover {
     background-color: #385212;
-    color: #E7E0CA;
+    color: #f5f5f0;
   }
   
   /* Save button style */
@@ -110,9 +110,9 @@
   .alert {
     margin-top: 10px;
     font-weight: 600;
-    background-color: #fff4e5;
-    border-color: #f1c40f;
-    color: #7f6000;
+    background-color: #f5f5f0;
+    border-color: #385212;
+    color: #6b8e23;
   }
   
   /* Responsive adjustments */

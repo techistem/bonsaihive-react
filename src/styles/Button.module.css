@@ -8,20 +8,20 @@
   margin-right: 2px;
   min-width: 75px;
   background-color: #6B8E23;  /* Medium green */
-  color: #F5F5F0;             /* Light cream - Navbar text color */
+  color: #F5F5F0; /* Light cream - Navbar text color */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .Button:hover {
   opacity: 0.9;
   background-color: #A2AD63;  /* Navbar color (light olive) on hover */
-  color: #385212;             /* Dark green from page background */
+  color: #385212; /* Dark green from page background */
   cursor: pointer;
 }
 
 .Button:active {
-  background-color: #385212;  /* Dark green page background */
-  color: #E7E0CA;             /* Cream background of posts */
+  background-color: #385212; /* Dark green page background */
+  color: #D9CBA3; /* Cream background of posts */
 }
 
 .Button:focus {
@@ -33,7 +33,7 @@
 
 .AddPostButton {
   background-color: #385212; /* Dark green */
-  color: #E7E0CA;            /* Light cream text */
+  color: #E7E0CA; /* Light cream text */
   padding: 8px 16px;
   border-radius: 20px;
   font-weight: 600;
@@ -47,7 +47,7 @@
 
 .AddPostButton:hover {
   background-color: #6B8E23; /* Lighter green on hover */
-  color: #F5F5F0;            /* Light color similar to navbar */
+  color: #F5F5F0; /* Light color similar to navbar */
   cursor: pointer;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .AddPostButton:active {
-  background-color: #2E4B0B; /* Darker green for active state */
+  background-color: #385212; /* Darker green for active state */
   color: #E7E0CA;
 }
 
@@ -68,8 +68,8 @@
 }
 
 .Bright {
-  background-color: #F5F5F0;  /* Light cream */
-  color: #385212;             /* Dark green text */
+  background-color: #F5F5F0; /* Light cream */
+  color: #385212; /* Dark green text */
   font-weight: bold;
-  border: 2px solid #A2AD63;  /* Slight olive border */
+  border: 2px solid #A2AD63; /* Slight olive border */
 }

@@ -4,11 +4,11 @@
     max-width: 600px;
     margin: 40px auto;
     padding: 30px 25px;
-    background-color: #E7E0CA; /* açık bej arkaplan */
+    background-color: #F5F5F0;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #385212; /* koyu yeşil metin */
+    color: #385212;
   }
   
   .title {
@@ -41,7 +41,7 @@
     font-size: 16px;
     transition: border-color 0.25s ease-in-out;
     box-sizing: border-box;
-    background-color: #fdfcf7; /* daha açık bej */
+    background-color: #f5f5f0;
     color: #2b2b2b;
   }
   
@@ -54,7 +54,7 @@
   .textarea:focus {
     border-color: #385212;
     outline: none;
-    box-shadow: 0 0 6px #A2AD63aa;
+    box-shadow: 0 0 6px #A2AD63;
   }
   
   .button {
@@ -62,7 +62,7 @@
     padding: 14px;
     font-size: 18px;
     font-weight: 700;
-    color: #fff;
+    color: #F5F5F0;
     background-color: #A2AD63;
     border: none;
     border-radius: 8px;

@@ -132,7 +132,7 @@ button.NavLink:hover i {
 /* Mobile view styles */
 @media (max-width: 768px) {
   .navbar-collapse {
-    background-color: #A2AD63 !important; /* NavBar rengine uyumlu */
+    background-color: #A2AD63 !important;
     border-radius: 0 0 10px 10px;
   
   }

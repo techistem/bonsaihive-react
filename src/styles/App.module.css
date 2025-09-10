@@ -14,7 +14,6 @@
     border: 1px solid #dadadf;
   }
   
-  
   .Image {
     max-height: 40vh;
     max-width: 100%;
@@ -35,7 +34,7 @@
   }
   
   a:hover i {
-    color: #2142b2;
+    color: #385212;
     transition: color ease-in-out 0.3s;
   }
   

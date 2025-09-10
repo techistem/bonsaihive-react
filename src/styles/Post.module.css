@@ -47,8 +47,8 @@ h5 {
 .LikeWrapper,
 .CommentWrapper {
   display: inline-flex;
-  align-items: center;       /* Align icon and number */
-  gap: 6px;                  /* Space between icon and number */
+  align-items: center; /* Align icon and number */
+  gap: 6px; /* Space between icon and number */
   cursor: pointer;
   text-decoration: none;
   line-height: 1;
@@ -93,7 +93,7 @@ h5 {
 }
 
 .CommentIcon.filled {
-  color: #385212; /* dolu hali için koyu yeşil */
+  color: #385212;
 }
 
 .PostDate {

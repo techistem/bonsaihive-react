@@ -22,7 +22,7 @@ html, body {
 
 .ImageCol {
   background-image:
-    radial-gradient(circle at center, transparent 50%, #d8d3cd),
+    radial-gradient(circle at center, transparent 50%, #F5F5F0),
     url('../assets/homepage.jpg');
   background-size: cover;
   background-position: center 100%;

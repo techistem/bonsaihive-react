@@ -50,8 +50,8 @@
   
   /* Submit Button */
   button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #A2AD63;
+    color: #F5F5F0;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
@@ -60,7 +60,7 @@
   }
   
   button:hover {
-    background-color: #45a049;
+    background-color: #6B8E23;
   }
   
   /* Error Message */
