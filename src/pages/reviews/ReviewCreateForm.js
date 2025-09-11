@@ -60,7 +60,7 @@ const ReviewCreateForm = () => {
           <div className="d-flex justify-content-center mb-2">
             <Rating
               initialRating={rating}
-              onChange={(rate) => setRating(rate)}
+              onChange={(rate) => setRating(Math.round(rate))}
               emptySymbol={<FaRegStar size={24} color="#385212" />}
               fullSymbol={<FaStar size={24} color="#fcd93a" />}
               fractions={2}
