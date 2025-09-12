@@ -26,3 +26,12 @@
   min-width: 180px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
+
+.Menu {
+  color: #D9CBA3;
+  cursor: pointer;
+}
+
+.Menu:hover {
+  color: #6B8E23;
+}
