@@ -4,12 +4,16 @@ import { axiosReq } from "../../api/axiosDefaults";
 import ReviewCreateForm from "../reviews/ReviewCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/ReviewsPage.module.css";
+import { MoreDropdown } from "../../components/MoreDropdown";
+import ReviewEditForm from "../reviews/ReviewEditForm";
+
 
 const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [error, setError] = useState("");
   const [expandedIds, setExpandedIds] = useState([]);
+  const [editReviewId, setEditReviewId] = useState(null);
 
   const currentUser = useCurrentUser();
 
@@ -17,7 +21,7 @@ const ReviewsPage = () => {
     const fetchReviews = async () => {
       try {
         const { data } = await axiosReq.get("/reviews/");
-        setReviews(data.results);
+        setReviews(data?.results);
       } catch {
         setError("An error occurred while loading reviews.");
       } finally {
@@ -58,6 +62,17 @@ const ReviewsPage = () => {
     );
   }
 
+  const handleDelete = async (id) => {
+    try {
+      await axiosReq.delete(`/reviews/${id}/`);
+      setReviews((prevReviews) =>
+        prevReviews.filter((review) => review.id !== id)
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <Container className={styles.container}>
       <div className={styles.reviewBox}>
@@ -67,28 +82,47 @@ const ReviewsPage = () => {
           </div>
         )}
         <h3 className={styles.header}>All Reviews</h3>
-        {reviews.length ? (
-          reviews.map((review) => (
-            <Card key={review.id} className={`${styles.reviewCard} mb-3`}>
-              <Card.Body>
-                <Card.Title className={styles.cardTitle}>{review.title}</Card.Title>
-                <Card.Subtitle className={`mb-2 ${styles.cardSubtitle}`}>
-                  {review.owner} | Rating: {review.rating}
-                </Card.Subtitle>
-                <Card.Text>
-                  {truncateText(review.content, review.id)}
-                  {review.content.length > 200 && (
-                    <span
-                      onClick={() => toggleExpand(review.id)}
-                      style={{ color: "#A2AD63", cursor: "pointer", marginLeft: "8px" }}
-                    >
-                      {expandedIds.includes(review.id) ? "Show Less" : "Read More"}
-                    </span>
+        {reviews?.length ? (
+          reviews.map((review) => {
+            const is_owner = currentUser?.username === review.owner_username;
+            return (
+              <Card key={review.id} className={`${styles.reviewCard} mb-3`}>
+                <Card.Header className="d-flex justify-content-between align-items-center">
+                  <Card.Subtitle className={`mb-2 ${styles.cardSubtitle}`}>
+                    {review.owner_username} | Rating: {review.rating}
+                  </Card.Subtitle>
+                  {is_owner && (
+                    <MoreDropdown
+                      handleEdit={() => setEditReviewId(review.id)}
+                      handleDelete={() => handleDelete(review.id)}
+                    />
                   )}
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          ))
+                </Card.Header>
+                <Card.Title className={styles.cardTitle}>{review.title}</Card.Title>
+                <Card.Body>
+                  {editReviewId === review.id ? (
+                    <ReviewEditForm
+                      review={review}
+                      setReviews={setReviews}
+                      setEditReviewId={setEditReviewId}
+                    />
+                  ) : (
+                  <Card.Text>
+                    {truncateText(review.content, review.id)}
+                    {review.content.length > 200 && (
+                      <span
+                        onClick={() => toggleExpand(review.id)}
+                        style={{ color: "#A2AD63", cursor: "pointer", marginLeft: "8px" }}
+                      >
+                        {expandedIds.includes(review.id) ? "Show Less" : "Read More"}
+                      </span>
+                    )}
+                  </Card.Text>
+                  )}
+                </Card.Body>
+              </Card>
+            );
+          })
         ) : (
           <Alert variant="info">No reviews yet.</Alert>
         )}
