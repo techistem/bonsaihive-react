@@ -118,13 +118,6 @@ function PostsPage({ message, filter = "" }) {
      </Col>
    </Row>
  </Container>
-        
-        {/* Sidebar for /posts with Events */}
-        {pathname === "/" && (
-          <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-            <EventCardsSidebar />
-          </Col>
-      )}
     
     </>
   );
