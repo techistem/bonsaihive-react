@@ -64,11 +64,11 @@
 .ProfileTitle:hover i,
 #profile-nav-dropdown.show .ProfileTitle,
 #profile-nav-dropdown.show .ProfileTitle i {
-  color: #D9CBA3;
+  color: #ff6540;
 }
 
 #explore-nav-dropdown > .dropdown-toggle {
-  color: #F5F5F0;
+  color: #F5F5F9;
   display: inline-flex;
   align-items: center;
   gap: 6px;
