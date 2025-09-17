@@ -26,15 +26,14 @@
   flex-direction: column;
   justify-content: space-between;
   color: #2B2B2B; /* card text color: dark */
-  margin-bottom: 1rem;
+  margin: 1rem;
   min-height: 150px;
-  width: 100%;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
   padding: 1rem 1.5rem;
 }
 
 .Card:hover {
-  transform: scale(1.03);
+  transform: scale(1.01);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
   text-decoration: none;
   color: #385212;
