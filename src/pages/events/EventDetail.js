@@ -6,6 +6,8 @@ import { MoreDropdown } from "../../components/MoreDropdown";
 import { useHistory } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
+import EventsEditForm from "./EventsEditForm";
+
 
 function EventDetail() {
   const { id } = useParams();
@@ -15,7 +17,6 @@ function EventDetail() {
   const [showEditForm, setShowEditForm] = useState(false);
 
   const is_owner = currentUser?.username === event?.owner;
-
   const history = useHistory();
 
   const handleDelete = async () => {
@@ -43,29 +44,10 @@ function EventDetail() {
   if (error) return <p style={{ color: "olive green", textAlign: "center" }}>{error}</p>;
   if (!event) return <p>Loading event...</p>;
 
+  const formatDateTime = (dateStr) =>
+    dateStr ? dateStr.replace("T", " ").substring(0, 19) : "Not specified";
+
   return (
-    // <div style={{
-        // background: "#f8f9fa",
-        // padding: "2rem",
-        // borderRadius: "12px",
-        // maxWidth: "600px",
-        // margin: "2rem auto",
-        // boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
-      // }}>
-        // <h2 style={{ fontSize: "2rem", marginBottom: "1rem" }}>{event.title}</h2>
-        // <p><strong>Description:</strong> {event.description || "No description available."}</p>
-// <p><strong>Start:</strong> 
-  // {event.start_time 
-    // ? new Date(event.start_time).toLocaleString() 
-    // : "Start time not specified."}
-// </p>
-// <p><strong>End:</strong> 
-  // {event.end_time 
-    // ? new Date(event.end_time).toLocaleString() 
-    // : "End time not specified."}
-//</p>
-// <p><strong>Location:</strong> {event.location || "Location not specified."}</p>
-// </div>
 <Container className="my-4">
       <Card style={{ backgroundColor: "#D9CBA3" }}>
         <Card.Body>
@@ -80,13 +62,13 @@ function EventDetail() {
           </Card.Header>
           <Card.Text>{event.description}</Card.Text>
           <Card.Text>
-            <strong>Start Time:</strong>{" "}
+            <strong>Start Time:</strong>
             {event.start_time
               ? new Date(event.start_time).toLocaleString()
               : "Not specified"}
           </Card.Text>
           <Card.Text>
-            <strong>End Time:</strong>{" "}
+            <strong>End Time:</strong>
             {event.end_time
               ? new Date(event.end_time).toLocaleString()
               : "Not specified"}
@@ -97,6 +79,11 @@ function EventDetail() {
 
         </Card.Body>
       </Card>
+      <EventsEditForm
+        show={showEditForm}
+        handleClose={() => setShowEditForm(false)}
+        eventData={event}
+      />
     </Container>
   );
 }
