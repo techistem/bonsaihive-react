@@ -1,6 +1,6 @@
 # bonsaiHive (REACT UI)
 
-[bonsaiHive](heroku site adresini yaz) is a dedicated community platform connecting bonsai enthusiasts across West Sussex.
+[bonsaiHive](https://bonsaihive-react-dbe9685329cb.herokuapp.com/) is a dedicated community platform connecting bonsai enthusiasts across West Sussex.
 
 Unlike general gardening forums or broad social networks, Bonsai Hive is specifically designed for the art and passion of bonsai — offering a focused, vibrant space where knowledge, creativity, and local connection thrive.
 
@@ -26,9 +26,16 @@ Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is 
 
 ![A preview of the bonsaiHive interface displayed across desktop, tablet, and mobile devices — designed to offer a seamless experience for bonsai enthusiasts on any screen size.](docs/readme-images/multi-screen-mock.png)(https://ui.dev/amiresponsive-eklenecek)
 
+## Contents
+
+- [Design](#design)
+  - [Colour Scheme](#colour-scheme)
+  - [Typography](#typography)
+  - [Wireframes](#wireframes)
+
 ## UX Design
 
-- Color Palette
+- Colour Scheme
 
   - The colour palette of Bonsai Hive is inspired by nature and the calming tones often found in bonsai environments. The goal was to create a warm, earthy feel that reflects the peaceful and organic spirit of bonsai art.
     - #385212 – Deep olive green used as the main background colour. Evokes the richness of soil and deep foliage.
@@ -83,6 +90,36 @@ Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is 
     - Key: fas fa-key
 
 - All icons are sourced from the free [Font Awesome](https://fontawesome.com/) library and used consistently to represent their respective functions throughout the site.
+
+### Wireframes
+
+#### Desktop
+
+These views are only visible to users who are logged in.
+
+[Posts Page](docs/readme-images/Posts_page.png)
+
+[Feed Page](docs/readme-images/Feed_page.png)
+
+[Liked page](docs/readme-images/Liked_page.png)
+
+[Events Page](docs/readme-images/Events_page.png)
+
+[My Profile Page](docs/readme-images/my_profile_page.png)
+
+These views are only visible to users who are not logged in.
+
+[Home Page](docs/readme-images/Home_page.png)
+
+[Sign in](docs/readme-images/Signin_page.png)
+
+[Signup](docs/readme-images/Signup_page.png)
+
+These views are visible to all users whether logged in or not.
+
+[Reviews Page](docs/readme-images/Reviews_page.png)
+
+[Contact](docs/readme-images/Contact_page.png)
 
 ## Features
 

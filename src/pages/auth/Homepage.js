@@ -1,11 +1,11 @@
-import React from 'react';
-import { useRedirect } from '../../hooks/useRedirect';
+import React from "react";
+import { useRedirect } from "../../hooks/useRedirect";
 
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 
-import styles from '../../styles/Homepage.module.css';
+import styles from "../../styles/Homepage.module.css";
 
 const Homepage = () => {
   useRedirect();
@@ -21,9 +21,10 @@ const Homepage = () => {
             <hr className={styles.SecondLine} />
             <div className={styles.Description}>
               <p>
-                Bonsai Hive is a dedicated community for bonsai lovers in West Sussex.
-                Share your bonsai photos, exchange tips, and connect with local enthusiasts.
-                Discover new styles, follow artists, and grow your bonsai network here.
+                Bonsai Hive is a dedicated community for bonsai lovers in West
+                Sussex. Share your bonsai photos, exchange tips, and connect
+                with local enthusiasts. Discover new styles, follow artists, and
+                grow your bonsai network here.
               </p>
             </div>
           </div>
