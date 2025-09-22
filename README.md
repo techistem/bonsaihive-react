@@ -378,7 +378,6 @@ The links that are visible to authenticated users when logged in are:
 
 - Presents an easy-to-understand landing page to welcome new and returning users, describing the site's fundamental objectives and motivating them to join by registering or checking out the general feed.
 
-<br />
 <details>
 <summary> Home Page Screenshot (Desktop) </summary>
 
@@ -390,8 +389,7 @@ The links that are visible to authenticated users when logged in are:
 
 ![Home Page Screenshot (Mobile)](docs/readme-images/home-mobile.png)
 
-</details> 
-<br />
+</details>
 
 ### Posts
 
@@ -402,7 +400,6 @@ The Posts page allows users to browse all content submitted by members of the bo
 
 The page also features **infinite scrolling**, so new posts load automatically as the user scrolls down, providing a seamless browsing experience without pagination.
 
-<br />
 <details>
 <summary>Posts Page Screenshot (Desktop)</summary>
 
@@ -415,7 +412,6 @@ The page also features **infinite scrolling**, so new posts load automatically a
 ![Posts Page Screenshot (Mobile)](docs/readme-images/posts-mobile.png)
 
 </details>
-<br />
 
 ### Feed
 
@@ -429,7 +425,6 @@ This separation makes it easy for users to find the content they want.
 
 Additionally, the feed implements infinite scrolling, meaning new posts load automatically as the user scrolls down. This eliminates the need for pagination controls, providing a smooth and modern browsing experience.
 
-<br />
 <details>
 <summary> Feed Screenshot (Desktop) </summary>
 
@@ -441,8 +436,165 @@ Additionally, the feed implements infinite scrolling, meaning new posts load aut
 
 ![Feed Screenshot (Mobile)](docs/readme-images/feed-mobile.png)
 
-</details> 
-<br />
+</details>
+
+### Likes
+
+The **Likes** page allows users to view all posts they have liked across the bonsaiHive platform. This feature makes it easy for users to revisit and engage with content they have previously appreciated.
+
+- Displays a **personalized list** of posts that the user has liked
+- Each liked post shows details such as **author, content, and total likes**
+- Helps users **quickly find and re-engage** with their favorite content
+
+<details>
+<summary>Likes Page Screenshot (Desktop)</summary>
+
+![Likes Page Screenshot (Desktop)](docs/readme-images/likes-desktop.png)
+
+</details>
+<details>
+<summary>Likes Page Screenshot (Mobile)</summary>
+
+![Likes Page Screenshot (Mobile)](docs/readme-images/likes-mobile.png)
+
+</details>
+
+### Events
+
+The **Events** feature allows users to create and participate in community activities within bonsaiHive. This page helps members connect through shared interests such as workshops, discussions, and live sessions.
+
+- Users can **create new events** by adding a title, description, date, and location
+- A **clean, organized list** displays all upcoming events in chronological order
+- Each event shows details such as **time, and location**
+- Users can browse events to **stay updated and get involved** in the community
+
+<details>
+<summary>Events Page Screenshot (Desktop)</summary>
+
+![Events Page Screenshot (Desktop)](docs/readme-images/events-desktop.png)
+
+</details>
+<details>
+<summary>Events Page Screenshot (Mobile)</summary>
+
+![Events Page Screenshot (Mobile)](docs/readme-images/events-mobile.png)
+
+</details>
+
+### My Profile
+
+The **My Profile** page allows users to manage and personalize their bonsaiHive account. This section ensures that every member has control over their own information and community presence.
+
+- Users can **update personal details** such as username, password, and profile picture
+- Displays a summary of **user activity** (posts, likes, events)
+- Allows browsing of **followers and following lists**
+
+<details>
+<summary>My Profile Page Screenshot (Desktop)</summary>
+
+![My Profile Page Screenshot (Desktop)](docs/readme-images/profile-desktop.png)
+
+</details>
+
+<details>
+<summary>My Profile Page Screenshot (Mobile)</summary>
+
+![My Profile Page Screenshot (Mobile)](docs/readme-images/profile-mobile.png)
+
+</details>
+
+<details>
+<summary>Edit Profile Screenshot (Desktop)</summary>
+
+![Edit Profile Screenshot (Desktop)](docs/readme-images/profile-desktop2.png)
+
+</details>
+
+<details>
+<summary>Edit Profile Screenshot-2 (Desktop)</summary>
+
+![Edit Profile Screenshot-2 (Desktop)](docs/readme-images/profile-desktop3.png)
+
+</details>
+
+<details>
+<summary>Edit Profile Screenshot-2 (Mobile)</summary>
+
+![Edit Profile Screenshot-2 (Mobile)](docs/readme-images/profile-mobile2.png)
+
+</details>
+
+<details>
+<summary>Change Username Screenshot (Desktop)</summary>
+
+![Change Username Screenshot (Desktop)](docs/readme-images/username-desktop.png)
+
+</details>
+
+<details>
+<summary>Change Username Screenshot (Mobile)</summary>
+
+![Change Username Screenshot (Mobile)](docs/readme-images/username-mobile.png)
+
+</details>
+
+<details>
+<summary>Change Password Screenshot (Desktop)</summary>
+
+![Change Password Screenshot (Desktop)](docs/readme-images/password-desktop.png)
+
+</details>
+
+<details>
+<summary>Change Password Screenshot (Mobile)</summary>
+
+![Change Password Screenshot (Mobile)](docs/readme-images/password-mobile.png)
+
+</details>
+
+### Reviews
+
+The **Reviews** page allows all visitors — whether signed in or not — to view general feedback about bonsaiHive. This feature provides transparency and helps showcase how the community values the platform.
+
+- Displays **star ratings (1–5 stars)** given by users about the bonsaiHive platform
+- Shows **general written reviews** that reflect the overall experience
+- Both signed-in and signed-out users can **browse all reviews**
+- Helps build **trust and credibility** for new visitors before joining the community
+
+<details>
+<summary>Reviews Page Screenshot (Desktop)</summary>
+
+![Reviews Page Screenshot (Desktop)](docs/readme-images/reviews-desktop.png)
+
+</details>
+<details>
+<summary>Reviews Page Screenshot (Mobile)</summary>
+
+![Reviews Page Screenshot (Mobile)](docs/readme-images/reviews-mobile.png)
+
+</details>
+
+### Contact
+
+The **Contact** page allows users and visitors to get in touch with the bonsaiHive team for support, suggestions, or general inquiries. This feature ensures smooth communication between the community and platform administrators.
+
+- Users can **submit messages** using a simple contact form
+- Includes fields for **name, email, subject, and message**
+- Both signed-in and signed-out users can **reach out to the team**
+- Ensures timely responses and **effective community support**
+
+<details>
+<summary>Contact Page Screenshot (Desktop)</summary>
+
+![Contact Page Screenshot (Desktop)](docs/readme-images/contact-desktop.png)
+
+</details>
+<details>
+<summary>Contact Page Screenshot (Mobile)</summary>
+
+![Contact Page Screenshot (Mobile)](docs/readme-images/contact-mobile.png)
+
+</details>
 
 ### Future Features
 
@@ -476,60 +628,3 @@ There are several features that would further improve this application. With mor
 
 - **Accessibility**
   - The application is designed to be inclusive, following accessibility standards such as screen reader compatibility and providing alternative text for images to support all users.
-
-## Design Process
-
-- The full process for planning and setting up the project is outlined in the README for the [bonsaiHive REST API](https://github.com/techistem/bonsaiHive_P5)
-
-### User Stories
-
-<hr>
-
-- At the beginning of the project, user stories were outlined to define the core functionality from the user's perspective. These user stories were grouped under five key EPICs and developed iteratively.
-
-- The initial planning was done using a spreadsheet where each user story was mapped to its corresponding EPIC and broken down into technical tasks.
-
-- All user stories can be viewed in the user-stories pdf version of the spreadsheet
-
-# Agile Methodology
-
-## Overview
-
-An agile methodology was used to develop this project, using iterations on a kanban board.
-GitHub projects was used to facilitate the agile development:
-<a href="https://github.com/users/techistem/projects/20/views/1" target="_blank">bonsaihive-react Project</a>
-
-<br />
-
-## Specific Implementation and Breakdown of Themes
-
-To ensure structured, user-centered development, the project was organized into five main EPICs, each representing a key user experience area. These EPICs were broken down into detailed User Stories, which were managed on a GitHub Kanban board with columns for To Do, In Progress, and Done. Development progressed iteratively, following Agile principles and utilizing the MoSCoW prioritization method (Must Have, Should Have, Could Have, Won’t Have).
-
-The five EPICs and their focus areas are as follows:
-
-1. Navigation & Authentication
-   Users can securely sign up, log in, and navigate the site.
-
-Conditional navigation is implemented (e.g., NavBar updates based on login status).
-
-Features include routing, avatar display, and token refresh for session handling.
-
-2. Posts – Create, View & Interact
-   Users can create new posts, view individual posts, and engage by liking them.
-
-This encourages user participation and content sharing.
-
-3. Posts Page – Discovery & Browsing
-   Users can explore content using filters such as recent posts, liked posts, and posts from followed users.
-
-Infinite scrolling is implemented to enhance content discovery and browsing experience.
-
-4. Post Page – Detail & Comments
-   Users can view detailed post content and interact through comments.
-
-Commenting includes creating, editing, deleting, and viewing timestamped feedback.
-
-5. Profile Page – Users & Relationships
-   Users can manage their profiles, update credentials, and track activity.
-
-Features include viewing other users’ profiles, following/unfollowing, and viewing user stats (such as most followed).
