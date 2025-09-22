@@ -123,6 +123,8 @@ These views are visible to all users whether logged in or not.
 
 #### Mobile
 
+These views are only visible to users who are logged in.
+
 [Posts Page](docs/readme-images/mobile_posts_page.png)
 
 [Feed Page](docs/readme-images/mobile_feed_page.png)
