@@ -28,33 +28,33 @@ Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is 
 
 ## Contents
 
-- [Design](#design)
+- [UX Design](#design)
   - [Colour Scheme](#colour-scheme)
   - [Typography](#typography)
   - [Wireframes](#wireframes)
 
 ## UX Design
 
-- Colour Scheme
+### Colour Scheme
 
-  - The colour palette of Bonsai Hive is inspired by nature and the calming tones often found in bonsai environments. The goal was to create a warm, earthy feel that reflects the peaceful and organic spirit of bonsai art.
-    - #385212 – Deep olive green used as the main background colour. Evokes the richness of soil and deep foliage.
-    - #A2AD63 – Muted green-yellow used for navigation bars and buttons. Bright enough for attention, but still grounded in nature.
-    - #e7e0ca – Soft cream tone used for card backgrounds. Adds warmth and improves readability against darker tones.
-    - #d9cba3 – Pale golden beige used in card highlights and accents. Suggests natural light and subtle detail.
-  - While these colours were consistently used across the site, minor variations and adjustments were made where needed to maintain visual harmony and contrast.
+- The colour palette of Bonsai Hive is inspired by nature and the calming tones often found in bonsai environments. The goal was to create a warm, earthy feel that reflects the peaceful and organic spirit of bonsai art.
+  - #385212 – Deep olive green used as the main background colour. Evokes the richness of soil and deep foliage.
+  - #A2AD63 – Muted green-yellow used for navigation bars and buttons. Bright enough for attention, but still grounded in nature.
+  - #e7e0ca – Soft cream tone used for card backgrounds. Adds warmth and improves readability against darker tones.
+  - #d9cba3 – Pale golden beige used in card highlights and accents. Suggests natural light and subtle detail.
+- While these colours were consistently used across the site, minor variations and adjustments were made where needed to maintain visual harmony and contrast.
 
-  ![Colour Palette for the Application](docs/readme-images/colour-palette.png)
+![Colour Palette for the Application](docs/readme-images/colour-palette.png)
 
-- Typography
+### Typography
 
-  - A system font stack was used to ensure fast loading and consistent rendering across different devices and platforms.
+- A system font stack was used to ensure fast loading and consistent rendering across different devices and platforms.
 
-    - The primary font stack includes:
+  - The primary font stack includes:
 
-      - apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
+    - apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
 
-    - This approach ensures that the application looks clean and modern while minimizing dependency on external font files.
+  - This approach ensures that the application looks clean and modern while minimizing dependency on external font files.
 
 - For code elements, a monospaced font stack is used:
 
@@ -120,6 +120,32 @@ These views are visible to all users whether logged in or not.
 [Reviews Page](docs/readme-images/Reviews_page.png)
 
 [Contact](docs/readme-images/Contact_page.png)
+
+#### Mobile
+
+[Posts Page](docs/readme-images/mobile_posts_page.png)
+
+[Feed Page](docs/readme-images/mobile_feed_page.png)
+
+[Liked page](docs/readme-images/mobile_liked_page.png)
+
+[Events Page](docs/readme-images/mobile_events_page.png)
+
+[My Profile Page](docs/readme-images/mobile_my_profile_page.png)
+
+These views are only visible to users who are not logged in.
+
+[Home Page](docs/readme-images/mobile_home_page.png)
+
+[Sign in](docs/readme-images/mobile_signin_page.png)
+
+[Signup](docs/readme-images/mobile_signup_page.png)
+
+These views are visible to all users whether logged in or not.
+
+[Reviews Page](docs/readme-images/mobile_reviews_page.png)
+
+[Contact](docs/readme-images/mobile_contact_page.png)
 
 ## Features
 

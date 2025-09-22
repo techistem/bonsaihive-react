@@ -15,8 +15,7 @@ function EventCardsSidebar() {
         const { data } = await axiosReq.get("/events/?ordering=start_time");
         setEvents(data.results);
         setHasLoaded(true);
-      } catch (err) {
-      }
+      } catch (err) {}
     };
 
     fetchEvents();
@@ -28,21 +27,26 @@ function EventCardsSidebar() {
       {!hasLoaded ? (
         <p>Loading...</p>
       ) : events.length ? (
-        <Row xs={2} md={1} className="g-4">
-  {events.map((event) => (
-    <Col key={event.id}>
-      <Card as={Link} to={`/events/${event.id}`} className={styles.Card}>
-        <Card.Body className={styles.cardBody}>
-          <Card.Title className={styles.cardTitle}>{event.title}</Card.Title>
-          <Card.Text className={styles.cardDate}>
-            {new Date(event.start_time).toLocaleDateString()}
-          </Card.Text>
-        </Card.Body>
-      </Card>
-    </Col>
-  ))}
-</Row>
-
+        <Row xs={1} md={1} className="g-4">
+          {events.map((event) => (
+            <Col key={event.id}>
+              <Card
+                as={Link}
+                to={`/events/${event.id}`}
+                className={styles.Card}
+              >
+                <Card.Body className={styles.cardBody}>
+                  <Card.Title className={styles.cardTitle}>
+                    {event.title}
+                  </Card.Title>
+                  <Card.Text className={styles.cardDate}>
+                    {new Date(event.start_time).toLocaleDateString()}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
       ) : (
         <p>No upcoming events found.</p>
       )}
