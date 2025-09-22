@@ -45,6 +45,8 @@ Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is 
   - [Future Goals](#future-goals)
 
 - [User Stories](#user-stories)
+- [Agile Methodology](#agile-methodology)
+
 - [Features](#features)
   - [Navigation Bar](#navigation-bar)
     - [Navigation Bar (logged in)](#navigation-bar-logged-in)
@@ -261,7 +263,25 @@ Looking ahead, bonsaiHive plans to:
 
 - Grow beyond West Sussex to connect bonsai communities in other regions.
 
-XXXXXXXXXXXXXXXXXXXXXXXX
+## User Stories
+
+One of the first tasks was to map out user stories for the project which could be mapped against EPICS and broken down into tasks. These were initially worked through in an excel spreadsheet and worked into a rough working order based on the Moments walkthrough project build.
+
+![Screenshot of user-stories spreadsheet](docs/readme-images/userstories.png)
+
+## Agile Methodology
+
+Following the principles outlined in the Code Institute Agile Working units, I created a GitHub Kanban Board and, using Project Issues, Milestones, and Labels, mapped out the bonsaiHive user stories into the following categories:
+
+- **EPICS**: Overarching blocks of work broken down into USER STORY issues
+- **To Do**: USER STORY issues with acceptance criteria and tasks
+- **In Progress**: USER STORY issues currently in progress during each Milestone or 'Sprint'
+- **Completed**: USER STORY issues that have been completed
+- **BUGS**: BUG issues that define a particular problem encountered during the project and how it was resolved
+
+![Screenshot of GitHub Kanban Board](docs/readme-images/kanban-board.png)
+
+You can view the ongoing work through the [GitHub Issues](https://github.com/techistem/bonsaihive-react/issues) for this project, as well as the [KANBAN board](https://github.com/users/techistem/projects/20).
 
 ## Features
 
