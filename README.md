@@ -393,6 +393,30 @@ The links that are visible to authenticated users when logged in are:
 </details> 
 <br />
 
+### Posts
+
+The Posts page allows users to browse all content submitted by members of the bonsaiHive community. Posts are displayed in a **clean, scrollable list** that makes it easy to read and navigate.
+
+- Users can explore content **from all users across the site**, not limited to the ones they follow.
+- Each post shows key details such as author, content, likes, and interactions.
+
+The page also features **infinite scrolling**, so new posts load automatically as the user scrolls down, providing a seamless browsing experience without pagination.
+
+<br />
+<details>
+<summary>Posts Page Screenshot (Desktop)</summary>
+
+![Posts Page Screenshot (Desktop)](docs/readme-images/posts-desktop.png)
+
+</details>
+<details>
+<summary>Posts Page Screenshot (Mobile)</summary>
+
+![Posts Page Screenshot (Mobile)](docs/readme-images/posts-mobile.png)
+
+</details>
+<br />
+
 ### Feed
 
 The feed offers users a convenient way to browse through multiple posts displayed in a simple, scrollable list. On the bonsaiHive page, this feed specifically shows posts from users they follow.
@@ -409,13 +433,13 @@ Additionally, the feed implements infinite scrolling, meaning new posts load aut
 <details>
 <summary> Feed Screenshot (Desktop) </summary>
 
-![Feed Screenshot (Desktop)](/readme-assets/features/feed-desktop.webp)
+![Feed Screenshot (Desktop)](docs/readme-images/feed-desktop.png)
 
 </details> 
 <details>
 <summary> Feed Screenshot (Mobile) </summary>
 
-![Feed Screenshot (Mobile)](/foto eklenecek)
+![Feed Screenshot (Mobile)](docs/readme-images/feed-mobile.png)
 
 </details> 
 <br />
