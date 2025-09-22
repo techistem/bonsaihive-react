@@ -28,12 +28,60 @@ Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is 
 
 ## Contents
 
-- [UX Design](#design)
+- [Design](#design)
+
   - [Colour Scheme](#colour-scheme)
   - [Typography](#typography)
   - [Wireframes](#wireframes)
 
-## UX Design
+- [User Experience (UX)](#user-experience-ux)
+
+  - [Site Purpose](#site-purpose)
+  - [Site Goal](#site-goal)
+  - [Audience](#audience)
+  - [Communication](#communication)
+  - [Current User Goals](#current-user-goals)
+  - [New User Goals](#new-user-goals)
+  - [Future Goals](#future-goals)
+
+- [User Stories](#user-stories)
+- [Features](#features)
+  - [Navigation Bar](#navigation-bar)
+    - [Navigation Bar (logged in)](#navigation-bar-logged-in)
+    - [Navigation Bar (Admin)](#navigation-bar-admin-user)
+  - [Footer](#footer)
+  - [Home Page](#home-page)
+  - [About Page](#about-page)
+  - [Contact us Page](#contact-page)
+  - [Listings Page](#listings-page)
+  - [Listing Page](#listing-page)
+    - [Images modal](#images-modal)
+  - [Add Listing Page](#add-listing-page)
+  - [Edit Listing Page](#edit-listing-page)
+  - [Messages Page](#messages-page)
+    - [Message Page](#message-page)
+  - [Sign in Page](#sign-in-page)
+  - [Signup Page](#sign-up-page)
+  - [Wishlist Page](#wishlist-page)
+  - [Profile Page](#profile-page)
+    - [Edit Profile](#edit-profile-page)
+    - [Change username](#change-username-page)
+    - [Change password](#change-password-page)
+  - [403 error Page](#403-error-page)
+  - [404 error Page](#404-error-page)
+- [Reusable Components](#reusable-components)
+- [Technologies Used](#technologies-used)
+  - [Languages Used](#languages-used)
+  - [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
+- [Deployment and Local Development](#deployment-and-local-development)
+  - [Local Development](#local-development)
+    - [How to fork](#how-to-fork)
+    - [How to clone](#how-to-clone)
+    - [Deployment](#deployment)
+- [Testing](#testing)
+- [Credits](#credits)
+
+## Design
 
 ### Colour Scheme
 
@@ -148,6 +196,72 @@ These views are visible to all users whether logged in or not.
 [Reviews Page](docs/readme-images/mobile_reviews_page.png)
 
 [Contact](docs/readme-images/mobile_contact_page.png)
+
+## User Experience (UX)
+
+### Site Purpose
+
+bonsaiHive is a dedicated community platform connecting bonsai enthusiasts across West Sussex. Unlike general gardening forums or broad social networks, it offers a focused and vibrant space where bonsai knowledge, creativity, and local connections thrive. The site’s purpose is to make sharing, learning, and engaging around bonsai art seamless and rewarding.
+
+### Site Goal
+
+The overarching goal of bonsaiHive is to become a trusted and engaging digital hub for bonsai lovers. By fostering interaction and knowledge exchange, the platform strives to strengthen both the practice of bonsai cultivation and the bonds within the local community.
+
+### Audience
+
+The target audience includes bonsai enthusiasts of all levels — from beginners taking their first steps into the art, to experienced growers and collectors. Additionally, the site appeals to individuals seeking local meetups, workshops, and community-driven events.
+
+### Communication
+
+- Current Communication
+
+bonsaiHive communicates through user-generated posts, photos, care tips, and profiles. Its intuitive interface encourages members to actively share and explore content while keeping information clear and visually engaging. For direct inquiries or support, users can reach out to the admin via the Contact Us form, ensuring an open and accessible communication channel with the platform.
+
+- Future Communication
+
+As the platform evolves, bonsaiHive may introduce additional communication features such as in-platform notifications, event reminders, or direct messaging between members. These enhancements would further strengthen engagement and connectivity within the community.
+
+### Current User Goals
+
+- Existing users on bonsaiHive aim to:
+
+- Share photos of their bonsai trees,
+
+- Exchange care tips and cultivation techniques,
+
+- Discover and explore different bonsai styles,
+
+- Follow and interact with fellow bonsai artists,
+
+- Stay informed about local meetups and events.
+
+### New User Goals
+
+New users should be able to:
+
+- Sign up easily and access community features,
+
+- Quickly understand how to share posts, comment, and follow others,
+
+- Make their first contribution (e.g., posting a bonsai photo),
+
+- Start connecting with local bonsai enthusiasts.
+
+### Future Goals
+
+Looking ahead, bonsaiHive plans to:
+
+- Integrate more local event features,
+
+- Expand search and discovery tools for posts and users,
+
+- Add structured bonsai care guides and style libraries,
+
+- Enhance the mobile experience,
+
+- Grow beyond West Sussex to connect bonsai communities in other regions.
+
+XXXXXXXXXXXXXXXXXXXXXXXX
 
 ## Features
 
