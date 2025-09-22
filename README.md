@@ -303,7 +303,7 @@ This project follows a modular structure by creating and reusing React component
 
 - This consistent branding is applied throughout the site, including the navbar, browser tabs, and other key areas.
 
-![bonsaiHive favicon in use](docs/readme-images/favicon-16x16.png)
+![bonsaiHive favicon in use](docs/readme-images/favicon-16x16-.png)
 
 **Navigation Bar (components/NavBar.js)**
 
@@ -311,16 +311,20 @@ The navigation bar features the Bonsai Hive logo with a natural green background
 
 Links are tailored based on user authentication status:
 
-Logged-out users see links to Reviews, Contact, Sign in, and Sign up pages.
+Logged-out users see links to Home, Reviews, Contact, Sign in, and Sign up pages.
+
+![bonsaiHive nav bar for logged out users](docs/readme-images/logged-out-navbar.png)
 
 Logged-in users have access to dropdown menus for Explore (Posts, Feed, Liked, Events) and My Bonsai Hive (My Profile, Reviews, Contact, Sign out).
 
+![bonsaiHive nav bar for logged in users](docs/readme-images/logged-in-navbar.png)
+
 The navbar is fully responsive, collapsing navigation links into a hamburger menu on smaller screens (<768px) with consistent background and styled dropdown items for a clean, user-friendly interface.
+
+![bonsaiHive nav bar with collapsed menu](docs/readme-images/collapsed-navbar.png)
 
 Usage:
 Used throughout the entire application, fixed at the top with a height of 108px to ensure easy and consistent access.
-
-![bonsaiHive nav bar with collapsed menu](docs/readme-images/collapsed-navbar.png)
 
 - **Logged Out Links**
 
@@ -349,6 +353,13 @@ The links that are visible to authenticated users when logged in are:
   - Liked – See posts you’ve liked.
   - Events – Discover upcoming community events.
 
+<details>
+  <summary>Navbar Screenshot Authorised (Desktop)</summary>
+
+![Navbar Screenshot Authorised (Desktop)](docs/readme-images/logged-in-navbarr.png)
+
+</details>
+
 - My Bonsai Hive
 
   - My Profile – View and edit your user profile and posts.
@@ -356,11 +367,10 @@ The links that are visible to authenticated users when logged in are:
   - Contact – Get in touch with support or leave feedback.
   - Sign Out – Log out of your account.
 
-  <br />
-  <details>
-  <summary> Navbar Screenshot Authorised (Desktop) </summary>
+<details>
+  <summary>Navbar Screenshot Authorised (Desktop)</summary>
 
-  ![bonsaiHive nav bar for logged in users(Desktop)](docs/readme-images/readme-images:logged-in-navbar.png)
+![Navbar Screenshot Authorised (Desktop)](docs/readme-images/logged---in-navbar.png)
 
 </details>
 
