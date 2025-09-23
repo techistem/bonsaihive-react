@@ -46,31 +46,20 @@ Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is 
 
 - [User Stories](#user-stories)
 - [Agile Methodology](#agile-methodology)
-
 - [Features](#features)
+
+  - [Logo and Favicon](#logo-and-favicon)
   - [Navigation Bar](#navigation-bar)
-    - [Navigation Bar (logged in)](#navigation-bar-logged-in)
-    - [Navigation Bar (Admin)](#navigation-bar-admin-user)
-  - [Footer](#footer)
   - [Home Page](#home-page)
-  - [About Page](#about-page)
-  - [Contact us Page](#contact-page)
-  - [Listings Page](#listings-page)
-  - [Listing Page](#listing-page)
-    - [Images modal](#images-modal)
-  - [Add Listing Page](#add-listing-page)
-  - [Edit Listing Page](#edit-listing-page)
-  - [Messages Page](#messages-page)
-    - [Message Page](#message-page)
-  - [Sign in Page](#sign-in-page)
-  - [Signup Page](#sign-up-page)
-  - [Wishlist Page](#wishlist-page)
-  - [Profile Page](#profile-page)
+  - [Posts Page](#posts-page)
+  - [Feed](#feed)
+  - [Likes](#likes)
+  - [Events](#events)
+  - [My Profile Page](#my-profile-page)
     - [Edit Profile](#edit-profile-page)
-    - [Change username](#change-username-page)
-    - [Change password](#change-password-page)
-  - [403 error Page](#403-error-page)
-  - [404 error Page](#404-error-page)
+    - [Change username](#change-username)
+    - [Change password](#change-password)
+
 - [Reusable Components](#reusable-components)
 - [Technologies Used](#technologies-used)
   - [Languages Used](#languages-used)
@@ -285,19 +274,11 @@ You can view the ongoing work through the [GitHub Issues](https://github.com/tec
 
 ## Features
 
-### Reusable React Components
-
-<hr>
-
-This project follows a modular structure by creating and reusing React components to efficiently build the front-end. Below is an overview of reusable components and site-wide features, including their descriptions and how they are utilized throughout the application.
-
-### Visual Identity
-
-**Logo & Favicon (site-wide)**
+### Logo and Favicon
 
 - The application uses a single custom-designed image as both the logo and favicon.
 
-- This image features a stylized bonsai tree created in Canva, incorporating the colour palette: #eff6dd, #fab297, #ff8249, #ff6540, and #ff4536.
+- This image features a stylized bonsai tree created in [Canva](https://www.canva.com/en_gb/), incorporating the colour palette: #eff6dd, #fab297, #ff8249, #ff6540, and #ff4536.
 
 - The favicon was generated from this logo using [favicon](https://favicon.io/) to ensure compatibility across browsers and devices.
 
@@ -305,7 +286,7 @@ This project follows a modular structure by creating and reusing React component
 
 ![bonsaiHive favicon in use](docs/readme-images/favicon-16x16-.png)
 
-**Navigation Bar (components/NavBar.js)**
+### Navigation Bar
 
 The navigation bar features the Bonsai Hive logo with a natural green background (#A2AD63), providing clear and consistent branding across the site. Navigation links are styled in a light cream color (#F5F5F0) by default, switching to a pale gold (#D9CBA3) when active or hovered, improving visual feedback.
 
@@ -326,8 +307,6 @@ The navbar is fully responsive, collapsing navigation links into a hamburger men
 Usage:
 Used throughout the entire application, fixed at the top with a height of 108px to ensure easy and consistent access.
 
-- **Logged Out Links**
-
 The links visible to users who are not signed in include:
 
 - Reviews — Access the reviews page to see user feedback.
@@ -341,6 +320,7 @@ The links visible to users who are not signed in include:
 ![Navbar Screenshot Unauthorised (Desktop)](docs/readme-images/logged-out-navbar.png)
 
 </details>
+<br/>
 
 - **Logged In Links**
 
@@ -374,7 +354,7 @@ The links that are visible to authenticated users when logged in are:
 
 </details>
 
-### Home
+### Home Page
 
 - Presents an easy-to-understand landing page to welcome new and returning users, describing the site's fundamental objectives and motivating them to join by registering or checking out the general feed.
 
@@ -391,7 +371,7 @@ The links that are visible to authenticated users when logged in are:
 
 </details>
 
-### Posts
+### Posts Page
 
 The Posts page allows users to browse all content submitted by members of the bonsaiHive community. Posts are displayed in a **clean, scrollable list** that makes it easy to read and navigate.
 
@@ -481,7 +461,7 @@ The **Events** feature allows users to create and participate in community activ
 
 </details>
 
-### My Profile
+### My Profile Page
 
 The **My Profile** page allows users to manage and personalize their bonsaiHive account. This section ensures that every member has control over their own information and community presence.
 
@@ -502,6 +482,8 @@ The **My Profile** page allows users to manage and personalize their bonsaiHive 
 ![My Profile Page Screenshot (Mobile)](docs/readme-images/profile-mobile.png)
 
 </details>
+
+#### Edit Profile Page
 
 <details>
 <summary>Edit Profile Screenshot (Desktop)</summary>
@@ -524,6 +506,8 @@ The **My Profile** page allows users to manage and personalize their bonsaiHive 
 
 </details>
 
+#### Change username
+
 <details>
 <summary>Change Username Screenshot (Desktop)</summary>
 
@@ -537,6 +521,8 @@ The **My Profile** page allows users to manage and personalize their bonsaiHive 
 ![Change Username Screenshot (Mobile)](docs/readme-images/username-mobile.png)
 
 </details>
+
+#### Change Password
 
 <details>
 <summary>Change Password Screenshot (Desktop)</summary>
