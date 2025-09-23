@@ -59,6 +59,10 @@ Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is 
     - [Edit Profile](#edit-profile-page)
     - [Change username](#change-username)
     - [Change password](#change-password)
+  - [Reviews](#reviews)
+  - [Contact](#contact)
+  - [Future Features](#future-features)
+  - [Other Features](other-features)
 
 - [Reusable Components](#reusable-components)
 - [Technologies Used](#technologies-used)
