@@ -809,3 +809,7 @@ If you don't already have an account to Heroku, create one [here](https://www.he
   - Search for the Github repository name.
   - Then click "connect".
   - Scroll down and click "Deploy Branch".
+
+## Testing
+
+Please see [Testing](TESTING.md)
