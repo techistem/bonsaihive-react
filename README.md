@@ -695,3 +695,32 @@ There are several features that could further improve this application. With mor
 **utils.js :** provides functions for all components that use Infinite Scroll.
 
 **[avatar.js](docs/readme-images/avatar.png) -** The Avatar component shows a user’s avatar next to their profile link in the navbar or alongside their profile details, such as comments. It maintains a consistent size and layout across bonsaiHive. You can pass an image URL via the src prop, adjust the size with height (default 45px), and optionally display text next to the avatar.
+
+## Technologies Used
+
+### Languages Used
+
+HTML, CSS, JS
+
+### Frameworks, Libraries & Programs Used
+
+- [React](https://legacy.reactjs.org/docs/getting-started.html) Javascript library for building the component based UI and avoiding having to refresh to display dynamic content
+- [Node](https://nodejs.org/en) Package manager used to install dependencies
+- [ESLint](https://eslint.org/) Linter for error checking and syntax analysis
+- [React Bootstrap](https://react-bootstrap-v4.netlify.app/) CSS framework for styled components
+- [Axios](https://axios-http.com/) Promise based http client for making http requests to the backend API
+- [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) Used to easily load extra content rather than paginating pages, for a better UX
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start) Used to dynamically load pages and aid site navigation for the user.
+- [jwt-decode](https://www.npmjs.com/package/jwt-decode) A browser library that helps decoding JWT's token
+- [Cloudinary](https://cloudinary.com/) - To host images
+
+#### Programs Used
+
+- [GitHub](https://github.com/) - To save and store files for the website.
+- [VSCode](https://code.visualstudio.com/) - Code editor used for local development.
+- [Balsamiq](https://balsamiq.com/) - Used to create wireframes.
+- [AmiResponsive](https://ui.dev/amiresponsive) - To test how the website looks on different screen sizes (mobile, tablet, desktop).
+- [Google Developer Tools](https://developer.chrome.com/docs/) - To test features, resposiveness and stylilng.
+- [Favicon](https://favicon.io/) - To create favicon.
+- [Coolors](https://coolors.co/) - To create palette image to README.
+- [Canva](https://www.canva.com/) - To create the logo
