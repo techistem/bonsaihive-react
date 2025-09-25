@@ -46,6 +46,7 @@ Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is 
 
 - [User Stories](#user-stories)
 - [Agile Methodology](#agile-methodology)
+- [Data](#data)
 - [Features](#features)
 
   - [Logo and Favicon](#logo-and-favicon)
@@ -276,6 +277,32 @@ Following the principles outlined in the Code Institute Agile Working units, I c
 ![Screenshot of GitHub Kanban Board](docs/readme-images/kanban-board.png)
 
 You can view the ongoing work through the [GitHub Issues](https://github.com/techistem/bonsaihive-react/issues) for this project, as well as the [KANBAN board](https://github.com/users/techistem/projects/20).
+
+## Data
+
+**_Models_**
+
+- The next step was to plan and devise an ERD for each of my database models and a schema to map out and understand the relationships between them. I created an ERD and model schema for the project and the data structured required for the UI to work.
+
+You can view all ERDs and the full schema in the [back-end bonsaiHive API](https://github.com/techistem/bonsaiHive_P5) README.
+
+**_User Authentication_**
+
+Throughout the site, conditional rendering and fetchData filtering methods are used to ensure that the content rendered is accordant with the authentication profile for that user.
+
+There are three main user authentication levels:
+
+- **Casual User**
+  - Any user who visits the site and is not logged in.
+- **Authenticated User**
+  - A user who has signed up to the site and successfully logged in.
+- **Authenticated Admin**
+  - An authenticated user who has been given is_staff status in the api admin dashboard (accessible by superusers only).
+
+In addition to the above general authentication levels:
+
+- **is_owner**
+  - Checks if the current authenticated user is the owner of that particular instance. Conditional rendering is then used to display elements which are only accessible by the instance owner.
 
 ## Features
 
@@ -641,42 +668,30 @@ There are several features that could further improve this application. With mor
 
 ## Reusable Components
 
-[SearchBar.js](docs/readme-images/searchbar.png) - A simple search bar for filtering posts. Used in Posts, Feed, and Liked pages.
+**[SearchBar.js](docs/readme-images/searchbar.png) -** A simple search bar for filtering posts. Used in Posts, Feed, and Liked pages.
 
-- **Dropdown menu** — Provides dropdown options throughout the site.
+**Dropdown menu** — Provides dropdown options throughout the site.
 
-  1. **NavBar dropdowns** (for logged-in users):
+1. **NavBar dropdowns** (for logged-in users):
 
-     - [**Explore**](docs/readme-images/logged-in-navbarr.png) — Links to **Posts**, **Feed**, **Liked**, and **Events** pages.
-     - [**My Bonsai Hive**](docs/readme-images/logged---in-navbar.png) — Links to **My Profile**, **Reviews**, **Contact**, and **Sign out**.
+   - [**Explore**](docs/readme-images/logged-in-navbarr.png) — Links to **Posts**, **Feed**, **Liked**, and **Events** pages.
+   - [**My Bonsai Hive**](docs/readme-images/logged---in-navbar.png) — Links to **My Profile**, **Reviews**, **Contact**, and **Sign out**.
 
-  2. **MoreDropdown.js** (content-specific, owner-only):
+2. **MoreDropdown.js** (content-specific, owner-only):
 
-     - Provides **Edit** and **Delete** options for comments, posts, events, profile items, and reviews.
-     - Displayed only for the **owner** of the content.
+   - Provides [**Edit, Delete**](docs/readme-images/edit-delete.png) options for comments, posts, events, profile items, and reviews.
+   - Displayed only for the **owner** of the content.
 
-     XXXXXXXXXXX
+<br />
 
-ListingFormTextFields.js: displays the input fields for the ListingCreateForm and ListingEditForm.
+**Asset.js :** provides the loading spinner and user avatar components used throughout the site.
 
-ListingHeader.js: displays basic info for a property(listing) and it exists in the Listing, ListingsWishlistPage.
+**axiosDefault.js :** simplifies communication with the backend API.
 
-ListingsWishlistPage.js : to display all the listings, results of listings after a search and the user's wishlist
+**CurrentUserContext.js :** tracks the logged-in status of users to determine which functionality is available to them.
 
-axiosDefault.js : for ease of communication with the backend API.
+**useRedirect.js :** redirects a user to another page if they are not authorized to access the current page.
 
-Asset.js : to supply the loading spinner & user avatar throughout the site.
+**utils.js :** provides functions for all components that use Infinite Scroll.
 
-CurrentUserContext.js : confirm users logged-in status to determine what functionality is available to that user.
-
-useRedirect.js : redirects a user to another page if they are not authorised to be on the page they are trying to access.
-
-utils.js : supplies functionality to all of the components that utilise the Infinite Scroll.
-
-ScrolltoTop.js: scrolls the page to top when user change page.
-
-useFetchListings.js: to fetch listings from the API
-
-useFetchWishlist.js: to fetch user's wishlist from the API
-
-useUserStatus.js: to get user status to determine what functionality is available to that user.
+**[avatar.js](docs/readme-images/avatar.png) -** The Avatar component shows a user’s avatar next to their profile link in the navbar or alongside their profile details, such as comments. It maintains a consistent size and layout across bonsaiHive. You can pass an image URL via the src prop, adjust the size with height (default 45px), and optionally display text next to the avatar.
