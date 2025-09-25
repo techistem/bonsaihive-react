@@ -52,6 +52,7 @@ Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is 
   - [Navigation Bar](#navigation-bar)
   - [Home Page](#home-page)
   - [Posts Page](#posts-page)
+  - [Comments](#comments)
   - [Feed](#feed)
   - [Likes](#likes)
   - [Events](#events)
@@ -62,7 +63,7 @@ Whether you're just starting out or are a seasoned bonsai grower, bonsaiHive is 
   - [Reviews](#reviews)
   - [Contact](#contact)
   - [Future Features](#future-features)
-  - [Other Features](other-features)
+  - [Other Features](#other-features)
 
 - [Reusable Components](#reusable-components)
 - [Technologies Used](#technologies-used)
@@ -397,6 +398,29 @@ The page also features **infinite scrolling**, so new posts load automatically a
 
 </details>
 
+### Comments
+
+### Comments
+
+The Comments feature allows users to engage with posts by leaving feedback, questions, or starting discussions. Comments are displayed directly under each post in a **threaded format**, making it easy to follow conversations.
+
+- Users can **add, edit, and delete** their own comments.
+- Each comment displays the **author’s name, timestamp, and content**.
+- Comments update dynamically, ensuring a smooth interaction without page reloads.
+
+<details>
+<summary>Comments Screenshot (Desktop)</summary>
+
+![Comments Screenshot (Desktop)](docs/readme-images/comments-desktop.png)
+
+</details>
+<details>
+<summary>Comments Screenshot (Mobile)</summary>
+
+![Comments Screenshot (Mobile)](docs/readme-images/comments-mobile.png)
+
+</details>
+
 ### Feed
 
 The feed offers users a convenient way to browse through multiple posts displayed in a simple, scrollable list. On the bonsaiHive page, this feed specifically shows posts from users they follow.
@@ -588,17 +612,13 @@ The **Contact** page allows users and visitors to get in touch with the bonsaiHi
 
 ### Future Features
 
-<hr>
-There are several features that would further improve this application. With more time and resources, I would like to implement:
+There are several features that could further improve this application. With more time and resources, I plan to implement:
 
-- Google Maps integration for events — Allowing users to easily locate event venues on a map.
-- Filtering posts by categories or tags — Enabling users to sort and view posts based on their interests.
-- User nomination system — Allowing users to nominate new events or topics to be added.
-- Improved event management — Features such as RSVP, reminders, and calendar syncing.
+- Google Maps Integration for Events — Allows users to easily locate event venues on a map.
+- Filtering Posts by Categories or Tags — Enables users to sort and view posts based on their interests.
+- Enhanced Event Management — Includes features such as RSVP, reminders, and calendar syncing.
 
 ### Other Features
-
-<hr>
 
 - **Responsive Design**
 
@@ -618,3 +638,45 @@ There are several features that would further improve this application. With mor
 
 - **Accessibility**
   - The application is designed to be inclusive, following accessibility standards such as screen reader compatibility and providing alternative text for images to support all users.
+
+## Reusable Components
+
+[SearchBar.js](docs/readme-images/searchbar.png) - A simple search bar for filtering posts. Used in Posts, Feed, and Liked pages.
+
+- **Dropdown menu** — Provides dropdown options throughout the site.
+
+  1. **NavBar dropdowns** (for logged-in users):
+
+     - [**Explore**](docs/readme-images/logged-in-navbarr.png) — Links to **Posts**, **Feed**, **Liked**, and **Events** pages.
+     - [**My Bonsai Hive**](docs/readme-images/logged---in-navbar.png) — Links to **My Profile**, **Reviews**, **Contact**, and **Sign out**.
+
+  2. **MoreDropdown.js** (content-specific, owner-only):
+
+     - Provides **Edit** and **Delete** options for comments, posts, events, profile items, and reviews.
+     - Displayed only for the **owner** of the content.
+
+     XXXXXXXXXXX
+
+ListingFormTextFields.js: displays the input fields for the ListingCreateForm and ListingEditForm.
+
+ListingHeader.js: displays basic info for a property(listing) and it exists in the Listing, ListingsWishlistPage.
+
+ListingsWishlistPage.js : to display all the listings, results of listings after a search and the user's wishlist
+
+axiosDefault.js : for ease of communication with the backend API.
+
+Asset.js : to supply the loading spinner & user avatar throughout the site.
+
+CurrentUserContext.js : confirm users logged-in status to determine what functionality is available to that user.
+
+useRedirect.js : redirects a user to another page if they are not authorised to be on the page they are trying to access.
+
+utils.js : supplies functionality to all of the components that utilise the Infinite Scroll.
+
+ScrolltoTop.js: scrolls the page to top when user change page.
+
+useFetchListings.js: to fetch listings from the API
+
+useFetchWishlist.js: to fetch user's wishlist from the API
+
+useUserStatus.js: to get user status to determine what functionality is available to that user.
