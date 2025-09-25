@@ -724,3 +724,29 @@ HTML, CSS, JS
 - [Favicon](https://favicon.io/) - To create favicon.
 - [Coolors](https://coolors.co/) - To create palette image to README.
 - [Canva](https://www.canva.com/) - To create the logo
+
+## Deployment and Local Development
+
+### Local Development
+
+When in development:
+run first `nvm use 16.20.2` to use this version of Node
+run `npm start` to start the app
+
+#### How to fork
+
+To fork the repository :
+
+1. Log in (sign up) to GitHub.
+2. Go to the repository for this project [bonsaiHive](https://github.com/techistem/bonsaihive-react)
+3. Click the fork button in the top right corner.
+
+#### How to clone
+
+To clone the repository :
+
+1. Log in (sign up) to GitHub.
+2. Go to the repository for this project [bonsaiHive](https://github.com/techistem/bonsaihive-react)
+3. Click on the code button, select one of the HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
