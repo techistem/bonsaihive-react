@@ -750,3 +750,62 @@ To clone the repository :
 3. Click on the code button, select one of the HTTPS, SSH or GitHub CLI and copy the link shown.
 4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
 5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
+
+### Deployment
+
+The site has been deployed using Heroku. Deployed site [bonsaiHive](https://bonsaihive-react-dbe9685329cb.herokuapp.com/). Follow these steps:
+
+I have used VSCode on MacOS for development, so I'll describe the steps I took.
+
+- Create the repository
+- Open VSCode on MacOS
+- Run the command `npx create-react-app . --use-npm` inside the project directory.
+- After it has finished, run the command `npm start` to check if the app is working locally.
+- Stage, commit, and push your changes:
+  ```bash
+  git add .
+  git commit -m "Initial commit"
+  git push origin main
+  ```
+
+#### Add the Heroku deployment commands
+
+In package.json file, in the “scripts” section, add the following prebuild command:
+
+`"heroku-prebuild": "npm install -g serve",`
+
+This will install a package needed to serve our single page application on heroku
+
+Add a Procfile at the root of the project with the following web command:
+
+`web: serve -s build`
+
+#### Connect to the API
+
+Navigate to the Heroku app of the project DRF-API, and under the Settings tab, add the following configvars:
+
+| KEY               | VALUE                                             |
+| ----------------- | ------------------------------------------------- |
+| CLIENT_ORIGIN     | <https://your-react-app-name.herokuapp.com>\*     |
+| CLIENT_ORIGIN_DEV | <https://gitpod-browser-link.ws-eu54.gitpod.io>\* |
+
+\*Check that the trailing slash \ at the end of both links has been removed.
+
+#### Heroku App
+
+If you don't already have an account to Heroku, create one [here](https://www.heroku.com/).
+
+- Create Heroku app
+
+  - Go to the Heroku dashboard and click the "Create new app" button.
+  - Name the app. Each app name on Heroku has to be unique.
+  - Then select your region.
+  - And then click "Create app".
+
+- In heroku app
+  - Go to the deploy tab.
+  - Choose the deployment method.
+  - Select Github, and confirm to connect to Github.
+  - Search for the Github repository name.
+  - Then click "connect".
+  - Scroll down and click "Deploy Branch".
