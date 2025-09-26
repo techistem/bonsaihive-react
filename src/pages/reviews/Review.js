@@ -14,10 +14,9 @@ const Review = (props) => {
     content,
     rating,
     title,
-
   } = props;
 
-useEffect(() => {
+  useEffect(() => {
     const handleMount = async () => {
       try {
         const [{ data: posts }, { data: comments }] = await Promise.all([
@@ -38,14 +37,18 @@ useEffect(() => {
       <hr />
       <Media>
         <Link to={`/profiles/${profile_id}`}>
-          <Avatar src={profile_image} />
+          <Avatar src={profile_image} alt={`${owner}'s profile picture`} />
         </Link>
         <Media.Body className="align-self-center ml-2">
           <span className={styles.Owner}>{owner}</span>
           <span className={styles.Date}>{updated_at}</span>
           <p>
             Rating:
-            <Rating readonly initialValue={rating} size={25}/* Available Props */ />
+            <Rating
+              readonly
+              initialValue={rating}
+              size={25} /* Available Props */
+            />
           </p>
           <p>
             Review:

@@ -6,7 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
-import { format } from 'date-fns';
+import { format } from "date-fns";
 
 /* import { useHistory } from "react-router-dom/cjs/react-router-dom.min";*/
 
@@ -81,19 +81,26 @@ const Post = (props) => {
       <Card.Body>
         <Media className="align-items-center justify-content-between">
           <Link to={`/profiles/${profile_id}`}>
-            <Avatar src={profile_image} height={55} />
+            <Avatar
+              src={profile_image}
+              alt={`${owner}'s profile picture`}
+              height={55}
+            />
             {owner}
           </Link>
           <div className="d-flex align-items-center">
-          <span className={styles.PostDate}>
-  {updated_at ? format(new Date(updated_at), 'MM/dd/yyyy') : 'No date'}
-</span>
+            <span className={styles.PostDate}>
+              {updated_at
+                ? format(new Date(updated_at), "MM/dd/yyyy")
+                : "No date"}
+            </span>
 
             {is_owner && postPage && (
-              < MoreDropdown 
-              handleEdit={handleEdit}
-              handleDelete={handleDelete} />
-              )}
+              <MoreDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            )}
           </div>
         </Media>
       </Card.Body>
@@ -110,9 +117,9 @@ const Post = (props) => {
               overlay={<Tooltip>You can't like your own post!</Tooltip>}
             >
               <div className={styles.LikeWrapper}>
-        <i className="far fa-heart" />
-        <span className={styles.LikeCount}>{likes_count}</span>
-      </div>
+                <i className="far fa-heart" />
+                <span className={styles.LikeCount}>{likes_count}</span>
+              </div>
             </OverlayTrigger>
           ) : like_id ? (
             <span onClick={handleUnlike} className={styles.LikeWrapper}>
@@ -130,19 +137,20 @@ const Post = (props) => {
               overlay={<Tooltip>Log in to like posts!</Tooltip>}
             >
               <div className={styles.LikeWrapper}>
-              <i className="far fa-heart" />
-              <span className={styles.LikeCount}>{likes_count}</span>
+                <i className="far fa-heart" />
+                <span className={styles.LikeCount}>{likes_count}</span>
               </div>
             </OverlayTrigger>
           )}
-          
-          <Link to={`/posts/${id}`} className={styles.CommentWrapper}>
-  <i
-    className={`${comments_count > 0 ? 'fas' : 'far'} fa-comments ${styles.CommentIcon}`}
-  />
-  <span className={styles.CommentCount}>{comments_count}</span>
-</Link>
 
+          <Link to={`/posts/${id}`} className={styles.CommentWrapper}>
+            <i
+              className={`${comments_count > 0 ? "fas" : "far"} fa-comments ${
+                styles.CommentIcon
+              }`}
+            />
+            <span className={styles.CommentCount}>{comments_count}</span>
+          </Link>
         </div>
       </Card.Body>
     </Card>
