@@ -23,5 +23,4 @@ All files has been checked and gave no errors.
 
 ![Lighthouse](docs/readme-images/lighthouse.png)
 
-Lighthouse testing has been performed on all pages. No significants dropdowns other than the listings page
-performance that contain large images (user's uploads).
+Lighthouse audits were conducted across all pages. Overall, the application performs well, with no major issues observed in dropdown menus or interactive elements. The Listings page is the only exception, where large user-uploaded images may impact performance.
