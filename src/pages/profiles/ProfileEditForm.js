@@ -129,7 +129,12 @@ const ProfileEditForm = () => {
             <Form.Group>
               {image && (
                 <figure>
-                  <Image src={image} fluid className={styles.profileImage} />
+                  <Image
+                    src={image}
+                    fluid
+                    className={styles.profileImage}
+                    alt="Profile picture preview"
+                  />
                 </figure>
               )}
               {errors?.image?.map((message, idx) => (

@@ -75,7 +75,7 @@ function PostCreateForm() {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-      <Form.Label className={styles.CustomLabel}>Title</Form.Label>
+        <Form.Label className={styles.CustomLabel}>Title</Form.Label>
 
         <Form.Control
           type="text"
@@ -91,7 +91,7 @@ function PostCreateForm() {
       ))}
 
       <Form.Group>
-      <Form.Label className={styles.CustomLabel}>Content</Form.Label>
+        <Form.Label className={styles.CustomLabel}>Content</Form.Label>
         <Form.Control
           as="textarea"
           rows={6}
@@ -119,61 +119,65 @@ function PostCreateForm() {
   );
 
   return (
-      <div className={styles.FormWrapper}>
-        <Form onSubmit={handleSubmit}>
-          <Row>
-            <Col className="py-2 p-0 p-md-2" md={12}>
-              <Container className="d-flex flex-column justify-content-center">
-                <Form.Group className="text-center">
-                  {image ? (
-                    <>
-                      <figure>
-                      <Image className={styles.ImagePreview} src={image} rounded />
-                      </figure>
-                      <div>
-                        <Form.Label
-                          className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                          htmlFor="image-upload"
-                        >
-                          Change the image
-                        </Form.Label>
-                      </div>
-                    </>
-                  ) : (
-                    <Form.Label
-                      className="d-flex justify-content-center"
-                      htmlFor="image-upload"
-                      style={{ color: "#385212", fontWeight: "700" }}
-                    >
-                      <Asset
-                        src={Upload}
-                        message="Click or tap to upload an image"
-
+    <div className={styles.FormWrapper}>
+      <Form onSubmit={handleSubmit}>
+        <Row>
+          <Col className="py-2 p-0 p-md-2" md={12}>
+            <Container className="d-flex flex-column justify-content-center">
+              <Form.Group className="text-center">
+                {image ? (
+                  <>
+                    <figure>
+                      <Image
+                        className={styles.ImagePreview}
+                        src={image}
+                        alt="Preview of uploaded post"
+                        rounded
                       />
-                    </Form.Label>
-                  )}
-  
-                  <Form.File
-                    id="image-upload"
-                    accept="image/*"
-                    onChange={handleChangeImage}
-                    ref={imageInput}
-                  />
-                </Form.Group>
-                {errors?.image?.map((message, idx) => (
-                  <Alert variant="warning" key={idx}>
-                    {message}
-                  </Alert>
-                ))}
-  
-                {textFields}
-              </Container>
-            </Col>
-          </Row>
-        </Form>
-      </div>
+                    </figure>
+                    <div>
+                      <Form.Label
+                        className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                        htmlFor="image-upload"
+                      >
+                        Change the image
+                      </Form.Label>
+                    </div>
+                  </>
+                ) : (
+                  <Form.Label
+                    className="d-flex justify-content-center"
+                    htmlFor="image-upload"
+                    style={{ color: "#385212", fontWeight: "700" }}
+                  >
+                    <Asset
+                      src={Upload}
+                      alt="Upload icon"
+                      message="Click or tap to upload an image"
+                    />
+                  </Form.Label>
+                )}
+
+                <Form.File
+                  id="image-upload"
+                  accept="image/*"
+                  onChange={handleChangeImage}
+                  ref={imageInput}
+                />
+              </Form.Group>
+              {errors?.image?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                  {message}
+                </Alert>
+              ))}
+
+              {textFields}
+            </Container>
+          </Col>
+        </Row>
+      </Form>
+    </div>
   );
-  
 }
 
 export default PostCreateForm;

@@ -31,14 +31,14 @@ function PostEditForm() {
 
   useEffect(() => {
     const handleMount = async () => {
-        try {
-            const { data } = await axiosReq.get(`/posts/${id}/`);
-            const { title, content, image, is_owner } = data;
+      try {
+        const { data } = await axiosReq.get(`/posts/${id}/`);
+        const { title, content, image, is_owner } = data;
 
-            is_owner ? setPostData({ title, content, image }): history.push("/");
-        } catch(err){
-            console.log(err);
-        }
+        is_owner ? setPostData({ title, content, image }) : history.push("/");
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     handleMount();
@@ -68,8 +68,8 @@ function PostEditForm() {
     formData.append("title", title);
     formData.append("content", content);
 
-    if (imageInput?.current?.files[0]){
-        formData.append("image", imageInput.current.files[0]);
+    if (imageInput?.current?.files[0]) {
+      formData.append("image", imageInput.current.files[0]);
     }
 
     try {
@@ -136,18 +136,23 @@ function PostEditForm() {
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
             <Form.Group className="text-center">
-                  <figure>
-                    <Image className={appStyles.Image} src={image} rounded />
-                  </figure>
-                  <div>
-                    <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
-                      htmlFor="image-upload"
-                    >
-                      Change the image
-                    </Form.Label>
-                  </div>
-               
+              <figure>
+                <Image
+                  className={appStyles.Image}
+                  src={image}
+                  alt="Preview of post image"
+                  rounded
+                />
+              </figure>
+              <div>
+                <Form.Label
+                  className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                  htmlFor="image-upload"
+                >
+                  Change the image
+                </Form.Label>
+              </div>
+
               <Form.File
                 id="image-upload"
                 accept="image/*"
