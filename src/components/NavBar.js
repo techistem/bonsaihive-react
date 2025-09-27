@@ -9,8 +9,10 @@ import {
 } from "../contexts/CurrentUserContext";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import { useHistory } from "react-router-dom";
 
 const NavBar = () => {
+  const history = useHistory();
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
@@ -24,6 +26,7 @@ const NavBar = () => {
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
       setExpanded(false);
+      history.push("/");
     } catch (err) {
       console.log(err);
     }
@@ -47,7 +50,6 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
-
       <NavDropdown
         title={
           <span
@@ -111,15 +113,15 @@ const NavBar = () => {
       <NavDropdown
         title={
           <span
-  className={`${styles.NavLink} ${styles.ProfileTitle}`}
-  onClick={(e) => {
-    e.preventDefault();
-    toggleProfile();
-  }}
-  style={{ cursor: "pointer" }}
->
-  <i className="fas fa-user-circle"></i> My Bonsai Hive
-</span>
+            className={`${styles.NavLink} ${styles.ProfileTitle}`}
+            onClick={(e) => {
+              e.preventDefault();
+              toggleProfile();
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            <i className="fas fa-user-circle"></i> My Bonsai Hive
+          </span>
         }
         id="profile-nav-dropdown"
         className={styles.NavLink}
@@ -161,7 +163,6 @@ const NavBar = () => {
           as="button"
           onClick={() => {
             handleSignOut();
-            closeMenus();
           }}
           className={styles.NavLink}
           style={{ cursor: "pointer" }}
@@ -203,12 +204,14 @@ const NavBar = () => {
       fixed="top"
       ref={ref}
     >
-      
-
       <Container>
         <NavLink to="/" onClick={closeMenus}>
           <Navbar.Brand>
-            <img src={logo} alt="BonsaiHive logo" className={styles.LogoImage} />
+            <img
+              src={logo}
+              alt="BonsaiHive logo"
+              className={styles.LogoImage}
+            />
           </Navbar.Brand>
         </NavLink>
 
@@ -246,9 +249,7 @@ const NavBar = () => {
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
-       
       </Container>
-      
     </Navbar>
   );
 };

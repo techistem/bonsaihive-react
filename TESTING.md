@@ -58,3 +58,25 @@ Lighthouse audits were conducted across all pages. Overall, the application perf
 | As a user, I can view all the posts by a specific user so that I can catch up on their latest posts.                                                        |     | ✔️   |
 | As a logged in user, I can edit my profile so that I can change my profile picture and bio.                                                                 |     | ✔️   |
 | As a logged in user, I can update my username and password so that I can keep my profile secure.                                                            |     | ✔️   |
+
+## Manual Testing
+
+|  #  | Feature                  |          Expected Outcome          | Testing Performed | Pass/Fail |
+| :-: | :----------------------- | :--------------------------------: | :---------------: | :-------: |
+|     | Navbar (All users)       |                                    |                   |           |
+|  1  | Navbar - Review Page     |      Redirect to review page       |   click button    |    ✅     |
+|  2  | Navbar - Contact         |      Redirect to contact page      |   click button    |    ✅     |
+|     | Navbar (Logged out user) |                                    |                   |           |
+|  3  | Navbar - Review Page     |      Redirect to review page       |   click button    |    ✅     |
+|  4  | Navbar - Contact         |      Redirect to contact page      |   click button    |    ✅     |
+|  5  | Navbar - Sign in         |      Redirect to sign in page      |   click button    |    ✅     |
+|  6  | Navbar - Sign up         |      Redirect to sign up page      |   click button    |    ✅     |
+|     | Navbar (Logged in user)  |                                    |                   |           |
+|  7  | Navbar - Posts Page      |       Redirect to posts page       |   click button    |    ✅     |
+|  8  | Navbar - Feed Page       |       Redirect to feed page        |   click button    |    ✅     |
+|  9  | Navbar - Liked Page      |       Redirect to liked page       |   click button    |    ✅     |
+| 10  | Navbar - Events Page     |      Redirect to events page       |   click button    |    ✅     |
+| 11  | Navbar - My Profile Page |    Redirect to my profile page     |   click button    |    ✅     |
+| 12  | Navbar - Review Page     |      Redirect to review page       |   click button    |    ✅     |
+| 13  | Navbar - Contact         |      Redirect to contact page      |   click button    |    ✅     |
+| 14  | Navbar - Sign out        | Sign out and redirect to home page |   click button    |    ✅     |
