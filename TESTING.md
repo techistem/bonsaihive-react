@@ -61,22 +61,54 @@ Lighthouse audits were conducted across all pages. Overall, the application perf
 
 ## Manual Testing
 
-|  #  | Feature                  |          Expected Outcome          | Testing Performed | Pass/Fail |
-| :-: | :----------------------- | :--------------------------------: | :---------------: | :-------: |
-|     | Navbar (All users)       |                                    |                   |           |
-|  1  | Navbar - Review Page     |      Redirect to review page       |   click button    |    ✅     |
-|  2  | Navbar - Contact         |      Redirect to contact page      |   click button    |    ✅     |
-|     | Navbar (Logged out user) |                                    |                   |           |
-|  3  | Navbar - Review Page     |      Redirect to review page       |   click button    |    ✅     |
-|  4  | Navbar - Contact         |      Redirect to contact page      |   click button    |    ✅     |
-|  5  | Navbar - Sign in         |      Redirect to sign in page      |   click button    |    ✅     |
-|  6  | Navbar - Sign up         |      Redirect to sign up page      |   click button    |    ✅     |
-|     | Navbar (Logged in user)  |                                    |                   |           |
-|  7  | Navbar - Posts Page      |       Redirect to posts page       |   click button    |    ✅     |
-|  8  | Navbar - Feed Page       |       Redirect to feed page        |   click button    |    ✅     |
-|  9  | Navbar - Liked Page      |       Redirect to liked page       |   click button    |    ✅     |
-| 10  | Navbar - Events Page     |      Redirect to events page       |   click button    |    ✅     |
-| 11  | Navbar - My Profile Page |    Redirect to my profile page     |   click button    |    ✅     |
-| 12  | Navbar - Review Page     |      Redirect to review page       |   click button    |    ✅     |
-| 13  | Navbar - Contact         |      Redirect to contact page      |   click button    |    ✅     |
-| 14  | Navbar - Sign out        | Sign out and redirect to home page |   click button    |    ✅     |
+|  #  | Feature                                                     |                        Expected Outcome                         |                 Testing Performed                  | Pass/Fail |
+| :-: | :---------------------------------------------------------- | :-------------------------------------------------------------: | :------------------------------------------------: | :-------: |
+|     | Navbar (All users)                                          |                                                                 |                                                    |           |
+|  1  | Navbar - Review Page                                        |                     Redirect to review page                     |                    click button                    |    ✅     |
+|  2  | Navbar - Contact                                            |                    Redirect to contact page                     |                    click button                    |    ✅     |
+|     | Navbar (Logged out user)                                    |                                                                 |                                                    |           |
+|  3  | Navbar - Review Page                                        |                     Redirect to review page                     |                    click button                    |    ✅     |
+|  4  | Navbar - Contact                                            |                    Redirect to contact page                     |                    click button                    |    ✅     |
+|  5  | Navbar - Sign in                                            |                    Redirect to sign in page                     |                    click button                    |    ✅     |
+|  6  | Navbar - Sign up                                            |                    Redirect to sign up page                     |                    click button                    |    ✅     |
+|     | Navbar (Logged in user)                                     |                                                                 |                                                    |           |
+|  7  | Navbar - Posts Page                                         |                     Redirect to posts page                      |                    click button                    |    ✅     |
+|  8  | Navbar - Feed Page                                          |                      Redirect to feed page                      |                    click button                    |    ✅     |
+|  9  | Navbar - Liked Page                                         |                     Redirect to liked page                      |                    click button                    |    ✅     |
+| 10  | Navbar - Events Page                                        |                     Redirect to events page                     |                    click button                    |    ✅     |
+| 11  | Navbar - My Profile Page                                    |                   Redirect to my profile page                   |                    click button                    |    ✅     |
+| 12  | Navbar - Review Page                                        |                     Redirect to review page                     |                    click button                    |    ✅     |
+| 13  | Navbar - Contact                                            |                    Redirect to contact page                     |                    click button                    |    ✅     |
+| 14  | Navbar - Sign out                                           |               Sign out and redirect to home page                |                    click button                    |    ✅     |
+|     | Sign up Page                                                |                                                                 |                                                    |           |
+| 15  | All fields filled correctly                                 |           Create account and redirect to sign in page           |                click Sign up button                |    ✅     |
+| 16  | Leave blank username field                                  |           Display error: This field may not be blank.           |                click Sign up button                |    ✅     |
+| 17  | Leave blank password field                                  |           Display error: This field may not be blank.           |                click Sign up button                |    ✅     |
+| 18  | Leave empty confirm password field                          |           Display error: This field may not be blank.           |                click Sign up button                |    ✅     |
+| 19  | Set different confirm password                              |      Display error: The two password fields didn't match.       |                click Sign up button                |    ✅     |
+| 20  | Give username that already exists                           |    Display error: A user with that username already exists.     |                click Sign up button                |    ✅     |
+|     | Sign in Page                                                |                                                                 |                                                    |           |
+| 21  | All fields filled                                           |              Sign in and redirect to previous page              |                click Sign in button                |    ✅     |
+| 22  | Leave blank username field                                  |   Display error: Must include ""username"" and ""password"".    |                click Sign in button                |    ✅     |
+| 23  | Leave blank password field                                  |           Display error: This field may not be blank.           |                click Sign in button                |    ✅     |
+| 24  | Try username with first letter capital/ all letters capital |   Display error: Unable to log in with provided credentials.    |                click Sign in button                |    ✅     |
+|     | Contact Form                                                |                                                                 |                                                    |           |
+| 25  | Contact form success                                        | Display success message, redirect to a new(empty) Contact page  |            complete all fields and send            |    ✅     |
+| 26  | Email Address field empty                                   |                      Display error message                      |          Please fill all required fields           |    ✅     |
+| 27  | Reason for contacting us field empty                        |                      Display error message                      |          Please fill all required fields           |    ✅     |
+| 28  | Details field empty                                         |                      Display error message                      |          Please fill all required fields           |    ✅     |
+|     | Explore Page                                                |                                                                 |                                                    |           |
+| 29  | Dropdown menu                                               |         If user is logged in, display the dropdown menu         |        Log in and navigate to explore page         |    ✅     |
+| 30  | Dropdown menu                                               | If user is not logged in, dropdown menu should not be displayed | Log out and verify user is redirected to Home page |    ✅     |
+| 31  | Display dropdown menu                                       |            Display Posts, Feed, Liked, Events links             |                click explore button                |    ✅     |
+| 32  | Posts link                                                  |                     Redirect to Posts page                      |         Log in and navigate to posts page          |    ✅     |
+| 33  | Feed link                                                   |                      Redirect to Feed page                      |          Log in and navigate to feed page          |    ✅     |
+| 34  | Liked link                                                  |                     Redirect to Liked page                      |         Log in and navigate to liked page          |    ✅     |
+| 35  | Events link                                                 |                     Redirect to Events page                     |         Log in and navigate to events page         |    ✅     |
+|     | My Profile Page                                             |                                                                 |
+| 36  | Dropdown menu                                               |         If user is logged in, display the dropdown menu         |     Log in and click on My Bonsai Hive button      |    ✅     |
+| 37  | Display dropdown menu                                       |      Display My Profile, Reviews, Contact, Sign Out links       |            Click My Bonsai Hive button             |    ✅     |
+| 38  | My Profile link                                             |                   Redirect to My Profile page                   |        Click My Profile link from dropdown         |    ✅     |
+| 39  | Reviews link                                                |                    Redirect to Reviews page                     |          Click Reviews link from dropdown          |    ✅     |
+| 40  | Contact link                                                |                    Redirect to Contact page                     |          Click Contact link from dropdown          |    ✅     |
+| 41  | Sign Out link                                               |           Sign out the user and redirect to Home page           |         Click Sign Out link from dropdown          |    ✅     |
