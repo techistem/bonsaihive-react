@@ -92,12 +92,21 @@ Lighthouse audits were conducted across all pages. Overall, the application perf
 | 22  | Leave blank username field                                  |   Display error: Must include ""username"" and ""password"".    |                click Sign in button                |    ✅     |
 | 23  | Leave blank password field                                  |           Display error: This field may not be blank.           |                click Sign in button                |    ✅     |
 | 24  | Try username with first letter capital/ all letters capital |   Display error: Unable to log in with provided credentials.    |                click Sign in button                |    ✅     |
-|     | Contact Form                                                |                                                                 |                                                    |           |
+|     | Contact Page (All user)                                     |                                                                 |                                                    |           |
 | 25  | Contact form success                                        | Display success message, redirect to a new(empty) Contact page  |            complete all fields and send            |    ✅     |
 | 26  | Email Address field empty                                   |                      Display error message                      |          Please fill all required fields           |    ✅     |
 | 27  | Reason for contacting us field empty                        |                      Display error message                      |          Please fill all required fields           |    ✅     |
 | 28  | Details field empty                                         |                      Display error message                      |          Please fill all required fields           |    ✅     |
-|     | Explore Page                                                |                                                                 |                                                    |           |
+|     | Reviews Page (All users)                                    |                                                                 |                                                    |           |
+|  1  | Review page load                                            |            Page loads correctly with list of reviews            |              Navigate to review page               |    ✅     |
+|     | Reviews Page (Logged in user )                              |                                                                 |                                                    |           |
+|  1  | Create new review (all fields valid)                        |       Review successfully created and visible in the list       |           Fill all fields, click submit            |    ✅     |
+|  1  | Leave title field empty                                     |           Display error: This field may not be blank            |            Submit form with empty title            |    ✅     |
+|  1  | Leave description/content empty                             |           Display error: This field may not be blank            |         Submit form with empty description         |    ✅     |
+|  1  | Leave rating empty                                          | Display error: Ensure this value is greater than or equal to 1. |        Submit form without selecting rating        |    ✅     |
+|  1  | Edit existing review                                        |               Successfully update review content                |           Edit a review and save changes           |    ✅     |
+|  1  | Delete review                                               |        Review is removed from list and no longer visible        |          Click delete button on a review           |    ✅     |
+|     | Explore Page (Logged in user)                               |                                                                 |                                                    |           |
 | 29  | Dropdown menu                                               |         If user is logged in, display the dropdown menu         |        Log in and navigate to explore page         |    ✅     |
 | 30  | Dropdown menu                                               | If user is not logged in, dropdown menu should not be displayed | Log out and verify user is redirected to Home page |    ✅     |
 | 31  | Display dropdown menu                                       |            Display Posts, Feed, Liked, Events links             |                click explore button                |    ✅     |
