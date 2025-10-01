@@ -2,59 +2,24 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-}
-
-.Container {
-  height: calc(100vh - 70px);
-  width: 100%;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
-}
-
-.Row {
-  height: 100%;
-  margin: 0;
-  --bs-gutter-x: 0;
-  
 }
 
 .ImageCol {
   background-image:
     radial-gradient(circle at center, transparent 50%, #F5F5F0),
-    url('../assets/homepage.jpg');
+    url('../assets/homepage2.jpg');
   background-size: cover;
-  background-position: center 100%;
+  background-position: center;
   background-repeat: no-repeat;
-  height: 100%;
-  padding: 0;
-  margin: 0;
+  min-height: 300px;
 }
 
 .TitleContainer {
-  position: relative;
   background-color: rgba(231, 224, 202, 0.85); /* E7E0CA */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 100px 40px 40px;
+  padding: 2rem 1.5rem;
   box-shadow: -4px 0 15px rgba(0, 0, 0, 0.05);
-}
-
-.TitleContainer::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: inherit;
-  backdrop-filter: blur(4px);
-  z-index: 0;
-  border-radius: inherit;
-}
-
-.TitleContainer > * {
-  position: relative;
-  z-index: 1;
+  height: auto;
 }
 
 .Title {
@@ -62,14 +27,13 @@ html, body {
   font-weight: 700;
   font-size: 3rem;
   color: #385212;
-  text-align: center;
   margin-bottom: 1rem;
 }
 
 .Line {
   width: 100px;
   height: 5px;
-  margin: 0 auto 5px auto;
+  margin: 0 auto 5px;
   border-radius: 80% 80% 30% 30%;
   background-color: #a2ad63;
 }
@@ -77,7 +41,7 @@ html, body {
 .SecondLine {
   width: 50px;
   height: 5px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px;
   border-radius: 30% 30% 80% 80%;
   background-color: #a2ad63;
 }
@@ -87,30 +51,12 @@ html, body {
   line-height: 1.6;
   color: #385212;
   font-weight: 800;
-  text-align: center;
 }
 
-/* Mobile style */
-@media screen and (max-width: 991px) {
-  .Row {
-    flex-direction: column;
-  }
-
-  .ImageCol {
-    background-position: center 80%;
-    background-size: cover;
-  }
-
-  .TitleContainer {
-    padding: 40px 20px;
-    background-color: rgba(231, 224, 202, 0.95);
-    position: absolute;
-  }
-
+@media (max-width: 991px) {
   .Title {
     font-size: 2rem;
   }
-
   .Description {
     font-size: 1rem;
   }
