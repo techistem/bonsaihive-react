@@ -169,3 +169,5 @@ Lighthouse audits were conducted across all pages. Overall, the application perf
 | 89  | Mismatched passwords                                        |                                       Error displayed: “The two password fields didn’t match”                                        |        Enter different new and confirm passwords         |    ✅     |
 | 90  | Empty password fields                                       |                                            Error displayed: “This field may not be blank”                                            |       Leave new password or confirm password empty       |    ✅     |
 | 91  | Weak password                                               | Error displayed if password is too common or entirely numeric: “This password is too common.” / “This password is entirely numeric.” | Enter weak password like “123456” or “password” and save |    ✅     |
+
+## Bugs

@@ -11,11 +11,14 @@ const Homepage = () => {
   useRedirect();
 
   return (
-    <Container fluid className={styles.Container}>
-      <Row className={styles.Row}>
-        <Col lg={8} className={styles.ImageCol}></Col>
-        <Col lg={4} className={styles.TitleContainer}>
-          <div>
+    <Container fluid className="p-0 h-100">
+      <Row className="g-0 vh-100">
+        <Col
+          xs={12}
+          lg={4}
+          className={`${styles.TitleContainer} order-1 order-lg-2 d-flex align-items-center justify-content-center text-center p-4`}
+        >
+          <div className="w-100" style={{ maxWidth: "500px" }}>
             <h1 className={styles.Title}>BonsaiHive</h1>
             <hr className={styles.Line} />
             <hr className={styles.SecondLine} />
@@ -29,6 +32,12 @@ const Homepage = () => {
             </div>
           </div>
         </Col>
+
+        <Col
+          xs={12}
+          lg={8}
+          className={`${styles.ImageCol} order-2 order-lg-1`}
+        ></Col>
       </Row>
     </Container>
   );
