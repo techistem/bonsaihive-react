@@ -6,7 +6,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/ReviewsPage.module.css";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import ReviewEditForm from "../reviews/ReviewEditForm";
-
+import ReviewCard from "./ReviewCard";
 
 const ReviewsPage = () => {
   const [reviews, setReviews] = useState([]);
@@ -71,7 +71,7 @@ const ReviewsPage = () => {
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   return (
     <Container className={styles.container}>
@@ -86,41 +86,18 @@ const ReviewsPage = () => {
           reviews.map((review) => {
             const is_owner = currentUser?.username === review.owner_username;
             return (
-              <Card key={review.id} className={`${styles.reviewCard} mb-3`}>
-                <Card.Header className="d-flex justify-content-between align-items-center">
-                  <Card.Subtitle className={`mb-2 ${styles.cardSubtitle}`}>
-                    {review.owner_username} | Rating: {review.rating}
-                  </Card.Subtitle>
-                  {is_owner && (
-                    <MoreDropdown
-                      handleEdit={() => setEditReviewId(review.id)}
-                      handleDelete={() => handleDelete(review.id)}
-                    />
-                  )}
-                </Card.Header>
-                <Card.Title className={styles.cardTitle}>{review.title}</Card.Title>
-                <Card.Body>
-                  {editReviewId === review.id ? (
-                    <ReviewEditForm
-                      review={review}
-                      setReviews={setReviews}
-                      setEditReviewId={setEditReviewId}
-                    />
-                  ) : (
-                  <Card.Text>
-                    {truncateText(review.content, review.id)}
-                    {review.content.length > 200 && (
-                      <span
-                        onClick={() => toggleExpand(review.id)}
-                        style={{ color: "#A2AD63", cursor: "pointer", marginLeft: "8px" }}
-                      >
-                        {expandedIds.includes(review.id) ? "Show Less" : "Read More"}
-                      </span>
-                    )}
-                  </Card.Text>
-                  )}
-                </Card.Body>
-              </Card>
+              <ReviewCard
+                handleDelete={handleDelete}
+                review={review}
+                is_owner={is_owner}
+                setEditReviewId={setEditReviewId}
+                editReviewId={editReviewId}
+                setReviews={setReviews}
+                expandedIds={expandedIds}
+                toggleExpand={toggleExpand}
+                truncateText={truncateText}
+                key={review.id}
+              />
             );
           })
         ) : (

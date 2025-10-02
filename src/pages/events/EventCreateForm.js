@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { useCurrentUser } from "../../contexts/CurrentUserContext"
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/EventCreateForm.module.css";
-import { format } from 'date-fns';
+import { format } from "date-fns";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
 
 function EventCreateForm() {
   const currentUser = useCurrentUser();
@@ -25,12 +24,12 @@ function EventCreateForm() {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
 
-
-
-  const start_time = eventData.start_time ? format(new Date(eventData.start_time), "yyyy-MM-dd HH:mm") : null;
-  const end_time = eventData.end_time ? format(new Date(eventData.end_time), "yyyy-MM-dd HH:mm") : null;
-
-
+  const start_time = eventData.start_time
+    ? format(new Date(eventData.start_time), "yyyy-MM-dd HH:mm")
+    : null;
+  const end_time = eventData.end_time
+    ? format(new Date(eventData.end_time), "yyyy-MM-dd HH:mm")
+    : null;
 
   if (!currentUser) {
     return <p>You need to log in to create a new event.</p>;
@@ -72,7 +71,6 @@ function EventCreateForm() {
 
       history.push("/events");
     } catch (err) {
-
       if (err.response?.status === 401) {
         setError("You must be logged in to create an event.");
       } else {
@@ -84,7 +82,9 @@ function EventCreateForm() {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Create New Event</h2>
-      {success && <p className={styles.success}>Event submitted for approval!</p>}
+      {success && (
+        <p className={styles.success}>Event submitted for approval!</p>
+      )}
       {error && <p className={styles.error}>{JSON.stringify(error)}</p>}
       <Form onSubmit={handleSubmit}>
         <Form.Group className={styles.formGroup}>
@@ -92,6 +92,7 @@ function EventCreateForm() {
           <Form.Control
             type="text"
             name="title"
+            pattern="^\S+$"
             value={title}
             onChange={handleChange}
             required
@@ -103,6 +104,7 @@ function EventCreateForm() {
           <Form.Control
             as="textarea"
             name="description"
+            pattern="^\S+$"
             value={description}
             onChange={handleChange}
             required
@@ -141,11 +143,12 @@ function EventCreateForm() {
             className={styles.input}
           />
         </Form.Group>
-        <Button type="submit" className={styles.button}>Submit Event</Button>
+        <Button type="submit" className={styles.button}>
+          Submit Event
+        </Button>
       </Form>
     </div>
   );
-  
 }
 
 export default EventCreateForm;
