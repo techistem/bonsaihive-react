@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Container, Alert, Card, Spinner } from "react-bootstrap";
+import { Container, Alert, Spinner } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import ReviewCreateForm from "../reviews/ReviewCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/ReviewsPage.module.css";
-import { MoreDropdown } from "../../components/MoreDropdown";
-import ReviewEditForm from "../reviews/ReviewEditForm";
 import ReviewCard from "./ReviewCard";
 
 const ReviewsPage = () => {

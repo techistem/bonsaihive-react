@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Card } from "react-bootstrap";
 import styles from "../../styles/ReviewsPage.module.css";
 import { MoreDropdown } from "../../components/MoreDropdown";
