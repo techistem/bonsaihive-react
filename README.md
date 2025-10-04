@@ -813,3 +813,25 @@ If you don't already have an account to Heroku, create one [here](https://www.he
 ## Testing
 
 Please see [Testing](TESTING.md)
+
+## Credits
+
+### Media
+
+[signIn image](https://unsplash.com/photos/a-buddha-statue-with-a-tree-growing-out-of-it-jU1ISQG3iUk)- Image by Dan Crile on unsplash.com
+
+[signUp image](https://unsplash.com/photos/purple-flowers-on-blue-ceramic-vase-p51V2hcqRhc)- Image by Devin H on unsplash.com
+
+[HomePage image](https://pixabay.com/photos/bonsai-plant-decoration-6790367/)- Image by 关键是我啊 on pixabay.com
+
+[Post_image_1](https://unsplash.com/photos/yellow-leafed-tree-painting-hBYo2tCR6Wc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)- Image by Pauline Bernfeld on unsplash.com
+
+[Post_image_2](https://unsplash.com/photos/brown-tree-branch-on-book-DMfxDuqAAgY)- Image by Devin H on unsplash.com
+
+[Post_image_3](https://www.pexels.com/photo/watering-of-a-potted-plant-9130872/)- Image by Katrin Bolovtsova on pexels.com
+
+[Post_image_4](https://pixabay.com/da/photos/blade-bonsai-oliven-tr%C3%A6-gr%C3%B8n-5229598/)- Image by Glenn A Lucas on pixabay.com
+
+[Post_image_3]()- Image by 关键是我啊 on pixabay.com
+
+<a href="#top">Back to the top</a>
