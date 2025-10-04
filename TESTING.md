@@ -171,3 +171,25 @@ Lighthouse audits were conducted across all pages. Overall, the application perf
 | 91  | Weak password                                               | Error displayed if password is too common or entirely numeric: “This password is too common.” / “This password is entirely numeric.” | Enter weak password like “123456” or “password” and save |    ✅     |
 
 ## Bugs
+
+Problem:
+The like and comment icons had low visibility because of poor contrast with the pink background and site’s turquoise green theme, making them difficult for users to notice.
+
+Solved by:
+Updated the icon colours and adjusted the post background color to improve contrast and visual harmony.
+
+---
+
+Problem:
+The Review model was incomplete (missing clear association to what is reviewed), migrations were not applied causing 500 errors, and users could submit more than one review per post.
+
+Solved by:
+Added ForeignKey to posts in the Review model, ran migrations to apply changes, and added a unique_together constraint to ensure one review per user per post. Tested and confirmed fixes.
+
+---
+
+Problem:
+Comments on the Post page were not filtered correctly, causing all comments from every post to appear under each post. This happened because of a typo: filterfield was used instead of filterfields in the backend.
+
+Solved by:
+Fixed the typo by updating filterfield to filterfields so comments now display only those related to the specific post.
