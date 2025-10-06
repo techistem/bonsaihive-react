@@ -28,7 +28,7 @@ const NavBar = () => {
       setExpanded(false);
       history.push("/");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

@@ -47,7 +47,7 @@ const UsernameForm = () => {
       }));
       history.goBack();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setErrors(err.response?.data);
     }
   };
@@ -55,9 +55,7 @@ const UsernameForm = () => {
   return (
     <Row>
       <Col className="py-2 mx-auto text-center" md={6}>
-      <Container className={`${appStyles.Content} ${appStyles.CreamBox}`}>
-
-
+        <Container className={`${appStyles.Content} ${appStyles.CreamBox}`}>
           <Form onSubmit={handleSubmit} className="my-2">
             <Form.Group>
               <Form.Label>Change username</Form.Label>

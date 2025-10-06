@@ -47,7 +47,7 @@ const UserPasswordForm = () => {
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
       history.goBack();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setErrors(err.response?.data);
     }
   };
@@ -89,19 +89,19 @@ const UserPasswordForm = () => {
             ))}
 
             <div className="mt-3 d-flex justify-content-center gap-2">
-             <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
-              onClick={() => history.goBack()}
-             >
-              cancel
-            </Button>
-            <Button
-              type="submit"
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
-            >
-              save
-            </Button>
-            </div> 
+              <Button
+                className={`${btnStyles.Button} ${btnStyles.Blue}`}
+                onClick={() => history.goBack()}
+              >
+                cancel
+              </Button>
+              <Button
+                type="submit"
+                className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              >
+                save
+              </Button>
+            </div>
           </Form>
         </Container>
       </Col>

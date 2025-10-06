@@ -23,7 +23,7 @@ const ReviewEditForm = ({ review, setReviews, setEditReviewId }) => {
       );
       setEditReviewId(null);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       setError("Failed to update review. Please try again.");
     }
   };

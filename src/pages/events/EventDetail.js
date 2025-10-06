@@ -8,7 +8,6 @@ import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import EventsEditForm from "./EventsEditForm";
 
-
 function EventDetail() {
   const { id } = useParams();
   const [event, setEvent] = useState(null);
@@ -24,9 +23,9 @@ function EventDetail() {
       await axios.delete(`/events/${id}/`);
       history.push("/events");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
-  }
+  };
 
   useEffect(() => {
     const fetchEvent = async () => {
@@ -36,22 +35,31 @@ function EventDetail() {
         setError(null);
       } catch (error) {
         console.error("Error fetching event:", error);
-        setError("An error occurred while loading the event. Please try again.");
+        setError(
+          "An error occurred while loading the event. Please try again."
+        );
       }
     };
     fetchEvent();
   }, [id]);
-  if (error) return <p style={{ color: "olive green", textAlign: "center" }}>{error}</p>;
+  if (error)
+    return <p style={{ color: "olive green", textAlign: "center" }}>{error}</p>;
   if (!event) return <p>Loading event...</p>;
 
   const formatDateTime = (dateStr) =>
     dateStr ? dateStr.replace("T", " ").substring(0, 19) : "Not specified";
 
   return (
-<Container className="my-4">
+    <Container className="my-4">
       <Card style={{ backgroundColor: "#D9CBA3" }}>
         <Card.Body>
-          <Card.Header className="d-flex justify-content-between align-items-center mb-2 rounded" style={{ backgroundColor: "rgba(56, 82, 18, 0.8)", color: "#D9CBA3" }}>
+          <Card.Header
+            className="d-flex justify-content-between align-items-center mb-2 rounded"
+            style={{
+              backgroundColor: "rgba(56, 82, 18, 0.8)",
+              color: "#D9CBA3",
+            }}
+          >
             <h2>{event.title}</h2>
             {is_owner && !showEditForm && (
               <MoreDropdown
@@ -76,7 +84,6 @@ function EventDetail() {
           <Card.Text>
             <strong>Location:</strong> {event.location || "Not specified"}
           </Card.Text>
-
         </Card.Body>
       </Card>
       <EventsEditForm
